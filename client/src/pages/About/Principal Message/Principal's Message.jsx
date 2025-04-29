@@ -1,0 +1,68 @@
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+const PrincipalMessage = () => {
+  const { ref, inView } = useInView({ triggerOnce: true });
+
+  return (
+    <div className="container mx-auto p-6 !mt-15">
+      <motion.h1
+        ref={ref}
+        initial={{ opacity: 0, y: -10 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 1 }}
+        className="!text-4xl font-bold text-left"
+      >
+        Principal's Message
+        <div className="w-[20rem] h-0.5 bg-amber-200 mt-2"></div>
+      </motion.h1>
+
+      <div className="flex flex-col md:flex-row items-center mt-6">
+        {/* Left: Text */}
+        <div className="md:w-1/2 text-lg text-gray-700 space-y-4">
+          <p>
+            <strong>Dr. P BHASKAR NAIDU</strong> has around 20+ years of
+            experience in Telugu States & Non-Telugu States in India, as
+            well as 5+ years of international exposure.
+          </p>
+          <p>
+            He holds qualifications BE (ECE), MTech(ES), MTech(CSE), Ph.D
+            from GU, JNTUH, JNTUK, ANU, and also completed PGDCST from
+            the Human Resource Department.
+          </p>
+          <p>
+            He has published research papers in various reputed
+            international journals and has patents nationally and
+            internationally. He is a guest speaker and a paper setter
+            for various autonomous institutions.
+          </p>
+          <p>
+            Memberships: JCP(Java Certified Programmer) from Sun Micro
+            Systems, LMISTE (Life Member of Indian Society for Technical
+            Education), VSI (VLSI Society of India), International Association
+            of Engineers, LMBMSI, LM Indian Science Congress.
+          </p>
+          <p>
+            His roles have included mentor, lab in-charge, head, PG
+            coordinator, dean, and principal.
+          </p>
+          <p className="font-semibold">
+            Principal, GVR&S CET, Guntur, Andhra Pradesh, India
+          </p>
+          <p>📞 +91 6305893114 | ✉ principal@gvrs.ac.in</p>
+        </div>
+
+        {/* Right: Image */}
+        <div className="md:w-1/2 mt-6 md:mt-0 flex justify-center">
+          <img
+            src="https://gvrs.ac.in/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-12-at-12.57.17-PM.jpeg"
+            alt="Dr.P BHASKAR NAIDU"
+            className="w-90 h-auto rounded-lg shadow-lg"
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default PrincipalMessage;

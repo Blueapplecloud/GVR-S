@@ -13,7 +13,7 @@ const VisionMission = () => {
         ref={visionRef}
         initial={{ opacity: 0, y: -30 }}
         animate={visionInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 1 }}
         className="!text-3xl font-bold text-center mb-2"
       >
         VISION
@@ -28,7 +28,7 @@ const VisionMission = () => {
         ref={missionRef}
         initial={{ opacity: 0, y: -30 }}
         animate={missionInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 1 }}
         className="!text-3xl font-bold text-center mt-10 mb-2"
       >
         MISSION
@@ -43,7 +43,7 @@ const VisionMission = () => {
         ref={qualityRef}
         initial={{ opacity: 0, y: -30 }}
         animate={qualityInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 1 }}
         className="!text-3xl font-bold text-center mt-10 mb-2"
       >
         QUALITY POLICY
