@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css'
 import About from "./pages/About/About";
 import Management from "./pages/Management/Management";
-import CustomNavbar from "./components/Navbar/Navbar";
+import NavbarComponent from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import AboutGVRS from "./pages/About/About GVR&S/About GVR&S";
 import VisionMission from "./pages/About/Vision&Mission/Vision&Mission";
@@ -18,7 +18,7 @@ function App() {
     <>
       <Router>
       <div>
-        <CustomNavbar />
+        <NavbarComponent />
 
         <main >
           <Routes>
