@@ -6,6 +6,8 @@ import Management from "./pages/Management/Management";
 import CustomNavbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import AboutGVRS from "./pages/About/About GVR&S/About GVR&S";
+import VisionMission from "./pages/About/Vision&Mission/Vision&Mission";
 
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
             {/* Management page Routes */}
             <Route path="/management" element={<Management />} />
             {/* Add more routes as needed */}
+            <Route path="/about/history" element={<AboutGVRS/>}/>
+            <Route path="/about/vision&mission" element={<VisionMission/>}/>
           </Routes>
         </main>
         <Footer />

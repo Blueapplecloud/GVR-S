@@ -1,10 +1,10 @@
 import React from 'react'
-import Vision from './Vision/Vision'
+import Vision from './Vision&Mission/Vision&Mission'
 
 function About() {
   return (
     <>
-    <div>About</div>
+    
     <Vision/>
     </>
   )

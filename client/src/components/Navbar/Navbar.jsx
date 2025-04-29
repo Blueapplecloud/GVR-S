@@ -44,7 +44,7 @@ const CustomNavbar = () => {
   <NavDropdown.Item as={Link} to="/about/history" className={dropdownItemClass}>
     GVR&S History
   </NavDropdown.Item>
-  <NavDropdown.Item as={Link} to="/about/vision" className={dropdownItemClass}>
+  <NavDropdown.Item as={Link} to="/about/vision&mission" className={dropdownItemClass}>
     Vision & Mission
   </NavDropdown.Item>
   <NavDropdown.Item as={Link} to="/about/message" className={dropdownItemClass}>
