@@ -3,21 +3,23 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css'
 import About from "./pages/About/About";
 import Management from "./pages/Management/Management";
-import Navbar from "./components/Navbar/Navbar";
+import CustomNavbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
 
   return (
     <>
       <Router>
-      <div className="flex flex-col min-h-screen">
-        <Navbar />
+      <div>
+        <CustomNavbar />
 
-        <main className="flex-grow">
+        <main >
           <Routes>
             {/* Default route */}
-            {/* <Route path="/" element={<Home />} /> */}
+            {/* <Route path="/" element={<CustomNavbar />} /> */}
             {/* About page Routes */}
             <Route path="/about" element={<About />} />
             {/* Management page Routes */}
