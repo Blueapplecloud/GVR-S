@@ -9,6 +9,18 @@ const carouselItems = [
   {
     imageUrl: "/images/carousel/img1.jpg",
   },
+  {
+    imageUrl: "/images/carousel/img2.jpg",
+  },
+  {
+    imageUrl: "/images/carousel/img3.jpg",
+  },
+  {
+    imageUrl: "/images/carousel/img4.jpg",
+  },
+  {
+    imageUrl: "/images/carousel/img5.jpg",
+  },
 ];
 
 function CarouselComponent() {
