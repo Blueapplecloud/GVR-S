@@ -151,8 +151,8 @@ const CustomNavbar = () => {
         <NavDropdown.Item as={Link} to="/departments/mech" className={dropdownItemClass}>
           Mechanical Engineering
         </NavDropdown.Item>
-        <NavDropdown.Item as={Link} to="/departments/bsh" className={dropdownItemClass}>
-          BS & H
+        <NavDropdown.Item as={Link} to="/departments/sh" className={dropdownItemClass}>
+          S & H
         </NavDropdown.Item>
       </NavDropdown>
     </div>
