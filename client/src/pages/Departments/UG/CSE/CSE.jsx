@@ -1,5 +1,5 @@
 import React from "react";
-import DepartmentsComponent from "../../../Reusable Components/Departments"; // Adjust the path based on your folder structure
+import DepartmentsComponent from "../../../../Reusable Components/Departments"; // Adjust the path based on your folder structure
 
 const CSE = () => {
   const aboutText = `
