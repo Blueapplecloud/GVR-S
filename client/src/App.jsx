@@ -10,6 +10,7 @@ import AboutGVRS from "./pages/About/About GVR&S/About GVR&S";
 import VisionMission from "./pages/About/Vision&Mission/Vision&Mission";
 import PrincipalMessage from "./pages/About/Principal Message/Principal's Message";
 import Founder from "./pages/Management/Founder/Founder";
+import CSE from "./pages/Departments/CSE/CSE";
 
 
 function App() {
@@ -32,6 +33,8 @@ function App() {
             {/* Management page Routes */}
             <Route path="/management/founder" element={<Founder />} />
             {/* Add more routes as needed */}
+
+            <Route path="/departments/cse" element={<CSE/>}/>
           </Routes>
         </main>
         <Footer />

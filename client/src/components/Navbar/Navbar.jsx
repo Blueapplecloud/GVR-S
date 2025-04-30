@@ -12,6 +12,12 @@ const CustomNavbar = () => {
   const [showDepartments, setShowDepartments] = useState(false);
   const [showCampus, setShowCampus] = useState(false);
   const [showRnd, setShowRnd] = useState(false);
+  const [showUG, setShowUG] = useState(false);
+  const [showPG, setShowPG] = useState(false);
+  const [showMBA, setShowMBA] = useState(false);
+  const [showMTech, setShowMTech] = useState(false);
+  const [showGallery, setShowGallery] = useState(false);
+
 
   const handleMouseEnter = useCallback(setter => () => setter(true), []);
   const handleMouseLeave = useCallback(setter => () => setter(false), []);
@@ -49,12 +55,6 @@ const CustomNavbar = () => {
   </NavDropdown.Item>
   <NavDropdown.Item as={Link} to="/about/message" className={dropdownItemClass}>
     Principal's Message
-  </NavDropdown.Item>
-  <NavDropdown.Item as={Link} to="/about/map" className={dropdownItemClass}>
-    Campus Map
-  </NavDropdown.Item>
-  <NavDropdown.Item as={Link} to="/about/organization" className={dropdownItemClass}>
-    Organization Map
   </NavDropdown.Item>
 </NavDropdown>
 
@@ -99,12 +99,6 @@ const CustomNavbar = () => {
     Programs Offered
   </NavDropdown.Item>
   <NavDropdown.Item as={Link} to="/academics/calendar" className={dropdownItemClass}>
-    Academic Calendar
-  </NavDropdown.Item>
-  <NavDropdown.Item as={Link} to="/academics/syllabus" className={dropdownItemClass}>
-    Academic Regulation
-  </NavDropdown.Item>
-  <NavDropdown.Item as={Link} to="/academics/calendar" className={dropdownItemClass}>
     Fee Structure
   </NavDropdown.Item>
   <NavDropdown.Item as={Link} to="/academics/calendar" className={dropdownItemClass}>
@@ -116,71 +110,158 @@ const CustomNavbar = () => {
 </NavDropdown>
 
 <NavDropdown
-  title={<span className="text-white hover:text-white">{'Departments'}</span>}
+  title={<span className="text-white hover:text-white">Departments</span>}
   id="departments-dropdown"
-  // className="custom-dropdown"
   show={showDepartments}
   onMouseEnter={handleMouseEnter(setShowDepartments)}
   onMouseLeave={handleMouseLeave(setShowDepartments)}
+  className="custom-dropdown"
 >
-  <NavDropdown.Item as={Link} to="/departments/cse" className={dropdownItemClass}>
-    Computer Science & Engineering
-  </NavDropdown.Item>
-  <NavDropdown.Item as={Link} to="/departments/ece" className={dropdownItemClass}>
-    Computer Science & Engineering(AI & ML)
-  </NavDropdown.Item>
-  <NavDropdown.Item as={Link} to="/departments/ece" className={dropdownItemClass}>
-    Computer Science & Engineering(AI & DS)
-  </NavDropdown.Item>
-  <NavDropdown.Item as={Link} to="/departments/ece" className={dropdownItemClass}>
-    Electronics and Communication Engineering(EEE)
-  </NavDropdown.Item>
-  <NavDropdown.Item as={Link} to="/departments/ece" className={dropdownItemClass}>
-    Electrical and Electronics Engineering(ECE)
-  </NavDropdown.Item>
-  <NavDropdown.Item as={Link} to="/departments/ece" className={dropdownItemClass}>
-    Civil Engineering
-  </NavDropdown.Item>
-  <NavDropdown.Item as={Link} to="/departments/ece" className={dropdownItemClass}>
-    Mechanical Engineering
-  </NavDropdown.Item>
-  <NavDropdown.Item as={Link} to="/departments/ece" className={dropdownItemClass}>
-    BS & H
-  </NavDropdown.Item>
-  <hr />
-  <NavDropdown.Item as={Link} to="/departments/ece" className={dropdownItemClass}>
-    Finance
-  </NavDropdown.Item>
-  <NavDropdown.Item as={Link} to="/departments/ece" className={dropdownItemClass}>
-    Human Resources
-  </NavDropdown.Item>
-  <hr />
-  <NavDropdown.Item as={Link} to="/departments/ece" className={dropdownItemClass}>
-    EEE(Power System)
-  </NavDropdown.Item>
-  <NavDropdown.Item as={Link} to="/departments/ece" className={dropdownItemClass}>
-    CAD / CAM (Mechanical)
-  </NavDropdown.Item>
+  {/* UG and PG side by side */}
+  <div className="flex gap-4 px-3 py-2">
+    {/* UG Section */}
+    <div
+      onMouseEnter={handleMouseEnter(setShowUG)}
+      onMouseLeave={handleMouseLeave(setShowUG)}
+    >
+      <NavDropdown
+        title={<span className="text-black hover:text-[#B04040]">UG</span>}
+        id="ug-dropdown"
+        show={showUG}
+        className="submenu-item"
+      >
+        <NavDropdown.Item as={Link} to="/departments/cse" className={dropdownItemClass}>
+          Computer Science & Engineering
+        </NavDropdown.Item>
+        <NavDropdown.Item as={Link} to="/departments/cse-aiml" className={dropdownItemClass}>
+        Computer Science & Engineering (AI & ML)
+        </NavDropdown.Item>
+        <NavDropdown.Item as={Link} to="/departments/cse-aids" className={dropdownItemClass}>
+        Computer Science & Engineering (AI & DS)
+        </NavDropdown.Item>
+        <NavDropdown.Item as={Link} to="/departments/ece" className={dropdownItemClass}>
+          Electronics and Communication Engineering
+        </NavDropdown.Item>
+        <NavDropdown.Item as={Link} to="/departments/eee" className={dropdownItemClass}>
+          Electrical and Electronics Engineering
+        </NavDropdown.Item>
+        <NavDropdown.Item as={Link} to="/departments/civil" className={dropdownItemClass}>
+          Civil Engineering
+        </NavDropdown.Item>
+        <NavDropdown.Item as={Link} to="/departments/mech" className={dropdownItemClass}>
+          Mechanical Engineering
+        </NavDropdown.Item>
+        <NavDropdown.Item as={Link} to="/departments/bsh" className={dropdownItemClass}>
+          BS & H
+        </NavDropdown.Item>
+      </NavDropdown>
+    </div>
+
+    {/* PG Section */}
+    <div
+      onMouseEnter={handleMouseEnter(setShowPG)}
+      onMouseLeave={handleMouseLeave(setShowPG)}
+    >
+      <NavDropdown
+        title={<span className="text-black hover:text-transparent">PG</span>}
+        id="pg-dropdown"
+        show={showPG}
+      >
+        {/* MBA and M.Tech side by side inside PG */}
+        <div className="flex gap-4 px-2 py-1">
+          {/* MBA Section */}
+          <div
+            onMouseEnter={handleMouseEnter(setShowMBA)}
+            onMouseLeave={handleMouseLeave(setShowMBA)}
+          >
+            <NavDropdown
+              title={<span className="text-black hover:text-[#B04040]">MBA</span>}
+              id="mba-dropdown"
+              show={showMBA}
+              className="submenu-item"
+            >
+              <NavDropdown.Item as={Link} to="/departments/mba-finance" className={dropdownItemClass}>
+                Finance
+              </NavDropdown.Item>
+            </NavDropdown>
+          </div>
+
+          {/* M.Tech Section */}
+          <div
+            onMouseEnter={handleMouseEnter(setShowMTech)}
+            onMouseLeave={handleMouseLeave(setShowMTech)}
+          >
+            <NavDropdown
+              title={<span className="text-black hover:text-[#B04040]">M.Tech</span>}
+              id="mtech-dropdown"
+              show={showMTech}
+              className="submenu-item"
+            >
+              <NavDropdown.Item as={Link} to="/departments/mtech-cse" className={dropdownItemClass}>
+                CSE
+              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/departments/mtech-accounts" className={dropdownItemClass}>
+                EEE
+              </NavDropdown.Item>
+            </NavDropdown>
+          </div>
+        </div>
+      </NavDropdown>
+    </div>
+  </div>
 </NavDropdown>
+
 
 <NavDropdown
   title={<span className="text-white hover:text-white">{'Campus Life'}</span>}
   id="campus-dropdown"
-  // className="custom-dropdown"
   show={showCampus}
   onMouseEnter={handleMouseEnter(setShowCampus)}
   onMouseLeave={handleMouseLeave(setShowCampus)}
 >
-  <NavDropdown.Item as={Link} to="/campus/clubs" className={dropdownItemClass}>
-    Clubs
+  {/* First Main Item */}
+  <NavDropdown.Item as={Link} to="/campus/campus" className={dropdownItemClass}>
+    Campus
   </NavDropdown.Item>
-  <NavDropdown.Item as={Link} to="/campus/facilities" className={dropdownItemClass}>
-    Facilities
-  </NavDropdown.Item>
-  <NavDropdown.Item as={Link} to="/campus/facilities" className={dropdownItemClass}>
-    Student Activities
-  </NavDropdown.Item>
+
+  <div
+  className="dropdown-submenu"
+
+  onMouseEnter={() => setShowGallery(true)}
+  onMouseLeave={() => setShowGallery(false)}
+>
+  <NavDropdown
+   title={<span className="text-black hover:text-white ml-2">{'Gallery'}</span>}
+    drop="end"
+    show={showGallery}
+    id="gallery-dropdown"
+  >
+    <NavDropdown.Item as={Link} to="/gallery/culturals" className={dropdownItemClass}>
+      Culturals
+    </NavDropdown.Item>
+    <NavDropdown.Item as={Link} to="/gallery/library" className={dropdownItemClass}>
+      Library
+    </NavDropdown.Item>
+    <NavDropdown.Item as={Link} to="/gallery/sports" className={dropdownItemClass}>
+      Sports
+    </NavDropdown.Item>
+    <NavDropdown.Item as={Link} to="/gallery/canteen" className={dropdownItemClass}>
+      Canteen
+    </NavDropdown.Item>
+    <NavDropdown.Item as={Link} to="/gallery/transport" className={dropdownItemClass}>
+      Transport
+    </NavDropdown.Item>
+    <NavDropdown.Item as={Link} to="/gallery/events" className={dropdownItemClass}>
+      Events
+    </NavDropdown.Item>
+    <NavDropdown.Item as={Link} to="/gallery/labs" className={dropdownItemClass}>
+      Labs
+    </NavDropdown.Item>
+  </NavDropdown>
+  </div>
+  {/* Nested Gallery Dropdown */}
 </NavDropdown>
+
 
 <NavDropdown
   title={<span className="text-white hover:text-white">{'R & D Cell'}</span>}
