@@ -10,6 +10,7 @@ import Footer from "./components/Footer/Footer";
 import AboutGVRS from "./pages/About/About GVR&S/About GVR&S";
 import VisionMission from "./pages/About/Vision&Mission/Vision&Mission";
 import PrincipalMessage from "./pages/About/Principal Message/Principal's Message";
+import CSE from "./pages/Departments/CSE/CSE";
 
 
 function App() {
@@ -32,6 +33,8 @@ function App() {
             <Route path="/about/history" element={<AboutGVRS/>}/>
             <Route path="/about/vision&mission" element={<VisionMission/>}/>
             <Route path="/about/message" element={<PrincipalMessage/>}/>
+
+            <Route path="/departments/cse" element={<CSE/>}/>
           </Routes>
         </main>
         <Footer />
