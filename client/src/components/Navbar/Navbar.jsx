@@ -67,7 +67,7 @@ const CustomNavbar = () => {
   onMouseEnter={handleMouseEnter(setShowManagement)}
   onMouseLeave={handleMouseLeave(setShowManagement)}
 >
-  <NavDropdown.Item as={Link} to="/management/chairman" className={dropdownItemClass}>
+  <NavDropdown.Item as={Link} to="/management/founder" className={dropdownItemClass}>
     Founder & President
   </NavDropdown.Item>
   <NavDropdown.Item as={Link} to="/management/chairman" className={dropdownItemClass}>
