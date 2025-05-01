@@ -66,8 +66,8 @@ const CustomNavbar = () => {
               <NavDropdown.Item as={Link} to="/management/chairman" className={dropdownItemClass}>Chairman</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/management/director" className={dropdownItemClass}>Director</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/management/dean" className={dropdownItemClass}>Dean</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/management/executive-body" className={dropdownItemClass}>Executive Body</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/management/governing-body" className={dropdownItemClass}>Governing Body</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/management/executivebody" className={dropdownItemClass}>Executive Body</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/management/governingbody" className={dropdownItemClass}>Governing Body</NavDropdown.Item>
             </NavDropdown>
 
             {/* Academics Dropdown */}

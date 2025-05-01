@@ -18,6 +18,11 @@ import CSEAIDS from "./pages/Departments/UG/CSE(AI&DS)/CSE(AI&DS)";
 import Civil from "./pages/Departments/UG/Civil/Civil";
 import Mechanical from "./pages/Departments/UG/Mechanical/Mechanical";
 import SH from "./pages/Departments/UG/S&H/S&H";
+import Chairman from "./pages/Management/Chairman/Chairman";
+import Director from "./pages/Management/Director/Director";
+import Dean from "./pages/Management/Dean/Dean";
+import ExecutiveBody from "./pages/Management/ExecutiveBody/ExecutiveBody";
+import GoverningBody from "./pages/Management/GoverningBody/GoverningBody";
 
 
 function App() {
@@ -39,6 +44,11 @@ function App() {
             <Route path="/about/message" element={<PrincipalMessage/>}/>
             {/* Management page Routes */}
             <Route path="/management/founder" element={<Founder />} />
+            <Route path="/management/chairman" element={<Chairman/>} />
+            <Route path="/management/director" element={<Director />} />
+            <Route path="/management/dean" element={<Dean />} />
+            <Route path="/management/executivebody" element={<ExecutiveBody />} />
+            <Route path="/management/governingbody" element={<GoverningBody />} />
             {/* Add more routes as needed */}
 
             <Route path="/departments/cse" element={<CSE/>}/>
