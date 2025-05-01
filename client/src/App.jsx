@@ -27,10 +27,10 @@ function App() {
   return (
     <>
       <Router>
-        <div>
+        <div className="overflow-hidden">
           <NavbarComponent />
 
-          <main>
+          <main className="">
             <Routes>
               {/* Default route */}
               {/* <Route path="/" element={<CustomNavbar />} /> */}

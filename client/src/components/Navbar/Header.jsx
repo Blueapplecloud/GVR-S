@@ -4,7 +4,6 @@ const Header = () => {
   return (
     <header className="w-full bg-white border-b border-gray-300 py-4 h-38">
       <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-4 px-4">
-
         {/* Left Logo */}
         <div className="flex-shrink-0">
           <img

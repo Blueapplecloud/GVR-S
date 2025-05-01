@@ -39,7 +39,7 @@ const Carousel = () => {
 
   return (
     <div className="w-full  ">
-      <div className="relative w-full max-w-screen-xl mx-auto overflow-hidden mb-3 ">
+      <div className="relative w-full max-w-screen-xl mx-auto overflow-hidden mb-3  ">
         {/* Slide Image */}
         <motion.div
           key={currentIndex}

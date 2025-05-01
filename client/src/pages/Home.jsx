@@ -4,7 +4,7 @@ import Highlights from "../components/homeComponents/Highlights";
 
 function Home() {
   return (
-    <div>
+    <div className="">
       <CarouselComponent />
       <Highlights />
     </div>
