@@ -2,6 +2,14 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+
+    extend: {
+      colors: {
+        primary: "#ec4899", // add our custom color
+        secondary: "#ec4899",
+        // add more custom colors
+      },
+
     extend: {},
     colors: {
       primaryColor: "#B04040",
@@ -11,6 +19,7 @@ export default {
     fontFamily: {
       Sans: ["fantasy"], // Example font family
       Serif: [ "serif"], // Example font family
+
     },
   },
   plugins: [],
