@@ -7,6 +7,7 @@ export default {
         primary: "#ec4899", // add our custom color
         secondary: "#ec4899",
         // add more custom colors
+        //done some changes
       },
     },
   },
