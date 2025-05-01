@@ -12,14 +12,14 @@ const CustomNavbar = () => {
     showAcademics: false,
     showDepartments: false,
     showCampus: false,
-    showRnd: false,
+    showNaac: false,
     showUG: false,
     showPG: false,
     showMBA: false,
     showMTech: false,
     showGallery: false,
     showPlacements: false,
-    showStudentCorner: false,
+    showAdministrationCorner: false,
   });
 
   const handleMouseEnter = useCallback(
@@ -120,14 +120,14 @@ const CustomNavbar = () => {
               </NavDropdown.Item>
               <NavDropdown.Item
                 as={Link}
-                to="/management/executive-body"
+                to="/management/executivebody"
                 className={dropdownItemClass}
               >
                 Executive Body
               </NavDropdown.Item>
               <NavDropdown.Item
                 as={Link}
-                to="/management/governing-body"
+                to="/management/governingbody"
                 className={dropdownItemClass}
               >
                 Governing Body
@@ -150,7 +150,7 @@ const CustomNavbar = () => {
               </NavDropdown.Item>
               <NavDropdown.Item
                 as={Link}
-                to="/academics/fee-structure"
+                to="/academics/fees"
                 className={dropdownItemClass}
               >
                 Fee Structure
@@ -164,7 +164,14 @@ const CustomNavbar = () => {
               </NavDropdown.Item>
               <NavDropdown.Item
                 as={Link}
-                to="/academics/academic-scholarship"
+                to="/academics/academic regulations"
+                className={dropdownItemClass}
+              >
+                Academic Regulations
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                as={Link}
+                to="/academics/scholarship"
                 className={dropdownItemClass}
               >
                 Academic Scholarship
@@ -403,31 +410,24 @@ const CustomNavbar = () => {
 
             {/* R&D */}
             <NavDropdown
-              title="R&D"
-              show={dropdownStates.showRnd}
-              onMouseEnter={handleMouseEnter("showRnd")}
-              onMouseLeave={handleMouseLeave("showRnd")}
+              title="NAAC"
+              show={dropdownStates.showNaac}
+              onMouseEnter={handleMouseEnter("showNaac")}
+              onMouseLeave={handleMouseLeave("showNaac")}
             >
               <NavDropdown.Item
                 as={Link}
-                to="/rnd/activities"
+                to="/naac/naac"
                 className={dropdownItemClass}
               >
-                R&D Activities
+                NAAC
               </NavDropdown.Item>
               <NavDropdown.Item
                 as={Link}
-                to="/rnd/funded-projects"
+                to="/naac/dvv"
                 className={dropdownItemClass}
               >
-                Funded Projects
-              </NavDropdown.Item>
-              <NavDropdown.Item
-                as={Link}
-                to="/rnd/publications"
-                className={dropdownItemClass}
-              >
-                Research Publications
+                DVV
               </NavDropdown.Item>
             </NavDropdown>
 
@@ -440,61 +440,54 @@ const CustomNavbar = () => {
             >
               <NavDropdown.Item
                 as={Link}
-                to="/placements/overview"
+                to="/placements/tpo message"
                 className={dropdownItemClass}
               >
-                Overview
+                TPO Message
               </NavDropdown.Item>
               <NavDropdown.Item
                 as={Link}
-                to="/placements/companies"
+                to="/placements/placements procedure"
                 className={dropdownItemClass}
               >
-                Recruiters
+                Placements Procedure
               </NavDropdown.Item>
               <NavDropdown.Item
                 as={Link}
-                to="/placements/statistics"
+                to="/placements/placements committee"
                 className={dropdownItemClass}
               >
-                Placement Stats
+                Placements Committee
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                as={Link}
+                to="/placements/placements gallery"
+                className={dropdownItemClass}
+              >
+                Placements Gallery
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                as={Link}
+                to="/placements/meet the industry program"
+                className={dropdownItemClass}
+              >
+                Meet The Industry Program
               </NavDropdown.Item>
             </NavDropdown>
 
             {/* Student Corner */}
             <NavDropdown
-              title="Student Corner"
-              show={dropdownStates.showStudentCorner}
-              onMouseEnter={handleMouseEnter("showStudentCorner")}
-              onMouseLeave={handleMouseLeave("showStudentCorner")}
+              title="Administration"
+              show={dropdownStates.showAdministrationCorner}
+              onMouseEnter={handleMouseEnter("showAdministrationCorner")}
+              onMouseLeave={handleMouseLeave("showAdministrationCorner")}
             >
               <NavDropdown.Item
                 as={Link}
-                to="/students/achievements"
+                to="/administration/organising chart"
                 className={dropdownItemClass}
               >
-                Achievements
-              </NavDropdown.Item>
-              <NavDropdown.Item
-                as={Link}
-                to="/students/clubs"
-                className={dropdownItemClass}
-              >
-                Clubs
-              </NavDropdown.Item>
-              <NavDropdown.Item
-                as={Link}
-                to="/students/nss"
-                className={dropdownItemClass}
-              >
-                NSS
-              </NavDropdown.Item>
-              <NavDropdown.Item
-                as={Link}
-                to="/students/grievances"
-                className={dropdownItemClass}
-              >
-                Grievance Cell
+                Organising Chart
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>

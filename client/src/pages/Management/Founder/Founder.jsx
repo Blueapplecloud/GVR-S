@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 function Founder() {
      const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
     return (
-        <div className="container mx-auto p-6 !mt-15 mb-5 bg-white shadow-lg rounded-md ">
+        <div className="container m-10 bg-white shadow-lg rounded-md ">
              <motion.h1
                     ref={ref}
                     // key={index}
@@ -14,7 +14,7 @@ function Founder() {
                     className="!text-4xl font-bold text-left pb-2 mb-6"
                   >
                      Founder & Correspondent
-                    <div className="w-[25rem] h-0.5 bg-amber-200 mt-2"></div>
+                    <div className="w-[25rem] h-0.5 bg-Amber mt-2"></div>
                   </motion.h1>
             
             <div className="mb-4">
@@ -38,8 +38,9 @@ function Founder() {
                 <p className='text-justify'>We, in GVR&S, have a simple answer. We believe in the success of an institution and its ability to instill confidence, stemming from a higher caliber of its dedicated teaching force. When we have finest and the most sincere minds working for us, dedication, sincerity and continuing empathy of our teaching force get intellectually and emotionally translated into an increased success of our students and the satisfaction of all parents, leading to the most enviable placement.</p>
                 <p className='text-justify'>At GVR&S, we believe in our students to become the high-profiled professionals who can achieve the avowed objective of our great president, Hon'ble Abdul Kalam, to make our country a "SUPER POWER".</p>
             </div>
-            <h2 className="text-3xl font-semibold text-gray-800 pb-2 mb-6">
+            <h2 className="text-3xl font-semibold text-gray-800 pb-2 mb-6 !mt-3">
             President
+            <div className="w-[10rem] h-0.5 bg-Amber mt-2"></div>
             </h2>
             <div className='!pb-5'>
                 <p >Smt.Gangineni Sailaja is an Eminent Educationalist who has been associated with the society right from the inception; she dedicated her life for the empowerment of women through education.She takes utmost care in developing all the Educational institutions established by the society.</p>

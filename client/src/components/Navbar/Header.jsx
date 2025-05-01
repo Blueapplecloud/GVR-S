@@ -7,14 +7,14 @@ const Header = () => {
         {/* Left Logo */}
         <div className="flex-shrink-0">
           <img
-            src="https://gvrs.ac.in/wp-content/uploads/2024/11/cropped-newlogo-1.jpg"
+            src="/Images/GVR&S Logo.jpg"
             alt="College Logo"
-            className="!w-80 mt-4"
+            className="w-40 mt-4 ml-20"
           />
         </div>
 
         {/* Center Text Content */}
-        <div className="flex-1 text-center md:text-left !space-y-1 mt-4">
+        <div className="flex-1 text-center md:text-left !space-y-1 mt-5">
           <h1 className="!text-[30px] md:text-4xl !font-bold text-Red leading-tight">
             GVR&amp;S COLLEGE OF ENGINEERING AND TECHNOLOGY
           </h1>
