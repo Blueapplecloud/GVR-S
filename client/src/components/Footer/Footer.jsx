@@ -13,11 +13,11 @@ const Footer = () => {
         {/* Left: Logo and Icons */}
         <div className="flex flex-col items-center md:items-start">
           <img
-            src="https://gvrs.ac.in/wp-content/uploads/2024/11/cropped-newlogo-1.jpg"
+            src="/Images/GVR&S Logo.jpg"
             alt="College Logo"
-            className="w-50 !mt-20"
+            className="w-50"
           />
-          <div className="w-full flex !space-x-4 text-white !text-2xl !ml-13 mt-2">
+          <div className="w-full flex !space-x-4 text-white !text-2xl pl-12 mt-3">
             <FaFacebookF />
             <FaTwitter />
             <FaLinkedinIn />
