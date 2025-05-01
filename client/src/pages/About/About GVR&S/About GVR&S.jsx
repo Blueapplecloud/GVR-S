@@ -17,7 +17,7 @@ const AboutGVRS = () => {
         className="!text-2xl font-bold text-left mb-2"
       >
         WELCOME TO G.V.R.&S EDUCATIONAL INSTITUTIONS
-      <div className="w-200 h-0.5 bg-amber-200 mb-6" />
+      <div className="w-200 h-0.5 bg-Amber mb-6" />
       </motion.h1>
 
       {/* Thin amber-500 line aligned left */}

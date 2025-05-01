@@ -27,7 +27,7 @@ const Footer = () => {
         </div>
 
         {/* Center: Contact Info */}
-        <div className="text-center md:text-left">
+        <div className="text-center md:text-left pt-3 !mr-20">
           <h2 className="text-xl font-semibold mb-2">Contact Us</h2>
           <p>
             Near Budampadu Etukuru, Ponnuru Road, <br />

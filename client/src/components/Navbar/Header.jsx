@@ -15,13 +15,10 @@ const Header = () => {
         </div>
 
         {/* Center Text Content */}
-        <div className="flex-1 text-center md:text-left !space-y-1">
-          <h1 className="!text-[30px] md:text-4xl !font-bold !text-red-600 leading-tight">
+        <div className="flex-1 text-center md:text-left !space-y-1 mt-4">
+          <h1 className="!text-[30px] md:text-4xl !font-bold text-Red leading-tight">
             GVR&amp;S COLLEGE OF ENGINEERING AND TECHNOLOGY
           </h1>
-          <p className="text-green-600 text-lg font-semibold leading-tight">
-            (AUTONOMOUS)
-          </p>
           <p className="text-gray-800 italic font-serif leading-tight">
             (Approved by AICTE)
           </p>
