@@ -27,12 +27,14 @@ import Director from "./pages/Management/Director/Director";
 import Dean from "./pages/Management/Dean/Dean";
 import ExecutiveBody from "./pages/Management/ExecutiveBody/ExecutiveBody";
 import GoverningBody from "./pages/Management/GoverningBody/GoverningBody";
+import AcademicRegulations from "./pages/Academics/AcademicRegulatio";
+import ProgramsOffered from "./pages/Academics/ProgramsOffered";
 
 function App() {
   return (
     <>
       <Router>
-        <div className="overflow-hidden">
+        <div className="">
           <NavbarComponent />
 
           <main className="">
@@ -58,6 +60,15 @@ function App() {
                 path="/academics/fee-structure"
                 element={<FeeStructure />}
               />
+              <Route
+                path="/academics/programs-offered"
+                element={<ProgramsOffered />}
+              />
+
+              <Route
+                path="/academics/academic-regulations"
+                element={<AcademicRegulations />}
+              />
 
               {/* Departments page Routes */}
               <Route path="/departments/cse" element={<CSE />} />
@@ -73,35 +84,6 @@ function App() {
           <Footer />
         </div>
       </Router>
-      <main>
-        <Routes>
-          {/* Default route */}
-          {/* <Route path="/" element={<CustomNavbar />} /> */}
-          {/* About page Routes */}
-          <Route path="/about" element={<About />} />
-          <Route path="/about/history" element={<AboutGVRS />} />
-          <Route path="/about/vision&mission" element={<VisionMission />} />
-          <Route path="/about/message" element={<PrincipalMessage />} />
-          {/* Management page Routes */}
-          <Route path="/management/founder" element={<Founder />} />
-          <Route path="/management/chairman" element={<Chairman />} />
-          <Route path="/management/director" element={<Director />} />
-          <Route path="/management/dean" element={<Dean />} />
-          <Route path="/management/executivebody" element={<ExecutiveBody />} />
-          <Route path="/management/governingbody" element={<GoverningBody />} />
-          {/* Add more routes as needed */}
-
-          <Route path="/departments/cse" element={<CSE />} />
-          <Route path="/departments/eee" element={<EEE />} />
-          <Route path="/departments/cse-aiml" element={<CSEAIML />} />
-          <Route path="/departments/cse-aids" element={<CSEAIDS />} />
-          <Route path="/departments/ece" element={<ECE />} />
-          <Route path="/departments/civil" element={<Civil />} />
-          <Route path="/departments/mech" element={<Mechanical />} />
-          <Route path="/departments/sh" element={<SH />} />
-        </Routes>
-      </main>
-      <Footer />
     </>
   );
 }

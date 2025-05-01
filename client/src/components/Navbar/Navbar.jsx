@@ -46,7 +46,7 @@ const CustomNavbar = () => {
         <Navbar.Brand
           as={Link}
           to="/"
-          className="text-white flex items-center ml-20"
+          className="text-white flex items-center ml-4"
         >
           <FaHome className="mr-2" />
         </Navbar.Brand>
@@ -143,14 +143,14 @@ const CustomNavbar = () => {
             >
               <NavDropdown.Item
                 as={Link}
-                to="/academics/programs"
+                to="/academics/programs-offered"
                 className={dropdownItemClass}
               >
                 Programs Offered
               </NavDropdown.Item>
               <NavDropdown.Item
                 as={Link}
-                to="/academics/fees"
+                to="/academics/fee-structure"
                 className={dropdownItemClass}
               >
                 Fee Structure
@@ -164,14 +164,14 @@ const CustomNavbar = () => {
               </NavDropdown.Item>
               <NavDropdown.Item
                 as={Link}
-                to="/academics/academic regulations"
+                to="/academics/academic-regulations"
                 className={dropdownItemClass}
               >
                 Academic Regulations
               </NavDropdown.Item>
               <NavDropdown.Item
                 as={Link}
-                to="/academics/scholarship"
+                to="/academics/academic-scholarship"
                 className={dropdownItemClass}
               >
                 Academic Scholarship

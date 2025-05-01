@@ -42,7 +42,7 @@ function Highlights() {
         <h3 className="text-3xl font-semibold text-primaryColor">
           Leading Engineering Institution
         </h3>
-        <p className="text-Red">
+        <p className="text-Red ">
           Blending academic innovation with engineering excellence for a
           transformative educational experience.
         </p>
@@ -54,7 +54,7 @@ function Highlights() {
             height="100%"
           />
         </div>
-        <button className="mt-3 py-2 bg-primaryColor hover:bg-Amber hover:text-black text-white-500 rounded text-white">
+        <button className="mt-3 py-2 bg-primaryColor text-white  hover:bg-Amber hover:text-black text-white-500 rounded">
           Explore Brochure
         </button>
       </div>
@@ -71,7 +71,7 @@ function Highlights() {
               {card.buttons.map((btn, idx) => (
                 <button
                   key={idx}
-                  className="border border-Amber text-white  bg-primaryColor rounded hover:bg-Amber hover:text-black transition p-2 mx-1"
+                  className="border border-Amber text-black hover:text-white  bg-primaryColor rounded hover:bg-Amber  transition p-2 mx-1"
                 >
                   {btn}
                 </button>
