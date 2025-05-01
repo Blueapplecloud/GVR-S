@@ -12,14 +12,14 @@ const CustomNavbar = () => {
     showAcademics: false,
     showDepartments: false,
     showCampus: false,
-    showRnd: false,
+    showNaac: false,
     showUG: false,
     showPG: false,
     showMBA: false,
     showMTech: false,
     showGallery: false,
     showPlacements: false,
-    showStudentCorner: false,
+    showAdministrationCorner: false,
   });
 
   const handleMouseEnter = useCallback((key) => () => {
@@ -80,6 +80,7 @@ const CustomNavbar = () => {
               <NavDropdown.Item as={Link} to="/academics/programs" className={dropdownItemClass}>Programs Offered</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/academics/fees" className={dropdownItemClass}>Fee Structure</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/academics/exam" className={dropdownItemClass}>Examination Section</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/academics/academic regulations" className={dropdownItemClass}>Academic Regulations</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/academics/scholarship" className={dropdownItemClass}>Academic Scholarship</NavDropdown.Item>
             </NavDropdown>
 
@@ -161,14 +162,13 @@ const CustomNavbar = () => {
 
             {/* R&D */}
             <NavDropdown
-              title="R&D"
-              show={dropdownStates.showRnd}
-              onMouseEnter={handleMouseEnter('showRnd')}
-              onMouseLeave={handleMouseLeave('showRnd')}
+              title="NAAC"
+              show={dropdownStates.showNaac}
+              onMouseEnter={handleMouseEnter('showNaac')}
+              onMouseLeave={handleMouseLeave('showNaac')}
             >
-              <NavDropdown.Item as={Link} to="/rnd/activities" className={dropdownItemClass}>R&D Activities</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/rnd/funded-projects" className={dropdownItemClass}>Funded Projects</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/rnd/publications" className={dropdownItemClass}>Research Publications</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/naac/naac" className={dropdownItemClass}>NAAC</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/naac/dvv" className={dropdownItemClass}>DVV</NavDropdown.Item>
             </NavDropdown>
 
             {/* Placements */}
@@ -178,22 +178,21 @@ const CustomNavbar = () => {
               onMouseEnter={handleMouseEnter('showPlacements')}
               onMouseLeave={handleMouseLeave('showPlacements')}
             >
-              <NavDropdown.Item as={Link} to="/placements/overview" className={dropdownItemClass}>Overview</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/placements/companies" className={dropdownItemClass}>Recruiters</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/placements/statistics" className={dropdownItemClass}>Placement Stats</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/placements/tpo message" className={dropdownItemClass}>TPO Message</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/placements/placements procedure" className={dropdownItemClass}>Placements Procedure</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/placements/placements committee" className={dropdownItemClass}>Placements Committee</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/placements/placements gallery" className={dropdownItemClass}>Placements Gallery</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/placements/meet the industry program" className={dropdownItemClass}>Meet The Industry Program</NavDropdown.Item>
             </NavDropdown>
 
             {/* Student Corner */}
             <NavDropdown
-              title="Student Corner"
-              show={dropdownStates.showStudentCorner}
-              onMouseEnter={handleMouseEnter('showStudentCorner')}
-              onMouseLeave={handleMouseLeave('showStudentCorner')}
+              title="Administration"
+              show={dropdownStates.showAdministrationCorner}
+              onMouseEnter={handleMouseEnter('showAdministrationCorner')}
+              onMouseLeave={handleMouseLeave('showAdministrationCorner')}
             >
-              <NavDropdown.Item as={Link} to="/students/achievements" className={dropdownItemClass}>Achievements</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/students/clubs" className={dropdownItemClass}>Clubs</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/students/nss" className={dropdownItemClass}>NSS</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/students/grievances" className={dropdownItemClass}>Grievance Cell</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/administration/organising chart" className={dropdownItemClass}>Organising Chart</NavDropdown.Item>
             </NavDropdown>
 
           </Nav>
