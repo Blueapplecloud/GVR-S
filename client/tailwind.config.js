@@ -5,12 +5,12 @@ export default {
     extend: {},
     colors: {
       primaryColor: "#B04040",
-      Amber:"#fde68a",
-      Red:"#E11D48"
+      Amber: "#fde68a",
+      Red: "#E11D48",
     },
     fontFamily: {
       Sans: ["fantasy"], // Example font family
-      Serif: [ "serif"], // Example font family
+      Serif: ["serif"], // Example font family
     },
   },
   plugins: [],
