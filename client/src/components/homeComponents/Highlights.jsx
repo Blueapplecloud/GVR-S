@@ -10,37 +10,39 @@ import {
 function Highlights() {
   const cards = [
     {
-      icon: <FaUniversity className="text-blue-600 text-3xl mb-1 " />,
+      icon: <FaUniversity className="text-primaryColor text-3xl mb-1 " />,
       title: "Admissions",
       description:
         "Join a community of innovators and gain access to top-tier education.",
       buttons: ["View More >>"],
     },
     {
-      icon: <FaBuilding className="text-purple-600 text-3xl mb-1" />,
+      icon: <FaBuilding className="text-primaryColor text-3xl mb-1" />,
       title: "Hostels",
       description:
         "Access premium accommodations and networking opportunities for professional growth.",
       buttons: ["View More >>"],
     },
     {
-      icon: <FaMicroscope className="text-green-600 text-3xl mb-1" />,
+      icon: <FaMicroscope className="text-primaryColor text-3xl mb-1" />,
       title: "Programs Offered",
       description: "UG and PG Programs",
       buttons: ["View More >>"],
     },
     {
-      icon: <FaUsers className="text-red-600 text-3xl mb-1" />,
+      icon: <FaUsers className="text-primaryColor text-3xl mb-1" />,
       title: "RJ E-Nest (i-TBI)",
       description: "Engage in a vibrant campus life filled with opportunities.",
       buttons: ["View More >>", "Brochure"],
     },
   ];
   return (
-    <div className="!px-10 !py-10 flex flex-col md:flex-row gap-5 items-center justify-center h-screen">
-      <div className="w-full md:w-150 flex flex-col shadow-lg bg-white rounded-lg p-4 gap-2">
-        <h3>Leading Engineering Institution</h3>
-        <p>
+    <div className="px-12 py-10 flex flex-col md:flex-row gap-5 items-center justify-center h-screen ">
+      <div className="w-full md:w-1/2 flex flex-col shadow-2xl bg-white rounded-lg p-4 gap-3 px-5">
+        <h3 className="text-3xl font-semibold text-primaryColor">
+          Leading Engineering Institution
+        </h3>
+        <p className="text-Red">
           Blending academic innovation with engineering excellence for a
           transformative educational experience.
         </p>
@@ -52,15 +54,15 @@ function Highlights() {
             height="100%"
           />
         </div>
-        <button className="mt-3 py-2 bg-green-900 text-white rounded">
+        <button className="mt-3 py-2 bg-primaryColor hover:bg-Amber hover:text-black text-white-500 rounded text-white">
           Explore Brochure
         </button>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:w-1/2 w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:w-1/2 w-full">
         {cards.map((card, index) => (
           <div
             key={index}
-            className="bg-white rounded-lg shadow-md flex flex-col items-center justify-center text-center hover:shadow-lg transition duration-300 ease-in-out p-2"
+            className="bg-white rounded-lg shadow-lg hover:shadow-2xl flex flex-col items-center justify-center text-center transition duration-300 ease-in-out p-2 gap-2"
           >
             {card.icon}
             <p className="text-base font-semibold">{card.title}</p>
@@ -69,7 +71,7 @@ function Highlights() {
               {card.buttons.map((btn, idx) => (
                 <button
                   key={idx}
-                  className="border border-blue-500 text-blue-500  rounded hover:bg-blue-500 hover:text-white transition p-2 mx-1"
+                  className="border border-Amber text-white bg-primaryColor rounded hover:bg-Amber hover:text-black transition p-2 mx-1"
                 >
                   {btn}
                 </button>

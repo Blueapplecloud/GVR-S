@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
 import Header from "./Header";
 import "./Navbar.css";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 const CustomNavbar = () => {
   const [dropdownStates, setDropdownStates] = useState({
     showAbout: false,
