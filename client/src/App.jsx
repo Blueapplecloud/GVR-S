@@ -50,6 +50,11 @@ function App() {
               <Route path="/about/message" element={<PrincipalMessage />} />
               {/* Management page Routes */}
               <Route path="/management/founder" element={<Founder />} />
+              <Route path="/management/chairman" element={<Chairman/>} />
+              <Route path="/management/director" element={<Director />} />
+              <Route path="/management/dean" element={<Dean />} />
+              <Route path="/management/executivebody" element={<ExecutiveBody />} />
+              <Route path="/management/governingbody" element={<GoverningBody />} />
               {/* Add more routes as needed */}
               {/* Academics page Routes */}
               <Route

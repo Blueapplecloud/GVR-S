@@ -40,10 +40,14 @@ function Founder() {
           become qualified engineers equipped with skills to face the challenges
           in the industry and society.
         </p>
-        <img
-          src="https://gvrs.ac.in/wp-content/uploads/2021/09/WhatsApp-Image-2021-09-23-at-16.42.56-225x300.jpeg"
-          className=" float-end m-5 h-90 rounded-lg shadow-lg"
-        />
+        <div className="float-end m-5 mt-0 mb-0 text-center">
+          <img
+            src="https://gvrs.ac.in/wp-content/uploads/2023/06/dean-248x300.jpg"
+            alt="Dr. Vara Prasad"
+            className="h-90 rounded-lg shadow-lg mx-auto"
+          />
+          <p className="mt-4 font-semibold text-primaryColor">Dr. Vara Prasad, Dean</p>
+        </div>
         <p className="text-justify">
           His selfless service has been organized and appreciated by the
           journalists Federation of India, Hyderabad, who has honored him with A
@@ -58,7 +62,7 @@ function Founder() {
         </p>
         <b>FOUNDER MESSAGE</b>
         <p className="text-justify">
-          <strong className="text-[#b04040]">
+          <strong className="text-primaryColor">
             “We build society- by building people; we build the nation's
             technology and economy-by building leaders”
           </strong>
@@ -91,10 +95,14 @@ function Founder() {
           utmost care in developing all the Educational institutions established
           by the society.
         </p>
+        <div className="float-start text-center mb-5">
         <img
           src="https://gvrs.ac.in/wp-content/uploads/2021/09/WhatsApp-Image-2021-09-23-at-14.38.35-768x510.jpeg"
           className=" float-start m-5 w-70 h-60 rounded-lg shadow-lg"
-        />
+         />
+          <p className="mb-2 font-semibold text-primaryColor">Smt.Gangineni Sailaja</p>
+        </div>
+        
         <p className="text-justify">
           Her selfless service has been recognized and appreciated by the
           journalists Federation of India, Hyderabad, who has honored her with A
@@ -109,7 +117,7 @@ function Founder() {
         </p>
         <b>PRESIDENT MESSAGE</b>
         <p className="text-justify">
-          <strong className="text-[#b04040]">
+          <strong className="text-primaryColor">
             "Women are the real architects of society."
           </strong>
         </p>
