@@ -1,6 +1,6 @@
 import React from "react";
-import CarouselComponent from "../components/home/CarouselComponent";
-import Highlights from "../components/home/Highlights";
+import CarouselComponent from "../components/homeComponents/CarouselComponent";
+import Highlights from "../components/homeComponents/Highlights";
 
 function Home() {
   return (
