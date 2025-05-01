@@ -3,11 +3,11 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
-  "/images/carousel/img1.jpg",
-  "/images/carousel/img2.jpg",
-  "/images/carousel/img3.jpg",
-  "/images/carousel/img4.jpg",
-  "/images/carousel/img5.jpg",
+  "/Images/carousel/img1.jpg",
+  "/Images/carousel/img2.jpg",
+  "/Images/carousel/img3.jpg",
+  "/Images/carousel/img4.jpg",
+  "/Images/carousel/img5.jpg",
 ];
 
 const Carousel = () => {

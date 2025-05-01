@@ -19,6 +19,9 @@ import CSEAIDS from "./pages/Departments/UG/CSE(AI&DS)/CSE(AI&DS)";
 import Civil from "./pages/Departments/UG/Civil/Civil";
 import Mechanical from "./pages/Departments/UG/Mechanical/Mechanical";
 import SH from "./pages/Departments/UG/S&H/S&H";
+import Home from "./pages/Home";
+import AcademicScholarShip from "./pages/Academics/AcademicScholarship";
+import FeeStructure from "./pages/Academics/FeeStructure";
 
 function App() {
   return (
@@ -31,6 +34,8 @@ function App() {
             <Routes>
               {/* Default route */}
               {/* <Route path="/" element={<CustomNavbar />} /> */}
+              {/* Home page Routes */}
+              <Route path="/" element={<Home />} />
               {/* About page Routes */}
               <Route path="/about" element={<About />} />
               <Route path="/about/history" element={<AboutGVRS />} />
@@ -39,7 +44,17 @@ function App() {
               {/* Management page Routes */}
               <Route path="/management/founder" element={<Founder />} />
               {/* Add more routes as needed */}
+              {/* Academics page Routes */}
+              <Route
+                path="/academics/academic-scholarship"
+                element={<AcademicScholarShip />}
+              />
+              <Route
+                path="/academics/fee-structure"
+                element={<FeeStructure />}
+              />
 
+              {/* Departments page Routes */}
               <Route path="/departments/cse" element={<CSE />} />
               <Route path="/departments/eee" element={<EEE />} />
               <Route path="/departments/cse-aiml" element={<CSEAIML />} />

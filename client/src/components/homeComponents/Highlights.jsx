@@ -37,7 +37,7 @@ function Highlights() {
     },
   ];
   return (
-    <div className="!px-15 py-10 flex flex-col md:flex-row gap-5 items-center justify-center h-screen">
+    <div className="!px-15 !py-10 !flex flex-col md:flex-row gap-5 items-center justify-center h-screen">
       <div className="w-full md:w-150 flex flex-col shadow-lg bg-white rounded-lg p-4 gap-2">
         <h3>Leading Engineering Institution</h3>
         <p>
