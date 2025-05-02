@@ -162,7 +162,7 @@ const CustomNavbar = () => {
 
   const renderDropdown = (items, level = 1) => (
     <ul
-      className={`absolute ${level === 1 ? 'left-0 top-full' : 'left-full top-0'} mt-0.5 bg-White text-Black rounded shadow-md min-w-[8rem] w-max z-20`}
+      className={`absolute ${level === 1 ? 'left-0 top-full' : 'left-full top-0'} mt-0.5 bg-white text-black rounded shadow-md min-w-[8rem] w-max z-20`}
       onMouseLeave={() => {
         if (level === 1) setOpenSubDropdown(null);
         else setOpenNestedDropdown(null);
@@ -211,7 +211,7 @@ const CustomNavbar = () => {
   return (
     <>
       <Header />
-      <div className="bg-primaryColor text-White sticky top-0 z-50">
+      <div className="bg-primaryColor text-white sticky top-0 z-50">
         <div className="container mx-auto px-4 flex items-center justify-between h-14">
           <div className="hidden lg:flex justify-center gap-x-4 items-center w-full">
           {menuItems.map((item, index) => (

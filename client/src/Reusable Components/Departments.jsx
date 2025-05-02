@@ -72,7 +72,7 @@ const DepartmentsComponent = ({
     <div className="w-full">
       {/* Top Header Section with Background Image */}
       <div
-        className="w-full h-[250px] flex flex-col justify-center items-center bg-cover bg-center bg-no-repeat text-White sticky top-0"
+        className="w-full h-[250px] flex flex-col justify-center items-center bg-cover bg-center bg-no-repeat text-white sticky top-0"
         style={{ backgroundImage: `url('${backgroundImage}')` }}
       >
         <motion.h2
