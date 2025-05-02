@@ -16,25 +16,25 @@ function Highlights() {
         "Join a community of innovators and gain access to top-tier education.",
       buttons: ["View More >>"],
     },
-    {
-      icon: <FaBuilding className="text-primaryColor text-3xl mb-1" />,
-      title: "Hostels",
-      description:
-        "Access premium accommodations and networking opportunities for professional growth.",
-      buttons: ["View More >>"],
-    },
+    // {
+    //   icon: <FaBuilding className="text-primaryColor text-3xl mb-1" />,
+    //   title: "Hostels",
+    //   description:
+    //     "Access premium accommodations and networking opportunities for professional growth.",
+    //   buttons: ["View More >>"],
+    // },
     {
       icon: <FaMicroscope className="text-primaryColor text-3xl mb-1" />,
       title: "Programs Offered",
       description: "UG and PG Programs",
       buttons: ["View More >>"],
     },
-    {
-      icon: <FaUsers className="text-primaryColor text-3xl mb-1" />,
-      title: "RJ E-Nest (i-TBI)",
-      description: "Engage in a vibrant campus life filled with opportunities.",
-      buttons: ["View More >>", "Brochure"],
-    },
+    // {
+    //   icon: <FaUsers className="text-primaryColor text-3xl mb-1" />,
+    //   title: "RJ E-Nest (i-TBI)",
+    //   description: "Engage in a vibrant campus life filled with opportunities.",
+    //   buttons: ["View More >>", "Brochure"],
+    // },
   ];
   return (
     <div className="px-12 py-10 flex flex-col md:flex-row gap-5 items-center justify-center h-screen  ">
@@ -58,7 +58,7 @@ function Highlights() {
           Explore Brochure
         </button>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:w-1/2 w-full ">
+      <div className="grid grid-cols-1 md:grid-cols-1 gap-4 md:w-1/2 w-full ">
         {cards.map((card, index) => (
           <div
             key={index}
