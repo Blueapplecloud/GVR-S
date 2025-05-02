@@ -29,7 +29,8 @@ import ExecutiveBody from "./pages/Management/ExecutiveBody/ExecutiveBody";
 import GoverningBody from "./pages/Management/GoverningBody/GoverningBody";
 import AcademicRegulations from "./pages/Academics/AcademicRegulatio";
 import ProgramsOffered from "./pages/Academics/ProgramsOffered";
-
+import NAAC from "./pages/NAAC/NAAC/NAAC";
+import DVV from "./pages/NAAC/DVV/DVV";
 function App() {
   return (
     <>
@@ -84,6 +85,10 @@ function App() {
               <Route path="/departments/civil" element={<Civil />} />
               <Route path="/departments/mech" element={<Mechanical />} />
               <Route path="/departments/sh" element={<SH />} />
+
+
+              <Route path="/naac/naac" element={<NAAC />} />
+              <Route path="/naac/dvv" element={<DVV />} />
             </Routes>
           </main>
           <Footer />
