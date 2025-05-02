@@ -2,31 +2,60 @@ import React from "react";
 
 const Header = () => {
   return (
-    <header className="w-full bg-white border-b border-gray-300 py-4 h-38">
-      <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-4 px-4">
-        {/* Left Logo */}
-        <div className="flex-shrink-0">
-          <img
-            src="/Images/GVR&S Logo.jpg"
-            alt="College Logo"
-            className="w-40 mt-4 ml-20"
-          />
-        </div>
+<header className="w-full bg-white border-b border-Gray300 py-4">
+<div className="max-w-screen-xl mx-auto w-full flex flex-col md:flex-row items-center justify-between px-4 md:px-8 lg:px-11 gap-y-4 md:gap-y-0">
+    {/* Left Logo */}
+    <div className="flex-shrink-0">
+      <img
+        src="/Images/GVR&S Logo.jpg"
+        alt="College Logo"
+        className="w-24 md:w-28 mt-2 md:mt-4 ml-2 md:ml-6"
+      />
+    </div>
 
-        {/* Center Text Content */}
-        <div className="flex-1 text-center md:text-left !space-y-1 mt-5">
-          <h1 className="!text-[30px] md:text-4xl !font-bold text-Red leading-tight">
-            GVR&amp;S COLLEGE OF ENGINEERING AND TECHNOLOGY
-          </h1>
-          <p className="text-gray-800 italic font-serif leading-tight">
-            (Approved by AICTE)
-          </p>
-          <p className="text-gray-800 font-bold font-serif leading-tight">
-            Affiliated by JNTU Kakinada
-          </p>
+    {/* Center Content */}
+    <div className="flex-1 flex flex-col items-center text-center">
+      {/* College Name + EAPCET Code */}
+      <div className="flex flex-col md:flex-row items-center justify-center gap-5 ml-20">
+        <h1 className="!text-[34px] md:text-4xl font-bold text-Red !leading-tight tracking-wider font-Serif">
+          G.V.R. & S. COLLEGE OF ENGINEERING
+        </h1>
+        <div className="border border-black rounded px-1 py-0 !text-[20px] md:text-base !font-bold font-Serif">
+          EAPCET Code : GVRS
         </div>
       </div>
-    </header>
+
+      {/* Logos + Affiliation Text Block */}
+      <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-center">
+        {/* First 3 logos (left) */}
+        <div className="flex justify-center gap-2">
+          <img src="/Images/aicte.jpg" alt="AICTE" className="h-10 md:h-10" />
+          <img src="/Images/naac.png" alt="NAAC" className="h-10 md:h-10" />
+          <img src="/Images/nba.jpg" alt="NBA" className="h-10 md:h-10" />
+        </div>
+
+        {/* Center Text */}
+        <div className="flex flex-col items-center text-center px-2 leading-tight">
+          <p className="text-green-600 text-xl font-Brush">
+            (Sponsored by Nagarjuna Education Society)
+          </p>
+          <p className="text-black font-semibold font-Serif">
+            Affiliated to Acharya Nagarjuna University
+          </p>
+        </div>
+
+        {/* Last 4 logos (right) */}
+        <div className="flex justify-center gap-2">
+          <img src="/Images/tuv-sud-logo.png" alt="TUV" className="h-10 md:h-10" />
+          <img src="/Images/nirf-logo.png" alt="NIRF" className="h-10 md:h-10" />
+          <img src="/Images/ariia.png" alt="ARIIA" className="h-10 md:h-10" />
+          <img src="/Images/iic.png" alt="IIC" className="h-10 md:h-10" />
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
   );
 };
 

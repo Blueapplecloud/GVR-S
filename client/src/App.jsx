@@ -1,7 +1,6 @@
 import React from "react";
-//test
-
-import "@fortawesome/fontawesome-free/css/all.min.css";
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import About from "./pages/About/About";
@@ -29,6 +28,16 @@ import ExecutiveBody from "./pages/Management/ExecutiveBody/ExecutiveBody";
 import GoverningBody from "./pages/Management/GoverningBody/GoverningBody";
 import AcademicRegulations from "./pages/Academics/AcademicRegulatio";
 import ProgramsOffered from "./pages/Academics/ProgramsOffered";
+import CampusGalleryGrid from "./pages/CampusLife/Campus/campus";
+import CampusCulturals from "./pages/CampusLife/Gallery/Culturals";
+import CampusLibrary from "./pages/CampusLife/Gallery/Library";
+import SportsGallery from "./pages/CampusLife/Gallery/Sports";
+import CanteenGallery from "./pages/CampusLife/Gallery/Canteen";
+import TransportGallery from "./pages/CampusLife/Gallery/Transport";
+import EventsGallery from "./pages/CampusLife/Gallery/Events";
+import LabsGallery from "./pages/CampusLife/Gallery/Labs";
+import OrganisingChart from "./pages/Administration/OrganisingChart/OrganisingChart";
+
 
 function App() {
   return (
@@ -79,11 +88,23 @@ function App() {
               <Route path="/departments/civil" element={<Civil />} />
               <Route path="/departments/mech" element={<Mechanical />} />
               <Route path="/departments/sh" element={<SH />} />
+
+              <Route path="/campus/campus" element={<CampusGalleryGrid/>}/>
+            <Route path="/gallery/culturals" element={<CampusCulturals/>}/>
+            <Route path="/gallery/library" element={<CampusLibrary/>}/>
+            <Route path="/gallery/sports" element={<SportsGallery/>}/>
+            <Route path="/gallery/canteen" element={<CanteenGallery/>}/>
+            <Route path="/gallery/transport" element={<TransportGallery/>}/>
+            <Route path="/gallery/events" element={<EventsGallery/>}/>
+            <Route path="/gallery/labs" element={<LabsGallery/>}/>
+
+
+            <Route path="/administration/organising chart" element={<OrganisingChart/>}/>
             </Routes>
           </main>
           <Footer />
         </div>
-      </Router>
+    </Router>
     </>
   );
 }

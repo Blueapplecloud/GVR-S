@@ -72,7 +72,7 @@ const DepartmentsComponent = ({
     <div className="w-full">
       {/* Top Header Section with Background Image */}
       <div
-        className="w-full h-[250px] flex flex-col justify-center items-center bg-cover bg-center bg-no-repeat text-white sticky top-0"
+        className="w-full h-[250px] flex flex-col justify-center items-center bg-cover bg-center bg-no-repeat text-White sticky top-0"
         style={{ backgroundImage: `url('${backgroundImage}')` }}
       >
         <motion.h2
@@ -98,7 +98,7 @@ const DepartmentsComponent = ({
       <div className="flex justify-center mt-16 px-4 sm:px-8">
         <div className="bg-white shadow-lg rounded-lg max-w-6xl w-full p-8">
           <motion.h2
-            className="text-2xl font-semibold text-gray-800 mb-2"
+            className="text-2xl font-semibold text-Gray800 mb-2"
             initial="hidden"
             whileInView="visible"
             variants={fadeIn}
@@ -119,7 +119,7 @@ const DepartmentsComponent = ({
             />
           </div>
 
-          <p className="text-gray-700 leading-relaxed text-justify">
+          <p className="text-Gray800 leading-relaxed text-justify">
             {aboutContent}
           </p>
         </div>
@@ -130,7 +130,7 @@ const DepartmentsComponent = ({
         <div className="bg-white shadow-lg rounded-lg max-w-6xl w-full p-8 flex flex-col sm:flex-row sm:items-start sm:gap-8">
           <div className="sm:flex-1 sm:pr-6">
             <motion.h2
-              className="text-2xl font-semibold text-gray-800 mb-2"
+              className="text-2xl font-semibold text-Gray800 mb-2"
               initial="hidden"
               whileInView="visible"
               variants={fadeIn}
@@ -151,10 +151,10 @@ const DepartmentsComponent = ({
               />
             </div>
 
-            <p className="text-gray-700 leading-relaxed text-justify">
+            <p className="text-Gray800 leading-relaxed text-justify">
               {hodContent}
             </p>
-            <p className="mt-4 font-semibold text-gray-800">
+            <p className="mt-4 font-semibold text-Gray800">
               {hodName}
               <br />
               {hodDesignation}
@@ -177,7 +177,7 @@ const DepartmentsComponent = ({
             title="Vision & Mission"
             isOpen={openIndex === 0}
             onClick={() => toggleAccordion(0)}
-            headerClassName="bg-[#D6EAF8]/60 text-black font-bold text-lg px-4 py-3 rounded-t-lg"
+            headerClassName="bg-[#D6EAF8]/60 text-Black font-bold text-lg px-4 py-3 rounded-t-lg"
             content={
               <div className="space-y-6 px-4 py-4">
                 <div>
