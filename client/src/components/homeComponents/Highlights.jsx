@@ -62,7 +62,7 @@ function Highlights() {
         {cards.map((card, index) => (
           <div
             key={index}
-            className="bg-white rounded-lg shadow-md hover:shadow-2xl flex flex-col items-center justify-center text-center transition duration-300 ease-in-out p-2 gap-1"
+            className="bg-white rounded-lg shadow-md hover:shadow-2xl flex flex-col items-center justify-center text-center transition duration-300 ease-in-out p-3 gap-3"
           >
             {card.icon}
             <p className="text-base font-semibold">{card.title}</p>

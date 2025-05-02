@@ -47,7 +47,7 @@ const CampusLifeCarousel = () => {
       </h2>
       <div className="relative overflow-hidden">
         {/* Carousel Container */}
-        <div className="flex items-center justify-center relative">
+        <div className="flex items-center  justify-center relative">
           {/* Prev Button */}
           <button
             onClick={handlePrev}
@@ -59,7 +59,7 @@ const CampusLifeCarousel = () => {
 
           {/* Carousel Content */}
           <motion.div
-            className="w-[450px] h-[430px] bg-white shadow-md rounded-lg overflow-hidden"
+            className="w-[450px] h-[430px] bg-white shadow-md rounded-lg overflow-hidden "
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -100 }}
@@ -70,14 +70,14 @@ const CampusLifeCarousel = () => {
               alt={campusLifeData[currentIndex].title}
               className="w-full h-[270px] object-cover hover:scale-105 transition-transform duration-300 ease-in-out"
             />
-            <div className="p-2">
+            <div className="p-3">
               <h3 className="text-lg font-semibold text-gray-800">
                 {campusLifeData[currentIndex].title}
               </h3>
               <p className="mt-1 text-sm text-gray-600">
                 {campusLifeData[currentIndex].description}
               </p>
-              <button className="mt-2 px-4 py-2 bg-primaryColor text-white rounded hover:bg-blue-600">
+              <button className="mt-3 px-4 py-2 bg-primaryColor text-white rounded hover:bg-blue-600">
                 View more
               </button>
             </div>

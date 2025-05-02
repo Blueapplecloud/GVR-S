@@ -12,7 +12,9 @@ function SpotLight() {
   ];
   return (
     <div className="bg-gray-100 py-6 px-10 min-h-screen flex flex-col items-center mx-auto ">
-      <h3 className=" border-b-2 border-primaryColor pb-2">GVRS SpotLight</h3>
+      <h3 className="border-b-2 border-Amber pb-2 text-3xl font-bold text-primaryColor">
+        GVRS SpotLight
+      </h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6 px-10 place-items-cent max-w-6xl">
         {images.map((image, index) => (
           <div
