@@ -1,0 +1,191 @@
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+
+const imageVariants = {
+  hidden: { opacity: 0, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
+const sizeClasses = {
+  medium: "row-span-2",
+  large: "row-span-3",
+  full: "col-span-full row-span-2",
+  default: "row-span-1",
+};
+
+const CampusCulturals = () => {
+  const images = [
+    {
+      imageUrl:
+        "https://gvrs.ac.in/wp-content/uploads/2023/09/cul1-1536x922.jpg",
+      size: "medium",
+    },
+    {
+      imageUrl:
+        "https://gvrs.ac.in/wp-content/uploads/2023/09/cul-1536x922.jpg",
+      size: "default",
+    },
+    {
+      imageUrl:
+        "https://gvrs.ac.in/wp-content/uploads/2023/08/IMG-20220527-WA0069-1-1024x682.jpg",
+      size: "default",
+    },
+    {
+      imageUrl:
+        "https://gvrs.ac.in/wp-content/uploads/2023/08/IMG-20220527-WA0079-1-1024x682.jpg",
+      size: "medium",
+    },
+    {
+      imageUrl:
+        "https://gvrs.ac.in/wp-content/uploads/2023/08/IMG-20220527-WA0045-1-1024x682.jpg",
+      size: "default",
+    },
+    {
+      imageUrl:
+        "https://gvrs.ac.in/wp-content/uploads/2023/08/IMG-20220527-WA0064-1024x682.jpg",
+      size: "large",
+    },
+    {
+      imageUrl:
+        "https://gvrs.ac.in/wp-content/uploads/2023/08/IMG-20220527-WA0056-1024x682.jpg",
+      size: "default",
+    },
+    {
+      imageUrl:
+        "https://gvrs.ac.in/wp-content/uploads/2023/08/IMG-20220527-WA0079-2-1024x682.jpg",
+      size: "default",
+    },
+    {
+      imageUrl:
+        "https://gvrs.ac.in/wp-content/uploads/2023/12/IMG-20231214-WA0032-1024x770.jpg",
+      size: "medium",
+    },
+    {
+      imageUrl:
+        "https://gvrs.ac.in/wp-content/uploads/2023/12/IMG-20231214-WA0020-1024x770.jpg",
+      size: "default",
+    },
+    {
+      imageUrl:
+        "https://gvrs.ac.in/wp-content/uploads/2023/12/IMG-20231214-WA0028-1024x770.jpg",
+      size: "default",
+    },
+    {
+      imageUrl:
+        "https://gvrs.ac.in/wp-content/uploads/2023/12/IMG-20231214-WA0029-1024x770.jpg",
+      size: "medium",
+    },
+    {
+      imageUrl:
+        "https://gvrs.ac.in/wp-content/uploads/2023/12/IMG-20231214-WA0003.jpg",
+      size: "default",
+    },
+    {
+      imageUrl:
+        "https://gvrs.ac.in/wp-content/uploads/2023/12/IMG-20231214-WA0003.jpg",
+      size: "default",
+    },
+    {
+      imageUrl:
+        "https://gvrs.ac.in/wp-content/uploads/2023/12/IMG-20231214-WA0003.jpg",
+      size: "large",
+    },
+    {
+      imageUrl:
+        "https://gvrs.ac.in/wp-content/uploads/2023/12/IMG-20231214-WA0010.jpg",
+      size: "default",
+    },
+    {
+      imageUrl:
+        "https://gvrs.ac.in/wp-content/uploads/2023/12/IMG-20231214-WA0014.jpg",
+      size: "default",
+    },
+    {
+      imageUrl:
+        "https://gvrs.ac.in/wp-content/uploads/2023/12/IMG-20231214-WA0014.jpg",
+      size: "medium",
+    },
+    {
+      imageUrl:
+        "https://gvrs.ac.in/wp-content/uploads/2023/12/IMG-20231214-WA0014.jpg",
+      size: "default",
+    },
+    {
+      imageUrl:
+        "https://gvrs.ac.in/wp-content/uploads/2023/12/IMG-20231214-WA0014.jpg",
+      size: "default",
+    },
+    {
+      imageUrl:
+        "https://gvrs.ac.in/wp-content/uploads/2023/12/IMG-20231214-WA0022.jpg",
+      size: "large",
+    },
+    {
+      imageUrl:
+        "https://gvrs.ac.in/wp-content/uploads/2023/12/IMG-20231214-WA0047.jpg",
+      size: "default",
+    },
+    {
+      imageUrl:
+        "https://gvrs.ac.in/wp-content/uploads/2023/12/IMG-20231214-WA0050.jpg",
+      size: "medium",
+    },
+    {
+      imageUrl:
+        "https://gvrs.ac.in/wp-content/uploads/2023/12/IMG-20231214-WA0057.jpg",
+      size: "default",
+    },
+    {
+      imageUrl:
+        "https://gvrs.ac.in/wp-content/uploads/2023/12/IMG-20231214-WA0053.jpg",
+      size: "full",
+    },
+  ];
+
+  const headingRef = useRef(null);
+  const headingInView = useInView(headingRef, { once: true });
+
+  return (
+    <section className="px-6 py-12 md:px-16 bg-gray-100">
+      <motion.h1
+        ref={headingRef}
+        initial={{ opacity: 0, y: 50 }}
+        animate={headingInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="text-4xl font-bold mb-10 text-center uppercase text-gray-800"
+      >
+        Campus Culturals
+      </motion.h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 auto-rows-[150px]">
+        {images.map((item, index) => {
+          const { imageUrl, size = "default" } = item;
+          const ref = React.useRef(null);
+          const isInView = useInView(ref, { once: true, margin: "-50px" });
+
+          return (
+            <motion.div
+              key={index}
+              ref={ref}
+              variants={imageVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              className={`relative overflow-hidden rounded shadow-md bg-cover bg-center cursor-pointer transition-transform duration-300 hover:scale-105 ${sizeClasses[size]}`}
+              style={{ backgroundImage: `url(${imageUrl})` }}
+            >
+              <div className="absolute inset-0 bg-black/30 hover:bg-black/0 transition-opacity duration-300" />
+            </motion.div>
+          );
+        })}
+      </div>
+    </section>
+  );
+};
+
+export default CampusCulturals;

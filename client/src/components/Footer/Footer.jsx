@@ -8,16 +8,17 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-[#B04040] text-white py-10 px-4 md:px-16">
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-center gap-20">
-        {/* Left: Logo and Icons */}
-        <div className="flex flex-col items-center md:items-start">
+    <footer className="bg-[#B04040] text-white py-8 px-4 md:px-10">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-around items-center md:items-start gap-8 md:gap-12">
+        
+        {/* Left: Logo and Social Icons */}
+        <div className="flex flex-col items-center md:items-center text-center md:text-left">
           <img
             src="/Images/GVR&S Logo.jpg"
             alt="College Logo"
-            className="w-50"
+            className="w-36 mb-2"
           />
-          <div className="w-full flex !space-x-4 text-white !text-2xl pl-12 mt-3">
+          <div className="flex space-x-4 text-2xl mt-2 md:mt-3 text-White">
             <FaFacebookF />
             <FaTwitter />
             <FaLinkedinIn />
@@ -26,9 +27,9 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Center: Contact Info */}
-        <div className="text-center md:text-left pt-3 !mr-20">
-          <h2 className="text-xl font-semibold mb-2">Contact Us</h2>
+        {/* Right: Contact Info */}
+        <div className="text-center md:text-left text-sm md:text-base text-White">
+          <h2 className="text-lg font-semibold mb-2">Contact Us</h2>
           <p>
             Near Budampadu Etukuru, Ponnuru Road, <br />
             beside National Highway 16, opposite to NSL Textiles, <br />
@@ -39,8 +40,9 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="text-center text-sm mt-10 border-t border-white/30 pt-2 pb-2">
-        © 2024 GVR&S College of Engineering & Technology. All Rights Reserved.
+      {/* Bottom Note */}
+      <div className="text-center text-xs mt-8 border-t border-White/30 pt-3">
+        © 2025 GVR&S College of Engineering & Technology. All Rights Reserved.
       </div>
     </footer>
   );

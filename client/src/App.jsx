@@ -1,5 +1,5 @@
 import React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css'
@@ -18,6 +18,15 @@ import CSEAIDS from "./pages/Departments/UG/CSE(AI&DS)/CSE(AI&DS)";
 import Civil from "./pages/Departments/UG/Civil/Civil";
 import Mechanical from "./pages/Departments/UG/Mechanical/Mechanical";
 import SH from "./pages/Departments/UG/S&H/S&H";
+import CampusGalleryGrid from "./pages/CampusLife/Campus/campus";
+import CampusCulturals from "./pages/CampusLife/Gallery/Culturals";
+import CampusLibrary from "./pages/CampusLife/Gallery/Library";
+import SportsGallery from "./pages/CampusLife/Gallery/Sports";
+import CanteenGallery from "./pages/CampusLife/Gallery/Canteen";
+import TransportGallery from "./pages/CampusLife/Gallery/Transport";
+import EventsGallery from "./pages/CampusLife/Gallery/Events";
+import LabsGallery from "./pages/CampusLife/Gallery/Labs";
+import OrganisingChart from "./pages/Administration/OrganisingChart/OrganisingChart";
 
 
 function App() {
@@ -49,6 +58,19 @@ function App() {
             <Route path="/departments/civil" element={<Civil/>}/>
             <Route path="/departments/mech" element={<Mechanical/>}/>
             <Route path="/departments/sh" element={<SH/>}/>
+
+
+            <Route path="/campus/campus" element={<CampusGalleryGrid/>}/>
+            <Route path="/gallery/culturals" element={<CampusCulturals/>}/>
+            <Route path="/gallery/library" element={<CampusLibrary/>}/>
+            <Route path="/gallery/sports" element={<SportsGallery/>}/>
+            <Route path="/gallery/canteen" element={<CanteenGallery/>}/>
+            <Route path="/gallery/transport" element={<TransportGallery/>}/>
+            <Route path="/gallery/events" element={<EventsGallery/>}/>
+            <Route path="/gallery/labs" element={<LabsGallery/>}/>
+
+
+            <Route path="/administration/organising chart" element={<OrganisingChart/>}/>
           </Routes>
         </main>
         <Footer />

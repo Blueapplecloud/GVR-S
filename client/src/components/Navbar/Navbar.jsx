@@ -1,203 +1,258 @@
-import React, { useState, useCallback } from 'react';
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { FaHome, FaBars, FaTimes } from 'react-icons/fa';
+import { FaChevronDown,FaChevronRight  } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { FaHome } from 'react-icons/fa';
 import Header from './Header';
-import './Navbar.css';
 
 const CustomNavbar = () => {
-  const [dropdownStates, setDropdownStates] = useState({
-    showAbout: false,
-    showManagement: false,
-    showAcademics: false,
-    showDepartments: false,
-    showCampus: false,
-    showNaac: false,
-    showUG: false,
-    showPG: false,
-    showMBA: false,
-    showMTech: false,
-    showGallery: false,
-    showPlacements: false,
-    showAdministrationCorner: false,
-  });
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [openSubDropdown, setOpenSubDropdown] = useState(null);
+  const [openDropdown, setOpenDropdown] = useState(null);
+  const [openNestedDropdown, setOpenNestedDropdown] = useState(null); // for MBA/MTech
 
-  const handleMouseEnter = useCallback((key) => () => {
-    setDropdownStates(prev => ({ ...prev, [key]: true }));
-  }, []);
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!isMobileMenuOpen);
+  };
 
-  const handleMouseLeave = useCallback((key) => () => {
-    setDropdownStates(prev => ({ ...prev, [key]: false }));
-  }, []);
 
-  const dropdownItemClass = "bg-white text-black hover:!text-[#B04040] hover:!bg-[#F5F5F5]";
+
+  const menuItems = [
+    {
+      label: <FaHome />,
+      path: '/',
+    },
+    {
+      label: (
+        <>
+          About GVR&S <FaChevronDown />
+        </>
+      ),
+      dropdown: [
+        { label: 'GVR&S History', path: '/about/history' },
+        { label: 'Vision & Mission', path: '/about/vision&mission' },
+        { label: "Principal's Message", path: '/about/message' },
+      ],
+    },
+    {
+      label: (
+        <>
+          Management <FaChevronDown />
+        </>
+      ),
+      dropdown: [
+        { label: 'Founder & President', path: '/management/founder' },
+        { label: 'Chairman', path: '/management/chairman' },
+        { label: 'Director', path: '/management/director' },
+        { label: 'Dean', path: '/management/dean' },
+        { label: 'Executive Body', path: '/management/executive-body' },
+        { label: 'Governing Body', path: '/management/governing-body' },
+      ],
+    },
+    {
+      label: (
+        <>
+          Academics <FaChevronDown />
+        </>
+      ),
+      dropdown: [
+        { label: 'Programs Offered', path: '/academics/programs' },
+        { label: 'Fee Structure', path: '/academics/fees' },
+        { label: 'Examination Section', path: '/academics/exam' },
+        { label: 'Academic Regulations', path: '/academics/academic regulations' },
+        { label: 'Academic Scholarship', path: '/academics/scholarship' },
+      ],
+    },
+    {
+      label: (
+        <>
+          Departments <FaChevronDown />
+        </>
+      ),
+      dropdown: [
+        {
+          label: (<>UG <FaChevronRight/></>),
+          dropdown: [
+            { label: 'Computer Science & Engineering', path: '/departments/cse' },
+            { label: 'Computer Science & Engineering(AI & ML)', path: '/departments/cse-aiml' },
+            { label: 'Computer Science & Engineering(AI & DS)', path: '/departments/cse-aids' },
+            { label: 'Electronics and Communication Engineering', path: '/departments/ece' },
+            { label: 'Electrical and Electronics Engineering', path: '/departments/eee' },
+            { label: 'Civil Engineering', path: '/departments/civil' },
+            { label: 'Mechanical Engineering', path: '/departments/mech' },
+            { label: 'SCIENCE & HUMANITIES', path: '/departments/sh' },
+          ],
+        },
+        {
+          label: (<>PG <FaChevronRight/></>),
+          dropdown: [
+            {
+              label: 'MBA',
+              dropdown: [
+                { label: 'Finance', path: '/departments/mba-finance' },
+              ],
+            },
+            {
+              label: 'MTech',
+              dropdown: [
+                { label: 'CSE', path: '/departments/mtech-cse' },
+                { label: 'EEE', path: '/departments/mtech-eee' },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      label: (
+        <>
+          Campus Life <FaChevronDown />
+        </>
+      ),
+      dropdown: [
+        { label: 'Campus', path: '/campus/campus' },
+        {
+          label: (<>Gallery <FaChevronRight/></>),
+          dropdown: [
+            { label: 'Culturals', path: '/gallery/culturals' },
+            { label: 'Library', path: '/gallery/library' },
+            { label: 'Sports', path: '/gallery/sports' },
+            { label: 'Canteen', path: '/gallery/canteen' },
+            { label: 'Transport', path: '/gallery/transport' },
+            { label: 'Events', path: '/gallery/events' },
+            { label: 'Labs', path: '/gallery/labs' },
+          ],
+        },
+      ],
+    },
+    {
+      label: (
+        <>
+          NAAC <FaChevronDown />
+        </>
+      ),
+      dropdown: [
+        { label: 'NAAC', path: '/naac/naac' },
+        { label: 'DVV', path: '/naac/dvv' },
+      ],
+    },
+    {
+      label: 'Placements',
+      path: '/placements'
+    },
+    {
+      label: (
+        <>
+          Administration <FaChevronDown />
+        </>
+      ),
+      dropdown: [
+        { label: 'Organising Chart', path: '/administration/organising chart' },
+      ],
+    },
+  ];
+  
+
+  const handleSubDropdownToggle = (index) => {
+    if (openSubDropdown === index) {
+      setOpenSubDropdown(null);
+    } else {
+      setOpenSubDropdown(index);
+    }
+  };
+
+  const renderDropdown = (items, level = 1) => (
+    <ul
+      className={`absolute ${level === 1 ? 'left-0 top-full' : 'left-full top-0'} mt-0.5 bg-White text-Black rounded shadow-md min-w-[8rem] w-max z-20`}
+      onMouseLeave={() => {
+        if (level === 1) setOpenSubDropdown(null);
+        else setOpenNestedDropdown(null);
+      }}
+    >
+      {items.map((item, i) => (
+        <li
+          key={i}
+          className="relative"
+          onMouseEnter={() => {
+            if (level === 1) setOpenSubDropdown(i);
+            else if (level === 2) setOpenNestedDropdown(i);
+          }}
+          onMouseLeave={() => {
+            if (level === 1) setOpenSubDropdown(null);
+            else if (level === 2) setOpenNestedDropdown(null);
+          }}
+        >
+          {item.dropdown ? (
+            <>
+              <div className="px-4 py-2 hover:text-primaryColor cursor-pointer flex items-center">
+                {item.label}
+              </div>
+              {((level === 1 && openSubDropdown === i) || (level === 2 && openNestedDropdown === i)) &&
+                renderDropdown(item.dropdown, level + 1)}
+            </>
+          ) : (
+            <Link
+              to={item.path}
+              className="block px-4 py-2 hover:text-primaryColor"
+              onClick={() => {
+                setOpenSubDropdown(null);
+                setOpenNestedDropdown(null);
+                setMobileMenuOpen(false); // if used
+              }}
+            >
+              {item.label}
+            </Link>
+          )}
+        </li>
+      ))}
+    </ul>
+  );
+  
 
   return (
     <>
       <Header />
-      <Navbar sticky="top" expand="lg" className="bg-[#B04040]" variant="dark">
-        <Navbar.Brand as={Link} to="/" className="text-white flex items-center ml-20">
-          <FaHome className="mr-2" />
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbar-nav" className="bg-[#B04040]" />
-        <Navbar.Collapse id="navbar-nav" className="justify-content-center">
-          <Nav className="mx-auto text-center">
+      <div className="bg-primaryColor text-White sticky top-0 z-50">
+        <div className="container mx-auto px-4 flex items-center justify-between h-14">
+          <div className="hidden lg:flex justify-center gap-x-4 items-center w-full">
+          {menuItems.map((item, index) => (
+  <div
+    key={index}
+    className="relative group"
+    onMouseEnter={() => setOpenDropdown(index)}
+    onMouseLeave={() => setOpenDropdown(null)}
+  >
+    {item.dropdown ? (
+      <div
+        className="px-3 py-2 hover:bg-primaryColor cursor-pointer flex items-center"
+        onClick={() => {
+          setOpenDropdown(openDropdown === index ? null : index);
+        }}
+      >
+        {item.label}
+      </div>
+    ) : (
+      <Link
+        to={item.path}
+        className="px-3 py-2 hover:bg-primaryColor cursor-pointer flex items-center"
+        onClick={() => setOpenDropdown(null)}
+      >
+        {item.label}
+      </Link>
+    )}
 
-            {/* About Dropdown */}
-            <NavDropdown
-              title="About GVR&S"
-              show={dropdownStates.showAbout}
-              onMouseEnter={handleMouseEnter('showAbout')}
-              onMouseLeave={handleMouseLeave('showAbout')}
-            >
-              <NavDropdown.Item as={Link} to="/about/history" className={dropdownItemClass}>GVR&S History</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/about/vision&mission" className={dropdownItemClass}>Vision & Mission</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/about/message" className={dropdownItemClass}>Principal's Message</NavDropdown.Item>
-            </NavDropdown>
+    {item.dropdown && openDropdown === index && renderDropdown(item.dropdown)}
+  </div>
+))}
 
-            {/* Management Dropdown */}
-            <NavDropdown
-              title="Management"
-              show={dropdownStates.showManagement}
-              onMouseEnter={handleMouseEnter('showManagement')}
-              onMouseLeave={handleMouseLeave('showManagement')}
-            >
-              <NavDropdown.Item as={Link} to="/management/founder" className={dropdownItemClass}>Founder & President</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/management/chairman" className={dropdownItemClass}>Chairman</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/management/director" className={dropdownItemClass}>Director</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/management/dean" className={dropdownItemClass}>Dean</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/management/executive-body" className={dropdownItemClass}>Executive Body</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/management/governing-body" className={dropdownItemClass}>Governing Body</NavDropdown.Item>
-            </NavDropdown>
+          </div>
 
-            {/* Academics Dropdown */}
-            <NavDropdown
-              title="Academics"
-              show={dropdownStates.showAcademics}
-              onMouseEnter={handleMouseEnter('showAcademics')}
-              onMouseLeave={handleMouseLeave('showAcademics')}
-            >
-              <NavDropdown.Item as={Link} to="/academics/programs" className={dropdownItemClass}>Programs Offered</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/academics/fees" className={dropdownItemClass}>Fee Structure</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/academics/exam" className={dropdownItemClass}>Examination Section</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/academics/academic regulations" className={dropdownItemClass}>Academic Regulations</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/academics/scholarship" className={dropdownItemClass}>Academic Scholarship</NavDropdown.Item>
-            </NavDropdown>
-
-            {/* Departments Dropdown */}
-            <NavDropdown
-              title="Departments"
-              show={dropdownStates.showDepartments}
-              onMouseEnter={handleMouseEnter('showDepartments')}
-              onMouseLeave={handleMouseLeave('showDepartments')}
-            >
-              <div className="flex gap-4 px-3 py-2">
-                <div
-                  onMouseEnter={handleMouseEnter('showUG')}
-                  onMouseLeave={handleMouseLeave('showUG')}
-                >
-                  <NavDropdown title={<span className="text-black hover:text-[#B04040]">UG</span>} show={dropdownStates.showUG} drop="end">
-                    <NavDropdown.Item as={Link} to="/departments/cse" className={dropdownItemClass}>CSE</NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="/departments/cse-aiml" className={dropdownItemClass}>CSE (AI & ML)</NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="/departments/cse-aids" className={dropdownItemClass}>CSE (AI & DS)</NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="/departments/ece" className={dropdownItemClass}>ECE</NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="/departments/eee" className={dropdownItemClass}>EEE</NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="/departments/civil" className={dropdownItemClass}>Civil</NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="/departments/mech" className={dropdownItemClass}>Mechanical</NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="/departments/sh" className={dropdownItemClass}>S & H</NavDropdown.Item>
-                  </NavDropdown>
-                </div>
-
-                <div
-                  onMouseEnter={handleMouseEnter('showPG')}
-                  onMouseLeave={handleMouseLeave('showPG')}
-                >
-                  <NavDropdown title={<span className="text-black hover:text-transparent">PG</span>} show={dropdownStates.showPG} drop="end">
-                    <div
-                      onMouseEnter={handleMouseEnter('showMBA')}
-                      onMouseLeave={handleMouseLeave('showMBA')}
-                    >
-                      <NavDropdown title={<span className="text-black hover:text-[#B04040]">MBA</span>} show={dropdownStates.showMBA} drop="end">
-                        <NavDropdown.Item as={Link} to="/departments/mba-finance" className={dropdownItemClass}>Finance</NavDropdown.Item>
-                      </NavDropdown>
-                    </div>
-
-                    <div
-                      onMouseEnter={handleMouseEnter('showMTech')}
-                      onMouseLeave={handleMouseLeave('showMTech')}
-                    >
-                      <NavDropdown title={<span className="text-black hover:text-[#B04040]">M-Tech</span>} show={dropdownStates.showMTech} drop="end">
-                        <NavDropdown.Item as={Link} to="/departments/mtech-cse" className={dropdownItemClass}>CSE</NavDropdown.Item>
-                        <NavDropdown.Item as={Link} to="/departments/mtech-eee" className={dropdownItemClass}>EEE</NavDropdown.Item>
-                      </NavDropdown>
-                    </div>
-                  </NavDropdown>
-                </div>
-              </div>
-            </NavDropdown>
-
-            {/* Campus Life */}
-            <NavDropdown
-              title="Campus Life"
-              show={dropdownStates.showCampus}
-              onMouseEnter={handleMouseEnter('showCampus')}
-              onMouseLeave={handleMouseLeave('showCampus')}
-            >
-              <NavDropdown.Item as={Link} to="/campus/campus" className={dropdownItemClass}>Campus</NavDropdown.Item>
-              <div
-                onMouseEnter={handleMouseEnter('showGallery')}
-                onMouseLeave={handleMouseLeave('showGallery')}
-              >
-                <NavDropdown title={<span className="text-black hover:text-white ml-2">{'Gallery'}</span>} show={dropdownStates.showGallery} drop="end">
-                  <NavDropdown.Item as={Link} to="/gallery/culturals" className={dropdownItemClass}>Culturals</NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to="/gallery/library" className={dropdownItemClass}>Library</NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to="/gallery/sports" className={dropdownItemClass}>Sports</NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to="/gallery/canteen" className={dropdownItemClass}>Canteen</NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to="/gallery/transport" className={dropdownItemClass}>Transport</NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to="/gallery/events" className={dropdownItemClass}>Events</NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to="/gallery/labs" className={dropdownItemClass}>Labs</NavDropdown.Item>
-                </NavDropdown>
-              </div>
-            </NavDropdown>
-
-            {/* R&D */}
-            <NavDropdown
-              title="NAAC"
-              show={dropdownStates.showNaac}
-              onMouseEnter={handleMouseEnter('showNaac')}
-              onMouseLeave={handleMouseLeave('showNaac')}
-            >
-              <NavDropdown.Item as={Link} to="/naac/naac" className={dropdownItemClass}>NAAC</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/naac/dvv" className={dropdownItemClass}>DVV</NavDropdown.Item>
-            </NavDropdown>
-
-            {/* Placements */}
-            <NavDropdown
-              title="Placements"
-              show={dropdownStates.showPlacements}
-              onMouseEnter={handleMouseEnter('showPlacements')}
-              onMouseLeave={handleMouseLeave('showPlacements')}
-            >
-              <NavDropdown.Item as={Link} to="/placements/tpo message" className={dropdownItemClass}>TPO Message</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/placements/placements procedure" className={dropdownItemClass}>Placements Procedure</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/placements/placements committee" className={dropdownItemClass}>Placements Committee</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/placements/placements gallery" className={dropdownItemClass}>Placements Gallery</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/placements/meet the industry program" className={dropdownItemClass}>Meet The Industry Program</NavDropdown.Item>
-            </NavDropdown>
-
-            {/* Student Corner */}
-            <NavDropdown
-              title="Administration"
-              show={dropdownStates.showAdministrationCorner}
-              onMouseEnter={handleMouseEnter('showAdministrationCorner')}
-              onMouseLeave={handleMouseLeave('showAdministrationCorner')}
-            >
-              <NavDropdown.Item as={Link} to="/administration/organising chart" className={dropdownItemClass}>Organising Chart</NavDropdown.Item>
-            </NavDropdown>
-
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+          <div className="lg:hidden">
+            <button onClick={toggleMobileMenu} className="text-white">
+              {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+            </button>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
