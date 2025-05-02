@@ -1,5 +1,4 @@
 import React from "react";
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
@@ -59,6 +58,11 @@ function App() {
               <Route path="/about/message" element={<PrincipalMessage />} />
               {/* Management page Routes */}
               <Route path="/management/founder" element={<Founder />} />
+              <Route path="/management/chairman" element={<Chairman />} />
+              <Route path="/management/director" element={<Director />} />
+              <Route path="/management/dean" element={<Dean />} />
+              <Route path="/management/executive-body" element={<ExecutiveBody />} />
+              <Route path="/management/governing-body" element={<GoverningBody />} />
               {/* Add more routes as needed */}
               {/* Academics page Routes */}
               <Route
