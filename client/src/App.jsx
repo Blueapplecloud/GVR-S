@@ -117,7 +117,7 @@ function App() {
               <Route path="/naac/naac" element={<NAAC />} />
               <Route path="/naac/dvv" element={<DVV />} />
                {/* Placement page Routes */}
-               <Route path="/placements/tpo message" element={<PlacementDashboard />} />
+               <Route path="/placements" element={<PlacementDashboard />} />
 
             </Routes>
           </main>
