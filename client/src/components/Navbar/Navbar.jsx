@@ -417,7 +417,7 @@ const CustomNavbar = () => {
             >
               <NavDropdown.Item
                 as={Link}
-                to="/naac/naac"
+                to="/naac"
                 className={dropdownItemClass}
               >
                 NAAC

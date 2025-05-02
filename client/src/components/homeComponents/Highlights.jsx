@@ -38,7 +38,7 @@ function Highlights() {
   ];
   return (
     <div className="px-12 py-10 flex flex-col md:flex-row gap-5 items-center justify-center h-screen  ">
-      <div className="w-full md:w-1/2 flex flex-col shadow-2xl bg-white rounded-lg p-4 gap-2 px-5 ">
+      <div className="w-full md:w-1/2 flex flex-col shadow-xl hover:shadow-2xl bg-white rounded-lg p-4 gap-2 px-5 ">
         <h3 className="text-3xl font-semibold text-primaryColor">
           Leading Engineering Institution
         </h3>
@@ -54,7 +54,7 @@ function Highlights() {
             height="100%"
           />
         </div>
-        <button className="mt-3 py-2 bg-primaryColor text-white  hover:bg-Amber hover:text-black text-white-500 rounded">
+        <button className="mt-3 py-2 bg-primaryColor text-white  hover:bg-Amber hover:!text-black rounded">
           Explore Brochure
         </button>
       </div>
@@ -62,7 +62,7 @@ function Highlights() {
         {cards.map((card, index) => (
           <div
             key={index}
-            className="bg-white rounded-lg shadow-lg  flex flex-col items-center justify-center text-center transition duration-300 ease-in-out p-2 gap-1"
+            className="bg-white rounded-lg shadow-md hover:shadow-2xl flex flex-col items-center justify-center text-center transition duration-300 ease-in-out p-2 gap-1"
           >
             {card.icon}
             <p className="text-base font-semibold">{card.title}</p>
@@ -71,7 +71,7 @@ function Highlights() {
               {card.buttons.map((btn, idx) => (
                 <button
                   key={idx}
-                  className="border border-Amber text-black hover:text-white  bg-primaryColor rounded hover:bg-Amber  transition p-2 mx-1"
+                  className="border border-Amber bg-primaryColor rounded hover:bg-Amber text-white hover:!text-black transition duration-200 ease-in-out p-2 mx-1"
                 >
                   {btn}
                 </button>
