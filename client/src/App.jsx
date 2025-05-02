@@ -29,6 +29,7 @@ import ExecutiveBody from "./pages/Management/ExecutiveBody/ExecutiveBody";
 import GoverningBody from "./pages/Management/GoverningBody/GoverningBody";
 import AcademicRegulations from "./pages/Academics/AcademicRegulatio";
 import ProgramsOffered from "./pages/Academics/ProgramsOffered";
+import PlacementDashboard from "./pages/Placement/TpoMessage";
 
 function App() {
   return (
@@ -79,6 +80,10 @@ function App() {
               <Route path="/departments/civil" element={<Civil />} />
               <Route path="/departments/mech" element={<Mechanical />} />
               <Route path="/departments/sh" element={<SH />} />
+
+               {/* Placement page Routes */}
+               <Route path="/placements/tpo message" element={<PlacementDashboard />} />
+
             </Routes>
           </main>
           <Footer />
