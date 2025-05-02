@@ -38,6 +38,8 @@ import LabsGallery from "./pages/CampusLife/Gallery/Labs";
 import OrganisingChart from "./pages/Administration/OrganisingChart/OrganisingChart";
 
 
+import NAAC from "./pages/NAAC/NAAC/NAAC";
+import DVV from "./pages/NAAC/DVV/DVV";
 function App() {
   return (
     <>
@@ -63,6 +65,11 @@ function App() {
               <Route path="/management/dean" element={<Dean />} />
               <Route path="/management/executive-body" element={<ExecutiveBody />} />
               <Route path="/management/governing-body" element={<GoverningBody />} />
+              <Route path="/management/chairman" element={<Chairman/>} />
+              <Route path="/management/director" element={<Director />} />
+              <Route path="/management/dean" element={<Dean />} />
+              <Route path="/management/executivebody" element={<ExecutiveBody />} />
+              <Route path="/management/governingbody" element={<GoverningBody />} />
               {/* Add more routes as needed */}
               {/* Academics page Routes */}
               <Route
@@ -104,6 +111,10 @@ function App() {
 
 
             <Route path="/administration/organising chart" element={<OrganisingChart/>}/>
+
+
+              <Route path="/naac/naac" element={<NAAC />} />
+              <Route path="/naac/dvv" element={<DVV />} />
             </Routes>
           </main>
           <Footer />

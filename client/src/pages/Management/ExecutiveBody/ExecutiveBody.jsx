@@ -98,8 +98,8 @@ function ExecutiveBody() {
         {executiveMembers.map((member, index) => (
           <div key={index} className="flex flex-col md:flex-row items-center md:items-start gap-6 mb-10">
             <div className="flex-1 p-2">
-              <h3 className="text-xl font-bold text-blue-700">{member.name}</h3>
-              <p className="text-md font-medium text-blue-600 mb-2">- {member.position}</p>
+              <h3 className="text-xl font-bold text-primaryColor">{member.name}</h3>
+              <p className="text-md font-medium text-Red mb-2">- {member.position}</p>
               <p className="text-gray-700">{member.description}</p>
             </div>
             <div>
