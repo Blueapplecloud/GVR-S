@@ -36,6 +36,7 @@ import TransportGallery from "./pages/CampusLife/Gallery/Transport";
 import EventsGallery from "./pages/CampusLife/Gallery/Events";
 import LabsGallery from "./pages/CampusLife/Gallery/Labs";
 import OrganisingChart from "./pages/Administration/OrganisingChart/OrganisingChart";
+import PlacementDashboard from "./pages/Placement/TpoMessage";
 
 
 import NAAC from "./pages/NAAC/NAAC/NAAC";
@@ -115,6 +116,9 @@ function App() {
 
               <Route path="/naac/naac" element={<NAAC />} />
               <Route path="/naac/dvv" element={<DVV />} />
+               {/* Placement page Routes */}
+               <Route path="/placements/tpo message" element={<PlacementDashboard />} />
+
             </Routes>
           </main>
           <Footer />
