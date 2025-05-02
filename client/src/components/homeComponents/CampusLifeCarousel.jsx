@@ -40,7 +40,7 @@ const CampusLifeCarousel = () => {
   };
 
   return (
-    <div className="relative mx-auto max-w-7xl bg-gray-100 px-10 py-10 min-h-screen">
+    <div className="relative mx-auto w-full bg-gray-100 px-10 py-10 min-h-screen">
       <h2 className="text-center text-3xl font-bold text-primaryColor mb-8">
         Campus Life
         <span className="block mt-2 h-1 w-20 bg-Amber mx-auto"></span>
