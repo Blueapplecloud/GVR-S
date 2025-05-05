@@ -42,11 +42,11 @@ function Founder() {
         </p>
         <div className="float-end m-5 mt-0 mb-0 text-center">
           <img
-            src="https://gvrs.ac.in/wp-content/uploads/2023/06/dean-248x300.jpg"
+            src="https://gvrs.ac.in/wp-content/uploads/2021/09/WhatsApp-Image-2021-09-23-at-16.42.56-600x799.jpeg"
             alt="Dr. Vara Prasad"
-            className="h-90 rounded-lg shadow-lg mx-auto"
+            className="h-70 w-60 rounded-lg shadow-lg mx-auto"
           />
-          <p className="mt-4 font-semibold text-primaryColor">Dr. Vara Prasad, Dean</p>
+          <p className="mt-4 font-semibold text-primaryColor">Dr. Gangineni Venkateswara Rao</p>
         </div>
         <p className="text-justify">
           His selfless service has been organized and appreciated by the
