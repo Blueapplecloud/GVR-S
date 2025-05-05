@@ -12,7 +12,7 @@ function AcademicRegulations() {
   };
   return (
     <div className="px-5 py-4">
-      <h1 className="shadow-lg p-5">Academic Regulations</h1>
+      <h1 className="shadow-lg p-5 text-5xl font-bold">Academic Regulations</h1>
 
       <div className="p-4">
         <div className="space-y-4">

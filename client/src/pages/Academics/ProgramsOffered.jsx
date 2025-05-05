@@ -41,8 +41,8 @@ function ProgramsOffered() {
     { id: 5, branch: "Masters in Business Administration(MBA)", seats: 120 },
   ];
   return (
-    <div className="px-5 py-4">
-      <h1 className="shadow-lg p-5">Programs Offered</h1>
+    <div className="px-5 py-4 ">
+      <h1 className="shadow-lg p-5 text-5xl font-bold">Programs Offered</h1>
       <ProgramsTable heading="Under Graduate Programs" programs={ugprograms} />
       <ProgramsTable heading="Post Graduate Programs" programs={pgprograms} />
       <ProgramsTable heading="Diploma" programs={diplomaprograms} />

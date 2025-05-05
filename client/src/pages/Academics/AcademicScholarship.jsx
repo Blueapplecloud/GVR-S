@@ -35,7 +35,7 @@ function AcademicScholarShip() {
   ];
   return (
     <div className="px-4 py-4">
-      <h1 className="shadow-lg p-5 ">Scholarship</h1>
+      <h1 className="shadow-lg p-5 text-5xl font-bold ">Scholarship</h1>
       <div className="p-4">
         {/* Heading */}
         <div className="mb-4">

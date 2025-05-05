@@ -2,13 +2,15 @@ import React from "react";
 
 function SpotLight() {
   const images = [
-    "/Images/spotlight/img1.jpg",
-    "/Images/spotlight/img2.jpg",
-    "/Images/spotlight/img3.jpg",
-    "/Images/spotlight/img4.jpg",
-    "/Images/spotlight/img5.jpg",
-    "/Images/spotlight/img6.jpg",
-    "/Images/spotlight/img7.jpg",
+    "/Images/placeholderImg.png",
+    "/Images/placeholderImg.png",
+    "/Images/placeholderImg.png",
+    "/Images/placeholderImg.png",
+    "/Images/placeholderImg.png",
+    "/Images/placeholderImg.png",
+    "/Images/placeholderImg.png",
+    "/Images/placeholderImg.png",
+    "/Images/placeholderImg.png",
   ];
   return (
     <div className="bg-gray-100 md:py-6 md:px-10 min-h-screen flex flex-col items-center mx-auto ">

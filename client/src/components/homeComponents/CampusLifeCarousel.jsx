@@ -7,41 +7,53 @@ const campusLifeData = [
     title: "Library",
     description:
       "Library offers a wide range of resources and a quiet space for study.",
-    image: "/Images/campuslife/library.jpg",
+    image: "/Images/placeholderImg.png",
   },
   {
     id: 2,
     title: "National Service Scheme (NSS)",
     description:
       "Join NSS to be part of a movement aimed at building a better society through community service and social work.",
-    image: "/Images/campuslife/sports.jpg",
+    image: "/Images/placeholderImg.png",
   },
   {
     id: 3,
     title: "Cultural Club",
     description:
       "Showcase your talents in drama, and art with the vibrant activities of the Cultural Club! Join us for exciting events.",
-    image: "/Images/campuslife/culturals.jpg",
+    image: "/Images/placeholderImg.png",
   },
   {
     id: 4,
     title: "Sports Arena",
     description:
       "Well-equipped courts and fields for all sports lovers to practice and compete.",
-    image: "/Images/campuslife/sportsarena.jpg",
+    image: "/Images/placeholderImg.png",
   },
   {
     id: 5,
     title: "Tech Club",
     description:
       "Join Tech Club to participate in coding contests, hackathons, and tech fests.",
-    image: "/Images/campuslife/techclub.jpg",
+    image: "/Images/placeholderImg.png",
   },
 ];
 
 const CampusLifeCarousel = () => {
   const [currentIndex, setCurrentIndex] = React.useState(0);
-  const itemsPerPage = 3;
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  const updateView = () => {
+    setIsMobile(window.innerWidth < 768); // Tailwind 'md'
+  };
+
+  React.useEffect(() => {
+    updateView();
+    window.addEventListener("resize", updateView);
+    return () => window.removeEventListener("resize", updateView);
+  }, []);
+
+  const itemsPerPage = isMobile ? 1 : 3;
 
   const handleNext = () => {
     setCurrentIndex((prev) =>
@@ -63,7 +75,7 @@ const CampusLifeCarousel = () => {
   );
 
   return (
-    <div className="relative mx-auto w-full bg-gray-100 md:px-10 md:py-10 min-h-screen px-3 py-3">
+    <div className="relative mx-auto w-full bg-gray-100 px-4 md:px-10 py-10 min-h-screen">
       <h2 className="text-center text-3xl font-bold text-primaryColor mb-8">
         Campus Life
         <span className="block mt-2 h-1 w-20 bg-Amber mx-auto"></span>
@@ -75,18 +87,18 @@ const CampusLifeCarousel = () => {
           {/* Prev Button */}
           <button
             onClick={handlePrev}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-full p-2 shadow-md z-10"
+            className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-full p-2 shadow-md z-10"
             aria-label="Scroll Left"
           >
             <FaArrowLeft />
           </button>
 
           {/* Cards Container */}
-          <div className="flex gap-6">
-            {currentItems.map((item, index) => (
+          <div className={`flex gap-4 md:gap-6 px-8`}>
+            {currentItems.map((item) => (
               <div
                 key={item.id}
-                className="w-[300px] h-[430px] bg-white shadow-md rounded-lg overflow-hidden transition-transform duration-300"
+                className={`w-[90vw] md:w-[300px] h-[430px] bg-white shadow-md rounded-lg overflow-hidden transition-transform duration-300`}
               >
                 <img
                   src={item.image}
@@ -111,7 +123,7 @@ const CampusLifeCarousel = () => {
           {/* Next Button */}
           <button
             onClick={handleNext}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-full p-2 shadow-md z-10"
+            className="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-full p-2 shadow-md z-10"
             aria-label="Scroll Right"
           >
             <FaArrowRight />
@@ -121,7 +133,9 @@ const CampusLifeCarousel = () => {
         {/* Pagination Dots */}
         <div className="flex justify-center mt-4">
           {Array.from(
-            { length: Math.ceil(campusLifeData.length / itemsPerPage) },
+            {
+              length: Math.ceil(campusLifeData.length / itemsPerPage),
+            },
             (_, i) => (
               <button
                 key={i}

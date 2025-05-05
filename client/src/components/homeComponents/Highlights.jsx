@@ -6,6 +6,7 @@ import {
   FaMicroscope,
   FaUsers,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Highlights() {
   const cards = [
@@ -15,6 +16,7 @@ function Highlights() {
       description:
         "Join a community of innovators and gain access to top-tier education.",
       buttons: ["View More >>"],
+      link: "#",
     },
     // {
     //   icon: <FaBuilding className="text-primaryColor text-3xl mb-1" />,
@@ -28,6 +30,7 @@ function Highlights() {
       title: "Programs Offered",
       description: "UG and PG Programs",
       buttons: ["View More >>"],
+      link: "/academics/programs-offered",
     },
     // {
     //   icon: <FaUsers className="text-primaryColor text-3xl mb-1" />,
@@ -36,6 +39,7 @@ function Highlights() {
     //   buttons: ["View More >>", "Brochure"],
     // },
   ];
+
   return (
     <div className="md:px-12 md:py-10 flex flex-col md:flex-row gap-5 items-center justify-center h-screen  mx-auto w-full ">
       <div className="w-full md:flex-1 md:h-[500px] flex flex-col shadow-xl hover:shadow-2xl bg-white rounded-lg  gap-2 md:px-5 p-1">
@@ -47,19 +51,13 @@ function Highlights() {
           transformative educational experience.
         </p>
         <div className="overflow-hidden rounded-lg shadow-lg md:h-[400px] w-full h-full  ">
-          {/* <ReactPlayer
-            url="https://youtu.be/NTpbbQUBbuo?feature=shared"
-            width="100%"
-            height="100%"
-            playing={true}
-            muted={false}
-            controls={false}
-          /> */}
           <iframe
             src="https://drive.google.com/file/d/1qQ4dX3d_WDg6A3d7laNbN69thB2TQwMY/preview"
             width="100%"
             height="100%"
             allow="autoplay"
+            mute="true"
+            controls="0"
           ></iframe>
         </div>
         <button className="mt-3 py-2 bg-primaryColor text-white  hover:bg-Amber hover:!text-black rounded">
@@ -81,7 +79,7 @@ function Highlights() {
                   key={idx}
                   className="border border-Amber bg-primaryColor rounded hover:bg-Amber text-white hover:!text-black transition duration-200 ease-in-out p-2 mx-1"
                 >
-                  {btn}
+                  <Link to={card.link}>{btn}</Link>
                 </button>
               ))}
             </div>

@@ -54,7 +54,7 @@ const CustomNavbar = () => {
       ),
       dropdown: [
         { label: "Programs Offered", path: "/academics/programs-offered" },
-        { label: "Fee Structure", path: "/academics/fees-structure" },
+        { label: "Fee Structure", path: "/academics/fee-structure" },
         { label: "Examination Section", path: "/academics/exam" },
         {
           label: "Academic Regulations",

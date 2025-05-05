@@ -8,33 +8,28 @@ const LogosMarquee = () => {
     "/logo/tcs.png",
     "/logo/wip.png",
     "/logo/acce.png",
-    // "/logo/bajaj.png",
-    // "/logo/blaize.png",
-    // "/logo/brillio.png",
-    // "/logo/byjus.png",
-    // "/logo/capgemini.png",
-    // "/logo/darwinbox.png",
   ];
+
   return (
-    <div className="bg-gray-100 py-6 overflow-hidden relative">
+    <div className="bg-gray-100 py-4 overflow-x-hidden w-full">
       <motion.div
-        className="flex gap-6 items-center whitespace-nowrap"
+        className="flex gap-4 items-center whitespace-nowrap"
         animate={{ x: ["100%", "-100%"] }}
         transition={{
           repeat: Infinity,
-          duration: 20,
+          duration: 25,
           ease: "linear",
         }}
       >
         {[...logos, ...logos].map((logo, index) => (
           <div
             key={index}
-            className="w-32 h-20 bg-white border rounded-lg flex items-center justify-center p-2 shadow-sm"
+            className="min-w-[80px] w-20 h-16 sm:w-24 sm:h-20 bg-white border rounded-xl flex items-center justify-center p-2 shadow-sm"
           >
             <img
               src={logo}
               alt={`logo-${index}`}
-              className="max-h-full max-w-full object-cover"
+              className="max-w-full max-h-full object-contain"
             />
           </div>
         ))}
