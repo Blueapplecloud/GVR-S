@@ -19,7 +19,7 @@ function Chairman() {
             </motion.h1>
 
             <div >
-                <p ><strong className='text-[#b04040]'>GVR&S</strong>(Gangineni Venkateswara Rao & Sailaja) Group of Institutions is a progressive educational institution, dedicated to the pursuit of excellence. Aspirants are encouraged on this journey by our intellectual faculty, world-class facilities and student-friendly educational systems. GVR&S Group of Institutions is the world-famous for its academic excellence. We accept the best and brilliant students purely on their academic merit and their curiosity on the course, they want to study. Our aim is to encourage you to become a creative professional and connect you to an exciting and rewarding career. GVR&S is dedicated to the innovation, expansion, association, protection, broadcasting and application of knowledge in extensive fields with a goal to enlarge the scale and compass of human understanding and contribute to the betterment of the humankind.</p>
+                <p ><strong className='text-primaryColor'>GVR&S</strong>(Gangineni Venkateswara Rao & Sailaja) Group of Institutions is a progressive educational institution, dedicated to the pursuit of excellence. Aspirants are encouraged on this journey by our intellectual faculty, world-class facilities and student-friendly educational systems. GVR&S Group of Institutions is the world-famous for its academic excellence. We accept the best and brilliant students purely on their academic merit and their curiosity on the course, they want to study. Our aim is to encourage you to become a creative professional and connect you to an exciting and rewarding career. GVR&S is dedicated to the innovation, expansion, association, protection, broadcasting and application of knowledge in extensive fields with a goal to enlarge the scale and compass of human understanding and contribute to the betterment of the humankind.</p>
                 {/* <div className='align-center  rounded-lg shadow-lg relative'> */}
                 <img
                     src="https://gvrs.ac.in/wp-content/uploads/2024/05/CHAIR-PERSON.webp"
@@ -33,7 +33,7 @@ function Chairman() {
             </div>
             <div className="text-end">
 
-                <p><strong className='mb-4 text-[#b04040]'>Dr. G.Sindhura</strong></p>
+                <p><strong className='mb-4 text-primaryColor'>Dr. G.Sindhura</strong></p>
                 <p className='m-0'>Chair Person</p>
                 <p className='m-0'><b>GVR&S</b> Group of Institutions</p>
             </div>

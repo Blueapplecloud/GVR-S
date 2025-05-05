@@ -26,7 +26,10 @@ const PrincipalMessage = () => {
               experience in Telugu States & Non-Telugu States in India, as
               well as 5+ years of international exposure.
             </p>
-            <p>
+            <p className="italic text-gray-600">
+              Detailed message from the principal will be shared soon. Please stay tuned for more updates.
+            </p>
+            {/* <p>
               He holds qualifications BE (ECE), MTech(ES), MTech(CSE), Ph.D
               from GU, JNTUH, JNTUK, ANU, and also completed PGDCST from
               the Human Resource Department.
@@ -50,13 +53,13 @@ const PrincipalMessage = () => {
             <p className="font-semibold">
               Principal, GVR&S CET, Guntur, Andhra Pradesh, India
             </p>
-            <p>📞 +91 6305893114 | ✉ principal@gvrs.ac.in</p>
+            <p>📞 +91 6305893114 | ✉ principal@gvrs.ac.in</p> */}
           </div>
 
           {/* Right: Image */}
           <div className="md:w-1/2 mt-6 md:mt-0 flex justify-center">
             <img
-              src="https://gvrs.ac.in/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-12-at-12.57.17-PM.jpeg"
+              src="https://static.vecteezy.com/system/resources/thumbnails/024/983/914/small/simple-user-default-icon-free-png.png"
               alt="Dr.P BHASKAR NAIDU"
               className="w-90 h-auto rounded-lg shadow-lg"
             />

@@ -48,8 +48,8 @@ Object Oriented Programming Lab`,
       visionContent={`To be top in the field of computer science and engineering, building competence through student centric learning for self-employment, research, industry and society needs.`}
       missionContent={missionPoints}
       infrastructureContent={infrastructure}
-      hodName=" (Dr).Papa Rao Challagundla"
-      hodDesignation=" B.Tech,M.Tech,Ph.D."
+      hodName="Papa Rao Challagundla"
+      hodDesignation=" B.Tech,M.Tech,(Ph.D.)"
       infrastructureImages={infrastructureData}
     />
   );
