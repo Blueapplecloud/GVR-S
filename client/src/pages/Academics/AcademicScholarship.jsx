@@ -35,11 +35,13 @@ function AcademicScholarShip() {
   ];
   return (
     <div className="px-4 py-4">
-      <h1 className="shadow-lg p-5 text-5xl font-bold ">Scholarship</h1>
+      <h1 className="shadow-lg p-5 text-5xl font-bold text-primaryColor">
+        Academic Scholarship
+      </h1>
       <div className="p-4">
         {/* Heading */}
-        <div className="mb-4">
-          <p className="text-red-600 font-semibold">
+        <div className="mb-4 ">
+          <p className="font-bold text-primaryColor ">
             Government Scholarships are available for A.P. students with
             specified upper limits of annual income of parents/guardians for the
             respective categories as stated below
@@ -85,13 +87,19 @@ function AcademicScholarShip() {
             </tbody>
             <tfoot>
               <tr className="bg-gray-100 text-primary">
-                <td className="py-3 px-4 text-lg font-semibold  " colSpan={4}>
+                <td
+                  className="py-3 px-4 text-lg font-semibold text-blue-500  "
+                  colSpan={4}
+                >
                   Income Certificate is to be obtained from Mandal Revenue
                   Officer/Tahsildar
                 </td>
               </tr>
               <tr className="bg-gray-100 text-primary">
-                <td className="py-3 px-4 text-lg font-semibold  " colSpan={4}>
+                <td
+                  className="py-3 px-4 text-lg font-semibold  text-blue-500 "
+                  colSpan={4}
+                >
                   Scholorship will be provided for Merit-cum-mean Students.
                 </td>
               </tr>
