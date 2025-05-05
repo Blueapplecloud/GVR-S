@@ -53,14 +53,17 @@ const CustomNavbar = () => {
         </>
       ),
       dropdown: [
-        { label: "Programs Offered", path: "/academics/programs" },
-        { label: "Fee Structure", path: "/academics/fees" },
+        { label: "Programs Offered", path: "/academics/programs-offered" },
+        { label: "Fee Structure", path: "/academics/fees-structure" },
         { label: "Examination Section", path: "/academics/exam" },
         {
           label: "Academic Regulations",
-          path: "/academics/academic regulations",
+          path: "/academics/academic-regulations",
         },
-        { label: "Academic Scholarship", path: "/academics/scholarship" },
+        {
+          label: "Academic Scholarship",
+          path: "/academics/academic-scholarship",
+        },
       ],
     },
     {
@@ -189,7 +192,9 @@ const CustomNavbar = () => {
 
   const renderDropdown = (items, level = 1) => (
     <ul
-      className={`absolute ${level === 1 ? 'left-0 top-full' : 'left-full top-0'} mt-0.5 bg-white text-black rounded shadow-md min-w-[8rem] w-max z-20`}
+      className={`absolute ${
+        level === 1 ? "left-0 top-full" : "left-full top-0"
+      } mt-0.5 bg-white text-black rounded shadow-md min-w-[8rem] w-max z-20`}
       onMouseLeave={() => {
         if (level === 1) setOpenSubDropdown(null);
         else setOpenNestedDropdown(null);
