@@ -37,10 +37,10 @@ const Header = () => {
         {/* Center Text */}
         <div className="flex flex-col items-center text-center px-2 leading-tight">
           <p className="text-green-600 text-xl font-Brush">
-            (Sponsored by Nagarjuna Education Society)
+            (Approved by AICTE)
           </p>
           <p className="text-black font-semibold font-Serif">
-            Affiliated to Acharya Nagarjuna University
+            Affiliated to JNTU Kakinada
           </p>
         </div>
 
