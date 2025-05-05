@@ -189,7 +189,7 @@ const CustomNavbar = () => {
 
   const renderDropdown = (items, level = 1) => (
     <ul
-      className={`absolute ${level === 1 ? 'left-0 top-full' : 'left-full top-0'} mt-0.5 bg-white text-black rounded shadow-md min-w-[8rem] w-max z-20`}
+      className={`absolute ${level === 1 ? 'left-0 top-full' : 'left-full top-0'} mt-0.5 bg-white text-black rounded shadow-md min-w-[3rem] w-max z-20`}
       onMouseLeave={() => {
         if (level === 1) setOpenSubDropdown(null);
         else setOpenNestedDropdown(null);
