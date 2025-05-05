@@ -37,8 +37,8 @@ function Highlights() {
     // },
   ];
   return (
-    <div className="px-12 py-10 flex flex-col md:flex-row gap-5 items-center justify-center h-screen  ">
-      <div className="w-full md:w-1/2 flex flex-col shadow-xl hover:shadow-2xl bg-white rounded-lg p-4 gap-2 px-5 ">
+    <div className="md:px-12 md:py-10 flex flex-col md:flex-row gap-5 items-center justify-center h-screen  mx-auto w-full ">
+      <div className="w-full md:flex-1 md:h-[500px] flex flex-col shadow-xl hover:shadow-2xl bg-white rounded-lg  gap-2 md:px-5 p-1">
         <h3 className="text-3xl font-semibold text-primaryColor">
           Leading Engineering Institution
         </h3>
@@ -46,19 +46,27 @@ function Highlights() {
           Blending academic innovation with engineering excellence for a
           transformative educational experience.
         </p>
-        <div className="overflow-hidden rounded-lg shadow-lg md:h-64 w-full h-full  ">
-          <ReactPlayer
-            url="https://youtu.be/wgLrRCczh48?feature=shared"
-            controls
+        <div className="overflow-hidden rounded-lg shadow-lg md:h-[400px] w-full h-full  ">
+          {/* <ReactPlayer
+            url="https://youtu.be/NTpbbQUBbuo?feature=shared"
             width="100%"
             height="100%"
-          />
+            playing={true}
+            muted={false}
+            controls={false}
+          /> */}
+          <iframe
+            src="https://drive.google.com/file/d/1qQ4dX3d_WDg6A3d7laNbN69thB2TQwMY/preview"
+            width="100%"
+            height="100%"
+            allow="autoplay"
+          ></iframe>
         </div>
         <button className="mt-3 py-2 bg-primaryColor text-white  hover:bg-Amber hover:!text-black rounded">
           Explore Brochure
         </button>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-1 gap-4 md:w-1/2 w-full ">
+      <div className="grid grid-cols-1 md:grid-cols-1 gap-4 md:w-1/4 w-full ">
         {cards.map((card, index) => (
           <div
             key={index}

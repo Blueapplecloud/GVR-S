@@ -65,12 +65,12 @@ const AnimatedCounter = ({ target }) => {
 
 const CampusOverview = () => {
   return (
-    <div className="bg-gray-100 py-10 px-4 text-center">
+    <div className="bg-gray-100 py-10 md:px-4 text-center">
       <h2 className="text-3xl font-semibold text-gray-800 mb-2">
         Campus Overview
       </h2>
       <div className="w-24 h-1 bg-primaryColor mx-auto mb-8"></div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
         {overviewData.map((item, index) => (
           <div key={index} className="flex flex-col items-center space-y-3">
             <div

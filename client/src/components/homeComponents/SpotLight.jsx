@@ -11,7 +11,7 @@ function SpotLight() {
     "/Images/spotlight/img7.jpg",
   ];
   return (
-    <div className="bg-gray-100 py-6 px-10 min-h-screen flex flex-col items-center mx-auto ">
+    <div className="bg-gray-100 md:py-6 md:px-10 min-h-screen flex flex-col items-center mx-auto ">
       <h3 className="border-b-2 border-Amber pb-2 text-3xl font-bold text-primaryColor">
         GVRS SpotLight
       </h3>
