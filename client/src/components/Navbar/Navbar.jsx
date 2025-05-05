@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { FaHome, FaBars, FaTimes } from "react-icons/fa";
-import { FaChevronDown, FaChevronRight } from "react-icons/fa";
+import { FaHome, FaBars, FaTimes, FaChevronDown, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Header from "./Header";
 
@@ -8,10 +7,12 @@ const CustomNavbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openSubDropdown, setOpenSubDropdown] = useState(null);
   const [openDropdown, setOpenDropdown] = useState(null);
-  const [openNestedDropdown, setOpenNestedDropdown] = useState(null); // for MBA/MTech
+  const [openNestedDropdown, setOpenNestedDropdown] = useState(null); // for nested mobile dropdowns
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
+    setOpenSubDropdown(null);
+    setOpenNestedDropdown(null);
   };
 
   const menuItems = [
@@ -22,7 +23,7 @@ const CustomNavbar = () => {
     {
       label: (
         <>
-          About GVR&S <FaChevronDown />
+          About GVR&S <FaChevronDown className="hidden lg:inline"/>
         </>
       ),
       dropdown: [
@@ -34,7 +35,7 @@ const CustomNavbar = () => {
     {
       label: (
         <>
-          Management <FaChevronDown />
+          Management <FaChevronDown className="hidden lg:inline"/>
         </>
       ),
       dropdown: [
@@ -49,54 +50,36 @@ const CustomNavbar = () => {
     {
       label: (
         <>
-          Academics <FaChevronDown />
+          Academics <FaChevronDown className="hidden lg:inline"/>
         </>
       ),
       dropdown: [
         { label: "Programs Offered", path: "/academics/programs" },
         { label: "Fee Structure", path: "/academics/fees" },
         { label: "Examination Section", path: "/academics/exam" },
-        {
-          label: "Academic Regulations",
-          path: "/academics/academic regulations",
-        },
+        { label: "Academic Regulations", path: "/academics/academic regulations" },
         { label: "Academic Scholarship", path: "/academics/scholarship" },
       ],
     },
     {
       label: (
         <>
-          Departments <FaChevronDown />
+          Departments <FaChevronDown className="hidden lg:inline"/>
         </>
       ),
       dropdown: [
         {
           label: (
             <>
-              UG <FaChevronRight />
+              UG <FaChevronRight className="hidden lg:inline"/>
             </>
           ),
           dropdown: [
-            {
-              label: "Computer Science & Engineering",
-              path: "/departments/cse",
-            },
-            {
-              label: "Computer Science & Engineering(AI & ML)",
-              path: "/departments/cse-aiml",
-            },
-            {
-              label: "Computer Science & Engineering(AI & DS)",
-              path: "/departments/cse-aids",
-            },
-            {
-              label: "Electronics and Communication Engineering",
-              path: "/departments/ece",
-            },
-            {
-              label: "Electrical and Electronics Engineering",
-              path: "/departments/eee",
-            },
+            { label: "Computer Science & Engineering", path: "/departments/cse" },
+            { label: "Computer Science & Engineering(AI & ML)", path: "/departments/cse-aiml" },
+            { label: "Computer Science & Engineering(AI & DS)", path: "/departments/cse-aids" },
+            { label: "Electronics and Communication Engineering", path: "/departments/ece" },
+            { label: "Electrical and Electronics Engineering", path: "/departments/eee" },
             { label: "Civil Engineering", path: "/departments/civil" },
             { label: "Mechanical Engineering", path: "/departments/mech" },
             { label: "SCIENCE & HUMANITIES", path: "/departments/sh" },
@@ -105,7 +88,7 @@ const CustomNavbar = () => {
         {
           label: (
             <>
-              PG <FaChevronRight />
+              PG <FaChevronRight className="hidden lg:inline"/>
             </>
           ),
           dropdown: [
@@ -129,7 +112,7 @@ const CustomNavbar = () => {
     {
       label: (
         <>
-          Campus Life <FaChevronDown />
+          Campus Life <FaChevronDown className="hidden lg:inline"/>
         </>
       ),
       dropdown: [
@@ -137,7 +120,7 @@ const CustomNavbar = () => {
         {
           label: (
             <>
-              Gallery <FaChevronRight />
+              Gallery <FaChevronRight className="hidden lg:inline"/>
             </>
           ),
           dropdown: [
@@ -155,7 +138,7 @@ const CustomNavbar = () => {
     {
       label: (
         <>
-          NAAC <FaChevronDown />
+          NAAC <FaChevronDown className="hidden lg:inline"/>
         </>
       ),
       dropdown: [
@@ -170,7 +153,7 @@ const CustomNavbar = () => {
     {
       label: (
         <>
-          Administration <FaChevronDown />
+          Administration <FaChevronDown className="hidden lg:inline"/>
         </>
       ),
       dropdown: [
@@ -178,14 +161,6 @@ const CustomNavbar = () => {
       ],
     },
   ];
-
-  const handleSubDropdownToggle = (index) => {
-    if (openSubDropdown === index) {
-      setOpenSubDropdown(null);
-    } else {
-      setOpenSubDropdown(index);
-    }
-  };
 
   const renderDropdown = (items, level = 1) => (
     <ul
@@ -222,9 +197,9 @@ const CustomNavbar = () => {
               to={item.path}
               className="block px-4 py-2 hover:text-primaryColor"
               onClick={() => {
+                setOpenDropdown(null);
                 setOpenSubDropdown(null);
                 setOpenNestedDropdown(null);
-                setMobileMenuOpen(false); // if used
               }}
             >
               {item.label}
@@ -240,6 +215,9 @@ const CustomNavbar = () => {
       <Header />
       <div className="bg-primaryColor text-white sticky top-0 z-50">
         <div className="container mx-auto px-4 flex items-center justify-between h-14">
+          <div className="lg:hidden text-2xl cursor-pointer" onClick={toggleMobileMenu}>
+            {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+          </div>
           <div className="hidden lg:flex justify-center gap-x-4 items-center w-full">
             {menuItems.map((item, index) => (
               <div
@@ -249,12 +227,7 @@ const CustomNavbar = () => {
                 onMouseLeave={() => setOpenDropdown(null)}
               >
                 {item.dropdown ? (
-                  <div
-                    className="px-3 py-2 hover:bg-primaryColor cursor-pointer flex items-center"
-                    onClick={() => {
-                      setOpenDropdown(openDropdown === index ? null : index);
-                    }}
-                  >
+                  <div className="px-3 py-2 hover:bg-primaryColor cursor-pointer flex items-center">
                     {item.label}
                   </div>
                 ) : (
@@ -266,20 +239,81 @@ const CustomNavbar = () => {
                     {item.label}
                   </Link>
                 )}
-
-                {item.dropdown &&
-                  openDropdown === index &&
-                  renderDropdown(item.dropdown)}
+                {item.dropdown && openDropdown === index && renderDropdown(item.dropdown)}
               </div>
             ))}
           </div>
-
-          <div className="lg:hidden">
-            <button onClick={toggleMobileMenu} className="text-white">
-              {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-            </button>
-          </div>
         </div>
+
+        {/* Mobile Dropdown */}
+        {isMobileMenuOpen && (
+          <div className="lg:hidden bg-white text-black px-4 py-2">
+            {menuItems.map((item, index) => (
+              <div key={index} className="mb-2">
+                {item.dropdown ? (
+                  <>
+                    <div
+                      onClick={() => setOpenSubDropdown(openSubDropdown === index ? null : index)}
+                      className="flex justify-between items-center cursor-pointer font-semibold"
+                    >
+                      <span>{item.label}</span>
+                      <FaChevronDown className={`transform transition-transform ${openSubDropdown === index ? "rotate-180" : ""}`} />
+                    </div>
+                    {openSubDropdown === index && (
+                      <div className="pl-4 mt-1">
+                        {item.dropdown.map((subItem, subIndex) => (
+                          <div key={subIndex} className="mb-1">
+                            {subItem.dropdown ? (
+                              <>
+                                <div
+                                  className="flex justify-between items-center cursor-pointer"
+                                  onClick={() => setOpenNestedDropdown(openNestedDropdown === subIndex ? null : subIndex)}
+                                >
+                                  <span>{subItem.label}</span>
+                                  <FaChevronRight className={`transform transition-transform ${openNestedDropdown === subIndex ? "rotate-90" : ""}`} />
+                                </div>
+                                {openNestedDropdown === subIndex && (
+                                  <div className="pl-4 mt-1">
+                                    {subItem.dropdown.map((nestedItem, nestedIndex) => (
+                                      <Link
+                                        key={nestedIndex}
+                                        to={nestedItem.path}
+                                        className="block py-1 text-sm"
+                                        onClick={toggleMobileMenu}
+                                      >
+                                        {nestedItem.label}
+                                      </Link>
+                                    ))}
+                                  </div>
+                                )}
+                              </>
+                            ) : (
+                              <Link
+                                to={subItem.path}
+                                className="block py-1 text-sm"
+                                onClick={toggleMobileMenu}
+                              >
+                                {subItem.label}
+                              </Link>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <Link
+                    to={item.path}
+                    className="block font-semibold"
+                    onClick={toggleMobileMenu}
+                  >
+                    {item.label}
+                  </Link>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </>
   );

@@ -40,6 +40,8 @@ Object Oriented Programming Lab`,
 
   return (
     <DepartmentsComponent
+     hodVisible="NO"
+     //If you want to show the hod data just remove the above hodVisible property.
       sectionName="Computer Science and Engineering(AI & ML)"
       aboutContent={aboutText}
       hodContent={hodMessage}

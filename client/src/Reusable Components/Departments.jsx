@@ -9,34 +9,27 @@ const fadeIn = {
 
 const AccordionItem = ({ title, content, isOpen, onClick }) => (
   <motion.div layout className="border-b border-gray-300">
-    {/* Header */}
     <button
       onClick={onClick}
-      className={`w-full text-left font-semibold text-lg px-4 py-3 flex justify-between items-center 
-                  transition-colors duration-300 
-                  ${
-                    isOpen
-                      ? "bg-[#B04040]/30 text-black"
-                      : "bg-white text-black"
-                  }`}
+      className={`w-full text-left font-semibold text-base sm:text-lg px-4 py-3 flex justify-between items-center transition-colors duration-300 ${
+        isOpen ? "bg-[#B04040]/30 text-black" : "bg-white text-black"
+      }`}
     >
       <span>{title}</span>
-      <span>{isOpen ? "▲" : "▼"}</span>
+      <span className="text-sm sm:text-base">{isOpen ? "▲" : "▼"}</span>
     </button>
 
-    {/* Content Section (smooth animation on open and close) */}
     <motion.div
       initial={false}
       animate={
         isOpen ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }
       }
-      transition={{
-        duration: 0.5,
-        ease: "easeInOut",
-      }}
-      style={{ overflow: "hidden" }} // Ensure smooth transition and hidden content
+      transition={{ duration: 0.5, ease: "easeInOut" }}
+      style={{ overflow: "hidden" }}
     >
-      <div className="px-4 py-4 text-black space-y-6">{content}</div>
+      <div className="px-4 py-4 text-black space-y-6 text-sm sm:text-base">
+        {content}
+      </div>
     </motion.div>
   </motion.div>
 );
@@ -53,6 +46,7 @@ const DepartmentsComponent = ({
   missionContent,
   infrastructureContent,
   infrastructureImages,
+  hodVisible,
 }) => {
   const { ref: aboutRef, inView: aboutInView } = useInView({
     triggerOnce: true,
@@ -70,13 +64,13 @@ const DepartmentsComponent = ({
 
   return (
     <div className="w-full">
-      {/* Top Header Section with Background Image */}
+      {/* Header */}
       <div
-        className="w-full h-[250px] flex flex-col justify-center items-center bg-cover bg-center bg-no-repeat text-white sticky top-0"
+        className="w-full h-[200px] sm:h-[250px] flex flex-col justify-center items-center bg-cover bg-center bg-no-repeat text-white text-center px-4"
         style={{ backgroundImage: `url('${backgroundImage}')` }}
       >
         <motion.h2
-          className="text-2xl sm:text-3xl md:text-4xl font-light"
+          className="text-xl sm:text-2xl md:text-3xl font-light"
           initial="hidden"
           animate="visible"
           variants={fadeIn}
@@ -84,7 +78,7 @@ const DepartmentsComponent = ({
           Department of
         </motion.h2>
         <motion.h1
-          className="text-3xl sm:text-4xl md:text-5xl font-semibold"
+          className="text-2xl sm:text-3xl md:text-4xl font-semibold"
           initial="hidden"
           animate="visible"
           variants={fadeIn}
@@ -94,11 +88,10 @@ const DepartmentsComponent = ({
       </div>
 
       {/* About Section */}
-      {/* About Section */}
-      <div className="flex justify-center mt-16 px-4 sm:px-8">
-        <div className="bg-white shadow-lg rounded-lg max-w-6xl w-full p-8">
+      <div className="flex justify-center mt-10 sm:mt-16 px-4 sm:px-6 md:px-8">
+        <div className="bg-white shadow-lg rounded-lg max-w-6xl w-full p-6 sm:p-8">
           <motion.h2
-            className="text-2xl font-semibold text-Gray800 mb-2"
+            className="text-xl sm:text-2xl font-semibold text-gray-800 mb-2"
             initial="hidden"
             whileInView="visible"
             variants={fadeIn}
@@ -115,78 +108,79 @@ const DepartmentsComponent = ({
                 visible: { opacity: 1, width: "100%" },
               }}
               transition={{ duration: 0.6 }}
-              className="h-0.5 bg-Amber mb-4"
+              className="h-0.5 bg-amber-500 mb-4"
             />
           </div>
-
-          <p className="text-Gray800 leading-relaxed text-justify">
+          <p className="text-gray-800 leading-relaxed text-justify text-sm sm:text-base">
             {aboutContent}
           </p>
         </div>
       </div>
 
-      {/* HoD's Message Section */}
-      <div className="flex justify-center mt-16 px-4 sm:px-8">
-        <div className="bg-white shadow-lg rounded-lg max-w-6xl w-full p-8 flex flex-col sm:flex-row sm:items-start sm:gap-8">
-          <div className="sm:flex-1 sm:pr-6">
-            <motion.h2
-              className="text-2xl font-semibold text-Gray800 mb-2"
-              initial="hidden"
-              whileInView="visible"
-              variants={fadeIn}
-              viewport={{ once: true }}
-            >
-              HOD's Message
-            </motion.h2>
-            <div ref={hodRef}>
-              <motion.div
+      {/* HOD Section */}
+      {hodVisible !== "NO" && (
+        <div className="flex justify-center mt-10 sm:mt-16 px-4 sm:px-6 md:px-8">
+          <div className="bg-white shadow-lg rounded-lg max-w-6xl w-full p-6 sm:p-8 flex flex-col sm:flex-row gap-6 sm:gap-8">
+            <div className="flex-1">
+              <motion.h2
+                className="text-xl sm:text-2xl font-semibold text-gray-800 mb-2"
                 initial="hidden"
-                animate={hodInView ? "visible" : "hidden"}
-                variants={{
-                  hidden: { opacity: 0, width: 0 },
-                  visible: { opacity: 1, width: "100%" },
-                }}
-                transition={{ duration: 0.8 }}
-                className="h-0.5 bg-Amber mb-4"
+                whileInView="visible"
+                variants={fadeIn}
+                viewport={{ once: true }}
+              >
+                HOD's Message
+              </motion.h2>
+              <div ref={hodRef}>
+                <motion.div
+                  initial="hidden"
+                  animate={hodInView ? "visible" : "hidden"}
+                  variants={{
+                    hidden: { opacity: 0, width: 0 },
+                    visible: { opacity: 1, width: "100%" },
+                  }}
+                  transition={{ duration: 0.8 }}
+                  className="h-0.5 bg-amber-500 mb-4"
+                />
+              </div>
+              <p className="text-gray-800 leading-relaxed text-justify text-sm sm:text-base">
+                {hodContent}
+              </p>
+              <p className="mt-4 font-semibold text-gray-800 text-sm sm:text-base">
+                {hodName}
+                <br />
+                {hodDesignation}
+              </p>
+            </div>
+            <div className="w-full sm:w-[140px] flex justify-center sm:justify-start">
+              <img
+                src={hodImage}
+                alt="HoD"
+                className="rounded-md w-28 h-36 sm:w-32 sm:h-40 object-cover"
               />
             </div>
-
-            <p className="text-Gray800 leading-relaxed text-justify">
-              {hodContent}
-            </p>
-            <p className="mt-4 font-semibold text-Gray800">
-              {hodName}
-              <br />
-              {hodDesignation}
-            </p>
-          </div>
-          <div className="sm:w-[140px] sm:flex-shrink-0 self-center sm:self-start">
-            <img
-              src={hodImage}
-              alt="HoD"
-              className="rounded-md w-32 h-40 object-cover mt-10 sm:mt-0"
-            />
           </div>
         </div>
-      </div>
+      )}
 
-      {/* Accordion Section */}
-      <div className="flex justify-center !mt-16 px-4 !pb-24">
+      {/* Accordion */}
+      <div className="flex justify-center mt-10 sm:mt-16 px-4 sm:px-6 md:px-8 pb-16">
         <div className="bg-white shadow-lg rounded-lg max-w-6xl w-full">
           <AccordionItem
             title="Vision & Mission"
             isOpen={openIndex === 0}
             onClick={() => toggleAccordion(0)}
-            headerClassName="bg-[#D6EAF8]/60 text-Black font-bold text-lg px-4 py-3 rounded-t-lg"
             content={
-              <div className="space-y-6 px-4 py-4">
+              <div className="space-y-6">
                 <div>
-                  <h3 className="font-bold text-2xl mb-2">Vision</h3>
-                  <p className="text-base leading-relaxed">{visionContent}</p>
+                  <h3 className="font-bold text-lg sm:text-2xl mb-2">Vision</h3>
+                  <p className="text-sm sm:text-base leading-relaxed">
+                    {visionContent}
+                  </p>
                 </div>
                 <div>
-                  <h3 className="font-bold text-2xl mb-2">Mission</h3>
-                  <ul className="list-disc pl-6 text-base leading-relaxed">
+                  <h3 className="font-bold text-lg sm:text-2xl mb-2">Mission</h3>
+                  <ul className="list-disc pl-6 text-sm sm:text-base leading-relaxed">
                     {missionContent.map((point, index) => (
                       <li key={index}>{point}</li>
                     ))}
@@ -200,8 +194,8 @@ const DepartmentsComponent = ({
             isOpen={openIndex === 1}
             onClick={() => toggleAccordion(1)}
             content={
-              <div className="space-y-6 px-4 py-4">
-                <p className="text-base leading-relaxed">
+              <div className="space-y-6">
+                <p className="text-sm sm:text-base leading-relaxed">
                   {infrastructureContent}
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -212,7 +206,9 @@ const DepartmentsComponent = ({
                         alt={`Infrastructure ${index + 1}`}
                         className="w-full h-auto rounded-md shadow-md"
                       />
-                      <p className="text-base leading-relaxed">{item.text}</p>
+                      <p className="text-sm sm:text-base leading-relaxed">
+                        {item.text}
+                      </p>
                     </div>
                   ))}
                 </div>

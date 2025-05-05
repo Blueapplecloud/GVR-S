@@ -37,16 +37,17 @@ Object Oriented Programming Lab`,
 
   return (
     <DepartmentsComponent
+    hodVisible="NO"
       sectionName="Computer Science and Engineering(AI & DS)"
       aboutContent={aboutText}
-      hodContent={hodMessage}
+      // hodContent={hodMessage}
       backgroundImage="/Images/ai.jpg"
-      hodImage="https://static.wixstatic.com/media/92bf96_5d6b4f6e43bc4e33be6c481a7c1de2f5~mv2.jpeg/v1/crop/x_0,y_0,w_892,h_997/fill/w_289,h_325,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/WhatsApp%20Image%202023-07-14%20at%202_37_58%20AM.jpeg"
+      // hodImage="https://static.wixstatic.com/media/92bf96_5d6b4f6e43bc4e33be6c481a7c1de2f5~mv2.jpeg/v1/crop/x_0,y_0,w_892,h_997/fill/w_289,h_325,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/WhatsApp%20Image%202023-07-14%20at%202_37_58%20AM.jpeg"
       visionContent={`To create an eminent academic platform the graduates by providing unique learning, research and empower to be technologically in field of computer science and engineering.`}
       missionContent={missionPoints}
       infrastructureContent={infrastructure}
-      hodName=" (Dr).Papa Rao Challagundla"
-      hodDesignation=" B.Tech,M.Tech,Ph.D."
+      // hodName=" (Dr).Papa Rao Challagundla"
+      // hodDesignation=" B.Tech,M.Tech,Ph.D."
       infrastructureImages={infrastructureData}
     />
   );
