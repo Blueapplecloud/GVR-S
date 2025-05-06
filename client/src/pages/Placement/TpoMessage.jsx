@@ -29,25 +29,25 @@ const PlacementDashboard = () => {
       </ul>
       `,
       images: [
-        "https://gvrs.ac.in/wp-content/uploads/2023/12/WhatsApp-Image-2023-12-19-at-11.37.53_7879fbc4.jpg",
-        "https://rvrjcce.ac.in/ximage/k.sureshbabu.jpg",
+        "https://static.vecteezy.com/system/resources/thumbnails/024/983/914/small/simple-user-default-icon-free-png.png",
+        "https://static.vecteezy.com/system/resources/thumbnails/024/983/914/small/simple-user-default-icon-free-png.png",
       ],
-      contacts: [
-        {
-          name: "Coming Soon",
-          position: "Training & Placement Officer",
-          email: "Coming Soon.ac.in",
-          mobile: "+91 Coming Soon",
-          image: "/attachments/Q6ZGnhwT8uVNfmnk1XULA.png",
-        },
-        {
-          name: "Coming Soon",
-          position: "Placement Officer",
-          email: "Coming Soon.ac.in",
-          mobile: "+91 Coming Soon",
-          image: "/attachments/WCtzjc398hQkU7e1DDotk.png",
-        },
-      ],
+      // contacts: [
+      //   {
+      //     name: "Coming Soon",
+      //     position: "Training & Placement Officer",
+      //     email: "Coming Soon.ac.in",
+      //     mobile: "+91 Coming Soon",
+      //     image: "/attachments/Q6ZGnhwT8uVNfmnk1XULA.png",
+      //   },
+      //   {
+      //     name: "Coming Soon",
+      //     position: "Placement Officer",
+      //     email: "Coming Soon.ac.in",
+      //     mobile: "+91 Coming Soon",
+      //     image: "/attachments/WCtzjc398hQkU7e1DDotk.png",
+      //   },
+      // ],
     },
     {
       id: "committee",
@@ -104,7 +104,8 @@ const PlacementDashboard = () => {
     {
       id: "statistics",
       label: "Placement Statistics",
-      content: "Coming Soon ...",
+      content: 
+          `Detailed message about Placements will be shared soon. Please stay tuned for more updates.`
     },
   ];
 
