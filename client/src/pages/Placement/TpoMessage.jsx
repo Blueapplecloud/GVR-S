@@ -34,17 +34,17 @@ const PlacementDashboard = () => {
       ],
       contacts: [
         {
-          name: "Ch. Srinivasa Rao",
+          name: "Coming Soon",
           position: "Training & Placement Officer",
-          email: "tpo@rvrjc.ac.in",
-          mobile: "+91 9491071947",
+          email: "Coming Soon.ac.in",
+          mobile: "+91 Coming Soon",
           image: "/attachments/Q6ZGnhwT8uVNfmnk1XULA.png",
         },
         {
-          name: "Dr. K. Suresh Babu",
+          name: "Coming Soon",
           position: "Placement Officer",
-          email: "tpcell@rvrjc.ac.in",
-          mobile: "+91 9490750007",
+          email: "Coming Soon.ac.in",
+          mobile: "+91 Coming Soon",
           image: "/attachments/WCtzjc398hQkU7e1DDotk.png",
         },
       ],
@@ -104,8 +104,7 @@ const PlacementDashboard = () => {
     {
       id: "statistics",
       label: "Placement Statistics",
-      content:
-        "Data on placements, company selections, and offered salaries...",
+      content: "Coming Soon ...",
     },
   ];
 
@@ -152,7 +151,7 @@ const PlacementDashboard = () => {
                   key={index}
                   src={image}
                   alt={`Section Image ${index + 1}`}
-                  className="w-[300px] h-[250px] object-cover rounded-lg shadow-md"
+                  className="w-[300px] h-[350px] object-cover rounded-lg shadow-md"
                 />
               ))}
             </div>
@@ -165,7 +164,7 @@ const PlacementDashboard = () => {
               {selectedItem.contacts.map((contact, index) => (
                 <div
                   key={index}
-                  className="flex items-center bg-gray-100 p-4 text-center rounded-lg shadow-md w-[300px]"
+                  className="flex items-center bg-gray-100 p-4  rounded-lg shadow-md w-[300px]"
                 >
                   <div>
                     <h3 className="text-xl font-semibold">{contact.name}</h3>
