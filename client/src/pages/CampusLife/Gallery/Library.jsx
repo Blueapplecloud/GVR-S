@@ -22,31 +22,58 @@ const sizeClasses = {
 
 const CampusLibrary = () => {
   const images = [
-    { imageUrl: "https://gvrs.ac.in/wp-content/uploads/2020/10/IMG_1611-2048x1365.jpg", size: "medium" },
-    { imageUrl: "https://gvrs.ac.in/wp-content/uploads/2020/10/IMG_1595-2048x1365.jpg", size: "default" },
-    { imageUrl: "https://gvrs.ac.in/wp-content/uploads/2020/10/LIB-3.jpg", size: "default" },
-    { imageUrl: "https://gvrs.ac.in/wp-content/uploads/2020/10/LIB-1.jpg", size: "medium" },
-    { imageUrl: "https://gvrs.ac.in/wp-content/uploads/2020/10/IMG_1583-2048x1365.jpg", size: "large" },
-    { imageUrl: "https://gvrs.ac.in/wp-content/uploads/2020/10/IMG_1614-2048x1365.jpg", size: "large" },
-    { imageUrl: "https://gvrs.ac.in/wp-content/uploads/2020/10/IMG_1589-2048x1365.jpg", size: "default" },
+    {
+      imageUrl:
+        "https://gvrs.ac.in/wp-content/uploads/2020/10/IMG_1611-2048x1365.jpg",
+      size: "medium",
+    },
+    {
+      imageUrl:
+        "https://gvrs.ac.in/wp-content/uploads/2020/10/IMG_1595-2048x1365.jpg",
+      size: "default",
+    },
+    {
+      imageUrl: "https://gvrs.ac.in/wp-content/uploads/2020/10/LIB-3.jpg",
+      size: "default",
+    },
+    {
+      imageUrl: "https://gvrs.ac.in/wp-content/uploads/2020/10/LIB-1.jpg",
+      size: "medium",
+    },
+    {
+      imageUrl:
+        "https://gvrs.ac.in/wp-content/uploads/2020/10/IMG_1583-2048x1365.jpg",
+      size: "large",
+    },
+    {
+      imageUrl:
+        "https://gvrs.ac.in/wp-content/uploads/2020/10/IMG_1614-2048x1365.jpg",
+      size: "large",
+    },
+    {
+      imageUrl:
+        "https://gvrs.ac.in/wp-content/uploads/2020/10/IMG_1589-2048x1365.jpg",
+      size: "default",
+    },
   ];
 
-
-      const headingRef = useRef(null);
-      const headingInView = useInView(headingRef, { once: true });
+  const headingRef = useRef(null);
+  const headingInView = useInView(headingRef, { once: true });
 
   return (
     <section className="px-6 py-12 md:px-16 bg-gray-100">
-  <motion.h1
-               ref={headingRef}
-               initial={{ opacity: 0, y: 50 }}
-               animate={headingInView ? { opacity: 1, y: 0 } : {}}
-               transition={{ duration: 0.6, ease: "easeOut" }}
-               className="text-4xl font-bold mb-10 text-center uppercase text-gray-800"
-             >
-              
-        Campus Library
-             </motion.h1>
+      <motion.h1
+        ref={headingRef}
+        initial={{ opacity: 0, y: 50 }}
+        animate={headingInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="text-4xl font-bold mb-10 text-center uppercase text-gray-800"
+      >
+        <h3 className="relative inline-block font-bold text-[32px] sm:text-[36px] md:text-[40px]">
+          Campus Library
+          <span className="absolute bottom-[-12px] left-0 right-0 h-0.5 bg-Amber mx-auto w-full" />
+        </h3>
+      </motion.h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 auto-rows-[150px]">
         {images.map((item, index) => {
           const { imageUrl, size = "default" } = item;

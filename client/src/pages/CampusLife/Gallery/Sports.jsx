@@ -36,7 +36,10 @@ const SportsGallery = () => {
                   transition={{ duration: 0.6, ease: "easeOut" }}
                   className="text-4xl font-bold mb-10 text-center uppercase text-gray-800"
                 >
+        <h3 className="relative inline-block font-bold text-[32px] sm:text-[36px] md:text-[40px]">
         Sports
+          <span className="absolute bottom-[-12px] left-0 right-0 h-0.5 bg-Amber mx-auto w-full" />
+        </h3>
                 </motion.h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 auto-rows-[150px]">
         {images.map((item, index) => {
