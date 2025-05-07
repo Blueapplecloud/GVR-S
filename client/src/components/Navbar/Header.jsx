@@ -37,11 +37,11 @@ const Header = () => {
 
             {/* Center Text */}
             <div className="flex flex-col items-center px-2 leading-tight">
-              <p className="text-green-600 text-lg sm:text-xl md:text-2xl font-Brush">
-                (Approved by AICTE)
+              <p className="text-green-600 text-lg sm:text-xl md:text-2xl font-Serif">
+                (Approved by AICTE,New Delhi)
               </p>
               <p className="text-black font-semibold font-Serif text-base sm:text-lg md:text-xl">
-                Affiliated to JNTU Kakinada
+                Affiliated to JNTUK Kakinada | Govt.of.AP Accrediated by NAAC | ISO Certified Institution
               </p>
             </div>
 
@@ -53,6 +53,14 @@ const Header = () => {
               <img src="/Images/iic.png" alt="IIC" className="h-10 md:h-10" />
             </div> */}
           </div>
+
+        </div>
+          <div className="flex-shrink-0">
+          <img
+            src="/logo/NAAC-Logo.png"
+            alt="NAAC Logo"
+            className="w-24 md:w-28 mt-2 md:mt-0 ml-0 md:ml-2"
+          />
         </div>
       </div>
     </header>
