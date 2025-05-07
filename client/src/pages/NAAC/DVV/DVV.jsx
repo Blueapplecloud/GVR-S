@@ -272,19 +272,18 @@ function DVV() {
     }
   };
   return (
-    <div className="container m-10 bg-white shadow-lg rounded-md p-6">
+    <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 bg-white shadow-lg rounded-md">
       {/* Tab Nav */}
-      <div className="border-b border-gray-200">
-        <nav className="-mb-px flex space-x-4">
+      <div className="border-b border-gray-200 overflow-x-auto">
+        <nav className="-mb-px flex flex-nowrap space-x-4 min-w-max">
           {tabs.map(tab => (
             <button
               key={tab.name}
               onClick={() => setActiveTab(tab.name)}
-              className={`whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm ${
-                activeTab === tab.name
+              className={`whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm ${activeTab === tab.name
                   ? 'border-primaryColor text-primaryColor'
                   : 'border-transparent text-gray-500 hover:text-gray-700'
-              }`}
+                }`}
             >
               {tab.name}
             </button>
