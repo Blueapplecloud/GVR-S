@@ -455,7 +455,7 @@ function NAAC() {
   ];
 
   const currentTab = tabs.find(t => t.name === activeTab);
-   const handleDownload = (event) => {
+  const handleDownload = (event) => {
     const fileType = event.currentTarget.href.split('.').pop().toLowerCase();
     // console.log("File type:", fileType);
     if (fileType === 'xlsx') {
@@ -466,25 +466,25 @@ function NAAC() {
     }
   };
   return (
-    <div className="container m-10 bg-white shadow-lg rounded-md p-6">
+    <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 bg-white shadow-lg rounded-md">
       {/* Tab Navigation */}
-      <div className="border-b border-gray-200">
-        <nav className="-mb-px flex space-x-4">
+      <div className="border-b border-gray-200 overflow-x-auto">
+        <nav className="-mb-px flex flex-nowrap space-x-4 min-w-max">
           {tabs.map(tab => (
             <button
               key={tab.name}
               onClick={() => setActiveTab(tab.name)}
-              className={`whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm ${
-                activeTab === tab.name
+              className={`whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm ${activeTab === tab.name
                   ? 'border-primaryColor text-primaryColor'
                   : 'border-transparent text-gray-500 hover:text-gray-700'
-              }`}
+                }`}
             >
               {tab.name}
             </button>
           ))}
         </nav>
       </div>
+
 
       {/* Tab Content */}
       <div className="mt-6">
@@ -504,7 +504,7 @@ function NAAC() {
                           {section.title}
                         </th>
                         <th className="px-5 py-3 border-gray-300 text-left text-sm font-bold text-gray-800">
-                        {section.link}
+                          {section.link}
                         </th>
                       </tr>
                     </thead>
@@ -515,15 +515,15 @@ function NAAC() {
                             {row.label}
                           </td>
                           <td className="px-5 py-2 border-r border-gray-300 text-sm text-gray-700 hover:text-white transition">
-                          <a
-                          href={row.link}
-                          className="text-blue-500 no-underline hover:underline"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={handleDownload}
-                        >
-                          Click Here
-                        </a>
+                            <a
+                              href={row.link}
+                              className="text-blue-500 no-underline hover:underline"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={handleDownload}
+                            >
+                              Click Here
+                            </a>
                           </td>
                         </tr>
                       ))}

@@ -3,72 +3,74 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 const executiveMembers = [
   {
-    name: 'Dr. Rayapati Srinivas',
-    position: 'President, Nagarjuna Education Society and the Constituent Institutions',
-    description: `Dr. Srinivas is a former Vice-President and Secretary of Nagarjuna Education Society. Former MLC, a Physician, a social worker, a Philanthropist and a patron of numerous social service and cultural organizations.`,
+    name: 'Smt.Gangineni Sailaja',
+    position: 'President, GVR&S COLLEGE OF ENGINEERING AND TECHNOLOGY',
+    description: `Smt.Gangineni Sailaja is an Eminent Educationalist who has been
+          associated with the society right from the inception; she dedicated
+          her life for the empowerment of women through education.`,
     img: '',
   },
   {
-    name: 'Sri. Rayapati Gopala Krishna',
+    name: 'Name',
     position: 'Secretary & Correspondent',
-    description: `Sri Rayapati Gopala Krishna hails from the famous Rayapati family. He is an Educationist, Businessman; Director, Jayalakshmi Group of Enterprises. He established Rayapati Venkata Ranga Rao College of Education, Guntur.`,
+    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,               
     img: '',
   },
   {
-    name: 'Dr. K. Krishna Prasad',
+    name: 'Name',
     position: 'Treasurer of the college and Secretary & Correspondent of Dr.K.L.P.Public School.',
-    description: `Dr. K. Krishna Prasad is an eminent Medical Practitioner (Paediatrics) of Guntur.`,
+    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
     img: '',
   },
 ];
 const executiveCommitteeMembers = [
   {
-    name: 'Dr. R. Srinivas',
+    name: 'Smt.Gangineni Sailaja',
     position: 'President',
-    img: '',
+    img: 'https://gvrs.ac.in/wp-content/uploads/2021/09/WhatsApp-Image-2021-09-23-at-14.38.35-768x510.jpeg',
   },
   {
-    name: 'Sri. J. Murali Mohan',
+    name: 'Name',
     position: 'Vice-President',
     img: '',
   },
   {
-    name: 'Dr. M. Jagadesh Kumar',
+    name: 'Name',
     position: 'Vice-President',
     img: '',
   },
   {
-    name: 'Sri. R. Gopala Krishna',
+    name: 'Name',
     position: 'Secretary & Correspondent',
     img: '',
   },
   {
-    name: 'Dr. K. Krishna Prasad',
+    name: 'Name',
     position: 'Treasurer',
     img: '',
   },
   {
-    name: 'Sri. V. Kuppu Swamy',
+    name: 'Name',
     position: 'Additional Secretary',
     img: '',
   },
   {
-    name: 'Dr. P. Gopi Chand',
+    name: 'Name',
     position: 'Joint Secretary',
     img: '',
   },
   {
-    name: 'Sri. Chukkapalli Ramesh',
+    name: 'Name',
     position: 'Special Invitee',
     img: '',
   },
   {
-    name: 'Dr. K. Vara Prasad, M.S.',
+    name: 'Name',
     position: 'Special Invitee',
     img: '',
   },
   {
-    name: 'Sri. R. Mohan Sai Krishna',
+    name: 'Name',
     position: 'Special Invitee',
     img: '',
   },
@@ -117,7 +119,7 @@ function ExecutiveBody() {
           <h1 className="text-2xl font-bold text-center">
             The Executive Committee of GVR&S COLLEGE OF ENGINEERING AND TECHNOLOGY
           </h1>
-          <div className="w-[59rem] h-0.5 bg-Amber mt-2"></div>
+          <div className="w-[20rem] h-0.5 bg-Amber mt-2"></div>
         </div>
 
         <div className="space-y-6 bg-gray-100 p-5 align-center ">

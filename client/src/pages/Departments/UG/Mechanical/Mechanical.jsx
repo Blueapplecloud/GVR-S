@@ -75,11 +75,11 @@ The department maintains updated printed laboratory manuals in all the lab�s a
       aboutContent={aboutText}
       hodContent={hodMessage}
       backgroundImage="https://nie.ac.in/wp-content/uploads/2019/02/NIE-Dipartment.-Mechanical-banner-1.jpg"
-      hodImage="https://static.wixstatic.com/media/92bf96_5bfa3a86125e447daf3db4834153e7a5~mv2.jpg/v1/fill/w_283,h_360,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/WhatsApp%20Image%202023-07-14%20at%2010_37_edited.jpg"
+      hodImage="/Images/management/MECH HOD.jpg"
       visionContent={`To be top in the field of computer science and engineering, building competence through student centric learning for self-employment, research, industry and society needs.To become a lead in producing quality mechanical engineers, which will prosper the society to face the current technical challenges.`}
       missionContent={missionPoints}
       infrastructureContent={infrastructure}
-      hodName="Mr.G.ANIL KUMAR"
+      hodName="DR. TVSRK PRASAD"
       hodDesignation=" B.Tech,M.Tech"
       infrastructureImages={infrastructureData}
     />

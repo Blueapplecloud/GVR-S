@@ -29,25 +29,25 @@ const PlacementDashboard = () => {
       </ul>
       `,
       images: [
-        "https://gvrs.ac.in/wp-content/uploads/2023/12/WhatsApp-Image-2023-12-19-at-11.37.53_7879fbc4.jpg",
-        "https://rvrjcce.ac.in/ximage/k.sureshbabu.jpg",
+        "https://static.vecteezy.com/system/resources/thumbnails/024/983/914/small/simple-user-default-icon-free-png.png",
+        "https://static.vecteezy.com/system/resources/thumbnails/024/983/914/small/simple-user-default-icon-free-png.png",
       ],
-      contacts: [
-        {
-          name: "Ch. Srinivasa Rao",
-          position: "Training & Placement Officer",
-          email: "tpo@rvrjc.ac.in",
-          mobile: "+91 9491071947",
-          image: "/attachments/Q6ZGnhwT8uVNfmnk1XULA.png",
-        },
-        {
-          name: "Dr. K. Suresh Babu",
-          position: "Placement Officer",
-          email: "tpcell@rvrjc.ac.in",
-          mobile: "+91 9490750007",
-          image: "/attachments/WCtzjc398hQkU7e1DDotk.png",
-        },
-      ],
+      // contacts: [
+      //   {
+      //     name: "Coming Soon",
+      //     position: "Training & Placement Officer",
+      //     email: "Coming Soon.ac.in",
+      //     mobile: "+91 Coming Soon",
+      //     image: "/attachments/Q6ZGnhwT8uVNfmnk1XULA.png",
+      //   },
+      //   {
+      //     name: "Coming Soon",
+      //     position: "Placement Officer",
+      //     email: "Coming Soon.ac.in",
+      //     mobile: "+91 Coming Soon",
+      //     image: "/attachments/WCtzjc398hQkU7e1DDotk.png",
+      //   },
+      // ],
     },
     {
       id: "committee",
@@ -104,8 +104,8 @@ const PlacementDashboard = () => {
     {
       id: "statistics",
       label: "Placement Statistics",
-      content:
-        "Data on placements, company selections, and offered salaries...",
+      content: 
+          `Detailed message about Placements will be shared soon. Please stay tuned for more updates.`
     },
   ];
 
@@ -152,7 +152,7 @@ const PlacementDashboard = () => {
                   key={index}
                   src={image}
                   alt={`Section Image ${index + 1}`}
-                  className="w-[300px] h-[250px] object-cover rounded-lg shadow-md"
+                  className="w-[300px] h-[350px] object-cover rounded-lg shadow-md"
                 />
               ))}
             </div>
@@ -165,7 +165,7 @@ const PlacementDashboard = () => {
               {selectedItem.contacts.map((contact, index) => (
                 <div
                   key={index}
-                  className="flex items-center bg-gray-100 p-4 text-center rounded-lg shadow-md w-[300px]"
+                  className="flex items-center bg-gray-100 p-4  rounded-lg shadow-md w-[300px]"
                 >
                   <div>
                     <h3 className="text-xl font-semibold">{contact.name}</h3>

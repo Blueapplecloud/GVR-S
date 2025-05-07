@@ -44,11 +44,11 @@ Object Oriented Programming Lab`,
       aboutContent={aboutText}
       hodContent={hodMessage}
       backgroundImage="https://wallpapercave.com/wp/wp2700093.jpg"
-      hodImage="https://static.wixstatic.com/media/92bf96_5d6b4f6e43bc4e33be6c481a7c1de2f5~mv2.jpeg/v1/crop/x_0,y_0,w_892,h_997/fill/w_289,h_325,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/WhatsApp%20Image%202023-07-14%20at%202_37_58%20AM.jpeg"
+      hodImage="/Images/management/CSE HOD.jpg"
       visionContent={`To be top in the field of computer science and engineering, building competence through student centric learning for self-employment, research, industry and society needs.`}
       missionContent={missionPoints}
       infrastructureContent={infrastructure}
-      hodName="Papa Rao Challagundla"
+      hodName="Dr. CH. PAPA RAO"
       hodDesignation=" B.Tech,M.Tech,(Ph.D.)"
       infrastructureImages={infrastructureData}
     />

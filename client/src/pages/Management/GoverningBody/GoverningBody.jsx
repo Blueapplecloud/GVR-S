@@ -3,62 +3,62 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 const governingMembers = [
     {
-        name: 'Dr.P BHASKAR NAIDU',
+        name: 'Smt.Gangineni Sailaja',
         role: 'President',
-        img: 'https://gvrs.ac.in/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-12-at-12.57.17-PM-228x300.jpeg',
+        img: 'https://gvrs.ac.in/wp-content/uploads/2021/09/WhatsApp-Image-2021-09-23-at-14.38.35-768x510.jpeg',
     },
     {
-        name: 'Sri. J. Murali Mohan',
-        role: 'B.Tech., M.B.A (U.S) Vice-President',
-        img: '',
-    },
-    {
-        name: 'Dr. M. Jagadish Kumar',
+        name: 'Name',
         role: 'Vice-President',
         img: '',
     },
     {
-        name: 'Sri. R. Gopala Krishna',
+        name: 'Name',
+        role: 'Vice-President',
+        img: '',
+    },
+    {
+        name: 'Name',
         role: 'Secretary & Correspondent',
         img: '',
     },
     {
-        name: 'Dr. K. Krishna Prasad',
+        name: 'Name',
         role: 'Treasurer',
         img: '',
     },
     {
-        name: 'Sri. V. Kuppu Swamy',
+        name: 'Name',
         role: 'Additional Secretary',
         img: '',
     },
     {
-        name: 'Dr. P. Gopi Chand',
+        name: 'Name',
         role: 'Joint Secretary',
         img: '',
     },
     {
-        name: 'Dr. K. Vara Prasad, M.S.',
+        name: 'Name',
         role: 'Member',
         img: '',
     },
     {
-        name: 'Dr. K. Krishna Prasad',
+        name: 'Name',
         role: 'Special Invitee',
         img: '',
     },
     {
-        name: 'Sri. V. Kuppu Swamy',
-        role: 'Principal, MBTS Govt. Polytechnic, Nallapadu',
+        name: 'Name',
+        role: 'Special Invitee',
         img: '',
     },
     {
-        name: 'Dr. P. Gopi Chand',
-        role: 'Principal, Dr.YSR ANU College of Engineering & Technology',
+        name: 'Name',
+        role: 'Special Invitee',
         img: '',
     },
     {
-        name: 'Dr. K. Vara Prasad, M.S.',
+        name: 'Name',
         role: 'Member / Director-Academics and R&D',
         img: '',
     },
@@ -77,9 +77,10 @@ function GoverningBody() {
                 className="!text-4xl font-bold text-left pl-10 mb-6 ml-5"
             >
                 The Governing Body
-                <div className="w-[25rem] h-0.5 bg-Amber mt-2 align-center"></div>
+                <div className="w-[16rem] h-0.5 bg-Amber mt-2"></div>
+                {/* <div className="w-[25rem] h-0.5 bg-Amber mt-2 align-center"></div> */}
             </motion.h1>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 bg-gray p-5 shadow-lg rounded-md">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 p-5 shadow-lg rounded-md">
                 {governingMembers.map((member, index) => (
                     <div
                         key={index}

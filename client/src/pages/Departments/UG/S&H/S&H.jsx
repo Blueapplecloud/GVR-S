@@ -10,11 +10,7 @@ The department shields the responsibility of the consolidation of attendance and
 The faculty has addressed itself to the need to orient the students towards the ultimate goal of relating their knowledge to the reality of life situations.  
 `;
 
-  const hodMessage = `Prof.&Vice Principal
-
-Email: ramanujasrinivas.burra@gmail.com
-
-Mob: 7386576511.`;
+  const hodMessage = ``;
 
   const missionPoints = [
     "To help young souls through dedicated teaching, commitment and innovative instructional methods, in discovering their talents.",
@@ -54,11 +50,11 @@ const infrastructureData = [
       aboutContent={aboutText}
       hodContent={hodMessage}
       backgroundImage="/Images/S&HImage.png"
-      hodImage="https://static.wixstatic.com/media/92bf96_9dd35eb468604bae9cad93a9df33782a~mv2.jpg/v1/fill/w_223,h_310,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/92bf96_9dd35eb468604bae9cad93a9df33782a~mv2.jpg"
+      hodImage="/Images/management/S&H HOD.jpg"
       visionContent={`To impart the knowledge which is relevant to the core engineering subjects as per university curricula in graduate students studying in different engineering streams.`}
       missionContent={missionPoints}
       infrastructureContent={infrastructure}
-      hodName="Dr.BURAA RAMANUJA SRINIVAS"
+      hodName="DR. M. AVINASH"
       hodDesignation=" Msc(Maths),Msc(stat),M.phil,M.Tech(cse),MBA,Ph.d"
       infrastructureImages={infrastructureData}
     />
