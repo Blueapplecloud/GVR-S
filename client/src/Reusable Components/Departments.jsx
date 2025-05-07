@@ -156,7 +156,7 @@ const DepartmentsComponent = ({
               <img
                 src={hodImage}
                 alt="HoD"
-                className="rounded-md w-28 h-36 sm:w-32 sm:h-40 object-cover"
+                className="rounded-md w-29 h-36 sm:w-32 sm:h-40 object-cover"
               />
             </div>
           </div>
