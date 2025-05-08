@@ -1,5 +1,5 @@
 import React from "react";
-import '@fortawesome/fontawesome-free/css/all.min.css';
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import About from "./pages/About/About";
@@ -38,9 +38,10 @@ import LabsGallery from "./pages/CampusLife/Gallery/Labs";
 import OrganisingChart from "./pages/Administration/OrganisingChart/OrganisingChart";
 import PlacementDashboard from "./pages/Placement/TpoMessage";
 
-
 import NAAC from "./pages/NAAC/NAAC/NAAC";
 import DVV from "./pages/NAAC/DVV/DVV";
+import LoginLayout from "./components/login/LoginLayout";
+import LoginPage from "./pages/Login/Login";
 function App() {
   return (
     <>
@@ -54,6 +55,11 @@ function App() {
               {/* <Route path="/" element={<CustomNavbar />} /> */}
               {/* Home page Routes */}
               <Route path="/" element={<Home />} />
+
+              {/* loginpage */}
+              <Route path="/login" element={<LoginLayout />}>
+                <Route index element={<LoginPage />} />
+              </Route>
               {/* About page Routes */}
               <Route path="/about" element={<About />} />
               <Route path="/about/history" element={<AboutGVRS />} />
@@ -64,13 +70,25 @@ function App() {
               <Route path="/management/chairman" element={<Chairman />} />
               <Route path="/management/director" element={<Director />} />
               <Route path="/management/dean" element={<Dean />} />
-              <Route path="/management/executive-body" element={<ExecutiveBody />} />
-              <Route path="/management/governing-body" element={<GoverningBody />} />
-              <Route path="/management/chairman" element={<Chairman/>} />
+              <Route
+                path="/management/executive-body"
+                element={<ExecutiveBody />}
+              />
+              <Route
+                path="/management/governing-body"
+                element={<GoverningBody />}
+              />
+              <Route path="/management/chairman" element={<Chairman />} />
               <Route path="/management/director" element={<Director />} />
               <Route path="/management/dean" element={<Dean />} />
-              <Route path="/management/executivebody" element={<ExecutiveBody />} />
-              <Route path="/management/governingbody" element={<GoverningBody />} />
+              <Route
+                path="/management/executivebody"
+                element={<ExecutiveBody />}
+              />
+              <Route
+                path="/management/governingbody"
+                element={<GoverningBody />}
+              />
               {/* Add more routes as needed */}
               {/* Academics page Routes */}
               <Route
@@ -101,29 +119,29 @@ function App() {
               <Route path="/departments/mech" element={<Mechanical />} />
               <Route path="/departments/sh" element={<SH />} />
 
-              <Route path="/campus/campus" element={<CampusGalleryGrid/>}/>
-            <Route path="/gallery/culturals" element={<CampusCulturals/>}/>
-            <Route path="/gallery/library" element={<CampusLibrary/>}/>
-            <Route path="/gallery/sports" element={<SportsGallery/>}/>
-            <Route path="/gallery/canteen" element={<CanteenGallery/>}/>
-            <Route path="/gallery/transport" element={<TransportGallery/>}/>
-            <Route path="/gallery/events" element={<EventsGallery/>}/>
-            <Route path="/gallery/labs" element={<LabsGallery/>}/>
+              <Route path="/campus/campus" element={<CampusGalleryGrid />} />
+              <Route path="/gallery/culturals" element={<CampusCulturals />} />
+              <Route path="/gallery/library" element={<CampusLibrary />} />
+              <Route path="/gallery/sports" element={<SportsGallery />} />
+              <Route path="/gallery/canteen" element={<CanteenGallery />} />
+              <Route path="/gallery/transport" element={<TransportGallery />} />
+              <Route path="/gallery/events" element={<EventsGallery />} />
+              <Route path="/gallery/labs" element={<LabsGallery />} />
 
-
-            <Route path="/administration/organising chart" element={<OrganisingChart/>}/>
-
+              <Route
+                path="/administration/organising chart"
+                element={<OrganisingChart />}
+              />
 
               <Route path="/naac/naac" element={<NAAC />} />
               <Route path="/naac/dvv" element={<DVV />} />
-               {/* Placement page Routes */}
-               <Route path="/placements" element={<PlacementDashboard />} />
-
+              {/* Placement page Routes */}
+              <Route path="/placements" element={<PlacementDashboard />} />
             </Routes>
           </main>
           <Footer />
         </div>
-    </Router>
+      </Router>
     </>
   );
 }
