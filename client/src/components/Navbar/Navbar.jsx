@@ -126,7 +126,7 @@ const CustomNavbar = () => {
               ],
             },
             {
-              label: "MTech",
+              label: "MTECH",
               dropdown: [
                 { label: "CSE", path: "/departments/mtech-cse" },
                 { label: "EEE", path: "/departments/mtech-eee" },
@@ -244,12 +244,15 @@ const CustomNavbar = () => {
       <Header />
       <div className="bg-primaryColor text-white sticky top-0 z-50">
         <div className="container mx-auto px-4 flex items-center justify-between h-14">
+          {/* Mobile Menu Toggle */}
           <div
             className="lg:hidden text-2xl cursor-pointer"
             onClick={toggleMobileMenu}
           >
             {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
           </div>
+
+          {/* Desktop Navbar */}
           <div className="hidden lg:flex justify-center gap-x-4 items-center w-full">
             {menuItems.map((item, index) => (
               <div
@@ -266,7 +269,6 @@ const CustomNavbar = () => {
                   <Link
                     to={item.path}
                     className="px-3 py-2 hover:bg-primaryColor cursor-pointer flex items-center"
-                    onClick={() => setOpenDropdown(null)}
                   >
                     {item.label}
                   </Link>
@@ -277,21 +279,33 @@ const CustomNavbar = () => {
               </div>
             ))}
           </div>
+
+          {/* Login Button (Desktop & Mobile View) */}
+          <div className="flex">
+            <Link
+              to="/login"
+              className="bg-white text-primaryColor px-4 py-2 rounded hover:bg-gray-200"
+            >
+              Login
+            </Link>
+          </div>
         </div>
 
-        {/* Mobile Dropdown */}
+        {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden bg-white text-black px-4 py-2">
+          <div className="lg:hidden bg-white text-black px-4 py-2 flex flex-col">
             {menuItems.map((item, index) => (
               <div key={index} className="mb-2">
                 {item.dropdown ? (
                   <>
                     <div
-                      onClick={() =>
+                      onClick={(e) => {
+                        e.stopPropagation(); // Stop bubbling
                         setOpenSubDropdown(
                           openSubDropdown === index ? null : index
-                        )
-                      }
+                        );
+                        setOpenNestedDropdown(null); // 🔥 Reset nested dropdown when opening new main dropdown
+                      }}
                       className="flex justify-between items-center cursor-pointer font-semibold"
                     >
                       <span>{item.label}</span>
@@ -301,21 +315,24 @@ const CustomNavbar = () => {
                         }`}
                       />
                     </div>
+
                     {openSubDropdown === index && (
                       <div className="pl-4 mt-1">
                         {item.dropdown.map((subItem, subIndex) => (
                           <div key={subIndex} className="mb-1">
                             {subItem.dropdown ? (
                               <>
+                                {/* Nested Dropdown Toggle for PG Programs */}
                                 <div
                                   className="flex justify-between items-center cursor-pointer"
-                                  onClick={() =>
+                                  onClick={(e) => {
+                                    e.stopPropagation(); // Stop bubbling
                                     setOpenNestedDropdown(
                                       openNestedDropdown === subIndex
                                         ? null
                                         : subIndex
-                                    )
-                                  }
+                                    );
+                                  }}
                                 >
                                   <span>{subItem.label}</span>
                                   <FaChevronRight
@@ -326,18 +343,26 @@ const CustomNavbar = () => {
                                     }`}
                                   />
                                 </div>
+
+                                {/* Render Nested Dropdown for MBA & MTECH */}
                                 {openNestedDropdown === subIndex && (
                                   <div className="pl-4 mt-1">
                                     {subItem.dropdown.map(
                                       (nestedItem, nestedIndex) => (
-                                        <Link
-                                          key={nestedIndex}
-                                          to={nestedItem.path}
-                                          className="block py-1 text-sm"
-                                          onClick={toggleMobileMenu}
-                                        >
-                                          {nestedItem.label}
-                                        </Link>
+                                        <div key={nestedIndex} className="mb-1">
+                                          <Link
+                                            to={nestedItem.path}
+                                            className="block py-1 text-sm hover:text-primaryColor"
+                                            onClick={(e) => {
+                                              e.preventDefault(); // Prevent refresh
+                                              setMobileMenuOpen(false);
+                                              setOpenSubDropdown(null);
+                                              setOpenNestedDropdown(null);
+                                            }}
+                                          >
+                                            {nestedItem.label}
+                                          </Link>
+                                        </div>
                                       )
                                     )}
                                   </div>
@@ -346,8 +371,13 @@ const CustomNavbar = () => {
                             ) : (
                               <Link
                                 to={subItem.path}
-                                className="block py-1 text-sm"
-                                onClick={toggleMobileMenu}
+                                className="block py-1 text-sm hover:text-primaryColor"
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  setMobileMenuOpen(false);
+                                  setOpenSubDropdown(null);
+                                  setOpenNestedDropdown(null);
+                                }}
                               >
                                 {subItem.label}
                               </Link>
@@ -360,8 +390,10 @@ const CustomNavbar = () => {
                 ) : (
                   <Link
                     to={item.path}
-                    className="block font-semibold"
-                    onClick={toggleMobileMenu}
+                    className="block font-semibold py-2"
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                    }}
                   >
                     {item.label}
                   </Link>
