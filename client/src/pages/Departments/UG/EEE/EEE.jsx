@@ -36,11 +36,11 @@ const infrastructureData = [
       aboutContent={aboutText}
       hodContent={hodMessage}
       backgroundImage="https://chennai.vit.ac.in/wp-content/uploads/2021/09/What-is-Electronics-Engineering-Difference-Between-Electrical-and-Electronics-Engineering.jpg"
-      hodImage="https://static.wixstatic.com/media/92bf96_6ec537ac382e4f79968e2f46870947de~mv2.jpg/v1/fill/w_260,h_321,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/92bf96_6ec537ac382e4f79968e2f46870947de~mv2.jpg"
+      hodImage="/Images/management/EEE HOD.jpg"
       visionContent={`The Department of Electrical and Electronics Engineering strives to be a Centre of Excellence in Electrical Engineering in producing competent Engineers.`}
       missionContent={missionPoints}
       infrastructureContent={infrastructure}
-      hodName=" Mr.LINGAIAH RAJ TUMMALA"
+      hodName="MR. T. LINGAIAH"
       hodDesignation=" B.Tech,M.Tech"
       infrastructureImages={infrastructureData}
     />

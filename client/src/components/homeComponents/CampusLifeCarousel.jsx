@@ -7,35 +7,35 @@ const campusLifeData = [
     title: "Library",
     description:
       "Library offers a wide range of resources and a quiet space for study.",
-    image: "/Images/placeholderImg.png",
+    image: "/Images/campuslife/library.jpg",
   },
-  {
-    id: 2,
-    title: "National Service Scheme (NSS)",
-    description:
-      "Join NSS to be part of a movement aimed at building a better society through community service and social work.",
-    image: "/Images/placeholderImg.png",
-  },
+  // {
+  //   id: 2,
+  //   title: "National Service Scheme (NSS)",
+  //   description:
+  //     "Join NSS to be part of a movement aimed at building a better society through community service and social work.",
+  //   image: "/Images/placeholderImg.png",
+  // },
   {
     id: 3,
     title: "Cultural Club",
     description:
       "Showcase your talents in drama, and art with the vibrant activities of the Cultural Club! Join us for exciting events.",
-    image: "/Images/placeholderImg.png",
+    image: "/Images/campuslife/culturals.jpg",
   },
   {
     id: 4,
     title: "Sports Arena",
     description:
       "Well-equipped courts and fields for all sports lovers to practice and compete.",
-    image: "/Images/placeholderImg.png",
+    image: "/Images/campuslife/sports.jpg",
   },
   {
     id: 5,
     title: "Tech Club",
     description:
       "Join Tech Club to participate in coding contests, hackathons, and tech fests.",
-    image: "/Images/placeholderImg.png",
+    image: "/Images/campuslife/techclub.jpg",
   },
 ];
 

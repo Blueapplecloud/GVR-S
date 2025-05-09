@@ -52,11 +52,11 @@ Respectively.He Published papers in Various reputed International Journals . Mem
       aboutContent={aboutText}
       hodContent={hodMessage}
       backgroundImage="https://th.bing.com/th/id/OIP.0jB1ar8YvZIs5omyLPyHrgHaEJ?w=274&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
-      hodImage="https://static.wixstatic.com/media/92bf96_611b1396ff0a4ea292abb19e3459807e~mv2.jpeg/v1/crop/x_0,y_0,w_880,h_1078/fill/w_246,h_306,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/WhatsApp%20Image%202023-07-14%20at%202_37_58%20AM%20(1).jpeg"
+      hodImage="/Images/management/ECE HOD.jpg"
       visionContent={`To achieve academic excellence in Electronics and Communication Engineering education and to train students in contemporary core technologies by developing them into skillful engineers inspired with human values and social needs.`}
       missionContent={missionPoints}
       infrastructureContent={infrastructure}
-      hodName="Mr.SUGGUNA SESHAGIRIRAO "
+      hodName="Mrs. J. SOWJANYA"
       hodDesignation="B.Tech,M.Tech,(Ph.D)"
       infrastructureImages={infrastructureData}
     />
