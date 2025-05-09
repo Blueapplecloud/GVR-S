@@ -45,6 +45,7 @@ const registerUser = async (req, res) => {
 };
 const loginUser = async (req, res) => {
   const { name, password } = req.body;
+
   //check if all fields are provided
   if (!name || !password) {
     return res.status(400).json({
