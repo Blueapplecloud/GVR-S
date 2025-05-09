@@ -42,6 +42,7 @@ import NAAC from "./pages/NAAC/NAAC/NAAC";
 import DVV from "./pages/NAAC/DVV/DVV";
 import LoginLayout from "./components/login/LoginLayout";
 import LoginPage from "./pages/Login/Login";
+import Placements from "./pages/Admin/Placements/Placements";
 function App() {
   return (
     <>
@@ -137,6 +138,12 @@ function App() {
               <Route path="/naac/dvv" element={<DVV />} />
               {/* Placement page Routes */}
               <Route path="/placements" element={<PlacementDashboard />} />
+
+              {/* Admin Routes */}
+                <Route path="/admin/placement" element={<Placements />} />
+
+              {/* Add more routes as needed */}
+
             </Routes>
           </main>
           <Footer />
