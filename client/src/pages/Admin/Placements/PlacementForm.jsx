@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, TextField, Box, Typography,Form } from '@mui/material';
+import { Button, TextField, Box, Typography } from '@mui/material';
 
 export default function PlacementForm({ initialData, onSave, onCancel }) {
   // Ensure initialData is an object
@@ -11,16 +11,17 @@ export default function PlacementForm({ initialData, onSave, onCancel }) {
   const [preview, setPreview] = useState('');
 
   // Initialize form when data changes or on mount
-  useEffect(() => {
-    if (isEdit) {
-      setName(data.name || '');
-      setPreview(data.logo || '');
-    } else {
-      setName('');
-      setPreview('');
-    }
-    setFile(null);
-  }, [data, isEdit]);
+useEffect(() => {
+  if (isEdit) {
+    setName(data.name || '');
+    setPreview(data.logo || '');
+  } else {
+    setName('');
+    setPreview('');
+  }
+  setFile(null);
+}, []); // run only once on mount
+
 
   // Generate preview when a new file is picked
   useEffect(() => {
@@ -54,7 +55,7 @@ export default function PlacementForm({ initialData, onSave, onCancel }) {
   };
 
   return (
-    <Form onSubmit={handleSubmit} className="space-y-4 max-w-md">
+    <form onSubmit={handleSubmit} className="space-y-4 max-w-md">
       <TextField
         label="Company Name"
         value={name}
@@ -96,6 +97,6 @@ export default function PlacementForm({ initialData, onSave, onCancel }) {
           Cancel
         </Button>
       </Box>
-    </Form>
+    </form>
   );
 }
