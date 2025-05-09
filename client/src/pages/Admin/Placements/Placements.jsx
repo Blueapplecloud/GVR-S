@@ -9,7 +9,7 @@ export default function Placements() {
   const [placements, setPlacements] = useState([]);
   const [editingId, setEditingId] = useState(null);
 
-  // 1) Load all placements on mount
+  // Load all placements on mount
   useEffect(() => {
     async function load() {
       try {
@@ -24,26 +24,26 @@ export default function Placements() {
     load();
   }, []);
 
-  // 2) Open add form
+  // Open add form
   const handleAdd = () => {
     setEditingId(null);
     setShowForm(true);
   };
 
-  // 3) Open edit form
-  const handleEdit = id => {
+  // Open edit form
+  const handleEdit = (id) => {
     setEditingId(id);
     setShowForm(true);
   };
 
-  // 4) Save (create or update)
-  const handleSave = record => {
+  // Save (create or update)
+  const handleSave = (record) => {
     setPlacements(prev => {
-      if (record._id) {
-        // Update existing placement
-        return prev.map(item => (item._id === record._id ? record : item));
+      if (record._id && prev.some(p => p._id === record._id)) {
+        // Update existing
+        return prev.map(p => p._id === record._id ? record : p);
       } else {
-        // Add new placement
+        // New
         return [record, ...prev];
       }
     });
@@ -51,23 +51,23 @@ export default function Placements() {
     setEditingId(null);
   };
 
-  // 5) Delete
-  const handleDelete = async id => {
+  // Delete
+  const handleDelete = async (id) => {
     if (!window.confirm('Are you sure you want to delete this placement?')) return;
     try {
       const res = await fetch(`http://localhost:3001/api/placement/${id}`, {
         method: 'DELETE'
       });
       if (!res.ok) throw new Error(`Status ${res.status}`);
-      setPlacements(pl => pl.filter(item => item._id !== id));
+      setPlacements(prev => prev.filter(item => item._id !== id));
     } catch (err) {
       console.error('Delete failed:', err);
       alert('Could not delete placement.');
     }
   };
 
-  // Find the record being edited
-  const initialData = editingId
+  // Calculate the data to pass into the form
+  const selectedPlacement = editingId
     ? placements.find(item => item._id === editingId) || null
     : null;
 
@@ -77,12 +77,7 @@ export default function Placements() {
 
       <Box className="flex-1 flex flex-col p-6">
         {/* Header */}
-        <Box
-          display="flex"
-          alignItems="center"
-          justifyContent="space-between"
-          mb={4}
-        >
+        <Box display="flex" alignItems="center" justifyContent="space-between" mb={4}>
           <Typography variant="h4">Placements</Typography>
           <Button
             onClick={handleAdd}
@@ -96,7 +91,7 @@ export default function Placements() {
         {/* Either Form or List */}
         {showForm ? (
           <PlacementForm
-            initialData={initialData}
+            initialData={selectedPlacement}
             onSave={handleSave}
             onCancel={() => {
               setShowForm(false);
@@ -105,10 +100,10 @@ export default function Placements() {
           />
         ) : (
           <List
-          placements={placements}
-          setPlacements={setPlacements}     
-          onEdit={handleEdit}
-          onDelete={handleDelete}
+            placements={placements}
+            setPlacements={setPlacements}
+            onEdit={handleEdit}
+            onDelete={handleDelete}
           />
         )}
       </Box>

@@ -1,46 +1,34 @@
 import React, { useEffect } from 'react';
 import {
-  Table,
-  TableHead,
-  TableRow,
-  TableCell,
-  TableBody,
-  Button,
-  Typography
+  Table, TableHead, TableRow, TableCell,
+  TableBody, Button, Typography
 } from '@mui/material';
+import axios from 'axios';
 
 export default function List({ placements, setPlacements, onEdit }) {
-  // 1) Fetch all placements on mount
   useEffect(() => {
-    async function load() {
+    const fetchData = async () => {
       try {
-        const res = await fetch('http://localhost:3001/api/placement/all');
-        if (!res.ok) throw new Error(`Status ${res.status}`);
-        const data = await res.json();
+        const { data } = await axios.get('http://localhost:3001/api/placement/all');
         setPlacements(data);
       } catch (err) {
-        console.error('Failed to fetch placements:', err);
+        console.error('Fetch error:', err);
       }
-    }
-    load();
+    };
+    fetchData();
   }, [setPlacements]);
 
-  // 2) Delete handler calls backend then updates state
-  const handleDelete = async id => {
-    if (!window.confirm('Are you sure you want to delete this?')) return;
+  const handleDelete = async (id) => {
+    if (!window.confirm('Delete this placement?')) return;
     try {
-      const res = await fetch(`http://localhost:3001/api/placement/${id}`, {
-        method: 'DELETE'
-      });
-      if (!res.ok) throw new Error(`Status ${res.status}`);
-      // Remove from local state
-      setPlacements(prev => prev.filter(item => item._id !== id));
+      await axios.delete(`http://localhost:3001/api/placement/${id}`);
+      setPlacements(prev => prev.filter(p => p._id !== id));
     } catch (err) {
       console.error('Delete failed:', err);
     }
   };
 
-  if (!placements || placements.length === 0) {
+  if (!placements?.length) {
     return <Typography>No placements added yet.</Typography>;
   }
 
@@ -54,16 +42,14 @@ export default function List({ placements, setPlacements, onEdit }) {
           <TableCell align="right">Actions</TableCell>
         </TableRow>
       </TableHead>
-
       <TableBody>
         {placements.map((item, idx) => (
           <TableRow key={item._id}>
             <TableCell>{idx + 1}</TableCell>
             <TableCell>{item.name}</TableCell>
             <TableCell>
-              {/* Ensure the URL is absolute; your backend stored it as http://.../uploads/... */}
               <img
-                src={item.logo}
+                src={`http://localhost:3001/uploads/${item.logo}`}
                 alt={item.name}
                 className="h-10 w-auto rounded"
               />
@@ -73,7 +59,7 @@ export default function List({ placements, setPlacements, onEdit }) {
                 size="small"
                 variant="outlined"
                 className="!mr-2"
-                onClick={() => onEdit(idx)}
+                onClick={() => onEdit(item)} // Pass the entire item object
               >
                 Edit
               </Button>

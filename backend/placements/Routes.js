@@ -36,27 +36,27 @@ router.post('/create', upload.single('image'), async (req, res) => {
 // UPDATE
 // UPDATE Placement (PUT /api/placement/update/:id)
 router.put('/update/:id', upload.single('image'), async (req, res) => {
-    try {
-      const { name } = req.body;
-      const update = { name };
-  
-      if (req.file) {
-        update.logo = `/uploads/${req.file.filename}`; // Store image path
-      }
-  
-      const updated = await Placement.findByIdAndUpdate(req.params.id, update, { new: true });
-      if (!updated) {
-        return res.status(404).json({ error: 'Placement not found' });
-      }
-  
-      res.json(updated);
-    } catch (err) {
-      console.error('Update error:', err);
-      res.status(500).json({ error: 'Server error during update' });
+  try {
+    const { name } = req.body;
+    const update = { name };
+
+    if (req.file) {
+      update.logo = req.file.filename; // Store only the filename
     }
-  });
-  
-  
+
+    const updated = await Placement.findByIdAndUpdate(req.params.id, update, { new: true });
+    if (!updated) {
+      return res.status(404).json({ error: 'Placement not found' });
+    }
+
+    res.json(updated);
+  } catch (err) {
+    console.error('Update error:', err);
+    res.status(500).json({ error: 'Server error during update' });
+  }
+});
+
+
 // DELETE /api/placement/:id
 router.delete('/:id', async (req, res) => {
   try {
