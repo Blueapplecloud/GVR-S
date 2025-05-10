@@ -42,6 +42,10 @@ import NAAC from "./pages/NAAC/NAAC/NAAC";
 import DVV from "./pages/NAAC/DVV/DVV";
 import LoginLayout from "./components/login/LoginLayout";
 import LoginPage from "./pages/Login/Login";
+import GVRSDegreeCollegeforWomen from "./pages/GVRSGroups/GVRS Degree Womens/GVRS Degree Womens";
+import GVRSDegreeCollegeforProfessionalStudents from "./pages/GVRSGroups/GVRS Degree Professional/GVRS Degree Professional";
+import GVRSJuniorCollege from "./pages/GVRSGroups/GVRS Junior College/GVRS Junior College";
+import MBA from "./pages/Departments/PG/MBA/MBA/MBA";
 function App() {
   return (
     <>
@@ -118,6 +122,7 @@ function App() {
               <Route path="/departments/civil" element={<Civil />} />
               <Route path="/departments/mech" element={<Mechanical />} />
               <Route path="/departments/sh" element={<SH />} />
+              <Route path="/departments/mba" element={<MBA/>}/>
 
               <Route path="/campus/campus" element={<CampusGalleryGrid />} />
               <Route path="/gallery/culturals" element={<CampusCulturals />} />
@@ -136,7 +141,10 @@ function App() {
               <Route path="/naac/naac" element={<NAAC />} />
               <Route path="/naac/dvv" element={<DVV />} />
               {/* Placement page Routes */}
-              <Route path="/placements" element={<PlacementDashboard />} />
+              
+              <Route path="/GVR&S Group/GVR&S Degree College For women" element={<GVRSDegreeCollegeforWomen/>}/>
+              <Route path="/GVR&S Group/GVR&S Degree College For Professional studies" element={<GVRSDegreeCollegeforProfessionalStudents/>}/>
+              <Route path="/GVR&S Group/GVR&S Co-operavtive junior college" element={<GVRSJuniorCollege/>}/>
             </Routes>
           </main>
           <Footer />

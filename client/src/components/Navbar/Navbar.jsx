@@ -7,13 +7,14 @@ import {
   FaChevronRight,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import Header from "./Header";
+import HeaderComponent from "./Header";
 
 const CustomNavbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openSubDropdown, setOpenSubDropdown] = useState(null);
   const [openDropdown, setOpenDropdown] = useState(null);
   const [openNestedDropdown, setOpenNestedDropdown] = useState(null); // for nested mobile dropdowns
+  const [isDesktop, setIsDesktop] = useState(false);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
@@ -27,11 +28,7 @@ const CustomNavbar = () => {
       path: "/",
     },
     {
-      label: (
-        <>
-          About GVR&S <FaChevronDown className="hidden lg:inline" />
-        </>
-      ),
+      label: <>About GVR&S</>,
       dropdown: [
         { label: "GVR&S History", path: "/about/history" },
         { label: "Vision & Mission", path: "/about/vision&mission" },
@@ -40,32 +37,24 @@ const CustomNavbar = () => {
       ],
     },
     {
-      label: (
-        <>
-          GVR&S Group <FaChevronDown className="hidden lg:inline" />
-        </>
-      ),
+      label: <>GVR&S Group</>,
       dropdown: [
         {
-          label: "GVR&S Degree College For women",
+          label: "GVR&S Degree College For Women",
           path: "/GVR&S Group/GVR&S Degree College For women",
         },
         {
-          label: "GVR&S Degree College For Professional studies",
+          label: "GVR&S Degree College For Professional Studies",
           path: "/GVR&S Group/GVR&S Degree College For Professional studies",
         },
         {
-          label: "GVR&S Co-operavtive junior college",
+          label: "GVR&S Co-operavtive Junior College",
           path: "/GVR&S Group/GVR&S Co-operavtive junior college",
         },
       ],
     },
     {
-      label: (
-        <>
-          Management <FaChevronDown className="hidden lg:inline" />
-        </>
-      ),
+      label: <>Management</>,
       dropdown: [
         { label: "Founder & President", path: "/management/founder" },
         { label: "Chairman", path: "/management/chairman" },
@@ -78,11 +67,7 @@ const CustomNavbar = () => {
       ],
     },
     {
-      label: (
-        <>
-          Academics <FaChevronDown className="hidden lg:inline" />
-        </>
-      ),
+      label: <>Academics</>,
       dropdown: [
         { label: "Programs Offered", path: "/academics/programs-offered" },
         { label: "Fee Structure", path: "/academics/fee-structure" },
@@ -99,18 +84,10 @@ const CustomNavbar = () => {
       ],
     },
     {
-      label: (
-        <>
-          Departments <FaChevronDown className="hidden lg:inline" />
-        </>
-      ),
+      label: <>Departments</>,
       dropdown: [
         {
-          label: (
-            <>
-              UG <FaChevronRight className="hidden lg:inline" />
-            </>
-          ),
+          label: <>UG Programs</>,
           dropdown: [
             {
               label: "Computer Science & Engineering",
@@ -138,30 +115,52 @@ const CustomNavbar = () => {
           ],
         },
         {
-          label: (
-            <>
-              PG <FaChevronRight className="hidden lg:inline" />
-            </>
-          ),
+          label: <>PG Programs</>,
           dropdown: [
             {
               label: (
-                <div className="flex items-center">
-                  <Link to="/departments/mba" className="mr-2">
-                    MBA
-                  </Link>
-                  <FaChevronDown className="hidden lg:inline cursor-pointer" />
-                </div>
+                <>
+                  <div className="flex items-center">
+                    <Link to="/departments/mba" className="mr-2">
+                      MBA
+                    </Link>
+                  </div>
+                </>
               ),
               dropdown: [
                 { label: "Finance", path: "/departments/mba-finance" },
+                {
+                  label: "Human Resources",
+                  path: "/departments/mba-humar-resources",
+                },
+                { label: "Marketing", path: "/departments/mba-marketing" },
+                {
+                  label: "Operation Management",
+                  path: "/departments/mba-operation-management",
+                },
+                {
+                  label: "Health Care and Hospital Administration",
+                  path: "/departments/mba-health-care-and-hospital-administration",
+                },
+                {
+                  label: "Agri Business Management",
+                  path: "/departments/mba-agri-business-management",
+                },
               ],
             },
             {
-              label: "MTECH",
+              label: <>MTECH </>,
               dropdown: [
-                { label: "CSE", path: "/departments/mtech-cse" },
-                { label: "Power System(EEE)", path: "/departments/mtech-eee" },
+                {
+                  label: "Computer Science & Engineering (CSE)",
+                  path: "/departments/mtech-cse",
+                },
+                { label: "Power System (EEE)", path: "/departments/mtech-eee" },
+                {
+                  label: "CAD/CAM (Mechanical)",
+                  path: "/departments/mtech-cad/cam",
+                },
+                { label: "VLSI (ECM)", path: "/departments/vlsi" },
               ],
             },
           ],
@@ -169,19 +168,11 @@ const CustomNavbar = () => {
       ],
     },
     {
-      label: (
-        <>
-          Campus Life <FaChevronDown className="hidden lg:inline" />
-        </>
-      ),
+      label: <>Campus Life</>,
       dropdown: [
         { label: "Campus", path: "/campus/campus" },
         {
-          label: (
-            <>
-              Gallery <FaChevronRight className="hidden lg:inline" />
-            </>
-          ),
+          label: <>Gallery</>,
           dropdown: [
             { label: "Culturals", path: "/gallery/culturals" },
             { label: "Library", path: "/gallery/library" },
@@ -195,33 +186,21 @@ const CustomNavbar = () => {
       ],
     },
     {
-      label: (
-        <>
-          NAAC <FaChevronDown className="hidden lg:inline" />
-        </>
-      ),
+      label: <>NAAC</>,
       dropdown: [
         { label: "NAAC", path: "/naac/naac" },
         { label: "DVV", path: "/naac/dvv" },
       ],
     },
     {
-      label: (
-        <>
-          Placements <FaChevronDown className="hidden lg:inline" />
-        </>
-      ),
+      label: <>Placements</>,
       dropdown: [
         { label: "Placements", path: "/placements/placements" },
         { label: "RTI", path: "/placements/rti" },
       ],
     },
     {
-      label: (
-        <>
-          Administration <FaChevronDown className="hidden lg:inline" />
-        </>
-      ),
+      label: <>Administration</>,
       dropdown: [
         { label: "Organising Chart", path: "/administration/organising chart" },
       ],
@@ -236,7 +215,7 @@ const CustomNavbar = () => {
     <ul
       className={`absolute ${
         level === 1 ? "left-0 top-full" : "left-full top-0"
-      } mt-0.5 bg-white text-black rounded shadow-md min-w-[3rem] w-max z-20`}
+      } mt-0.5 bg-white text-black rounded shadow-md min-w-[10rem] w-max z-20`} // Increased min-width
       onMouseLeave={() => {
         if (level === 1) setOpenSubDropdown(null);
         else setOpenNestedDropdown(null);
@@ -257,8 +236,12 @@ const CustomNavbar = () => {
         >
           {item.dropdown ? (
             <>
-              <div className="px-4 py-2 hover:text-primaryColor cursor-pointer flex items-center">
+              <div className="px-4 py-2 hover:bg-gray-100 flex justify-between items-center whitespace-nowrap">
                 {item.label}
+                {level > 1 && <FaChevronRight className="w-4 h-4" />}
+                {level === 1 && openSubDropdown === i && (
+                  <FaChevronDown className="w-4 h-4" />
+                )}
               </div>
               {((level === 1 && openSubDropdown === i) ||
                 (level === 2 && openNestedDropdown === i)) &&
@@ -267,7 +250,7 @@ const CustomNavbar = () => {
           ) : (
             <Link
               to={item.path}
-              className="block px-4 py-2 hover:text-primaryColor"
+              className="block px-4 py-2 hover:text-primaryColor whitespace-nowrap" // Added whitespace-nowrap
               onClick={() => {
                 setOpenDropdown(null);
                 setOpenSubDropdown(null);
@@ -284,170 +267,175 @@ const CustomNavbar = () => {
 
   return (
     <>
-      <Header />
-      <div className="bg-primaryColor text-white sticky top-0 z-50">
-        <div className="container mx-auto flex items-center justify-evenly h-14">
-          {/* Mobile Menu Toggle */}
-          <div
-            className="lg:hidden text-2xl cursor-pointer"
+      <HeaderComponent />
+      <div className="bg-primaryColor text-white py-4 px-6 flex justify-between items-center relative z-10">
+        <div className="flex items-center">
+          <button
             onClick={toggleMobileMenu}
+            className="lg:hidden mr-4"
+            aria-label="Toggle Mobile Menu"
           >
-            {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
-          </div>
-
-          {/* Desktop Navbar */}
-          <div className="hidden lg:flex justify-center gap-x-1 items-center w-full">
-            {menuItems.map((item, index) => (
-              <div
-                key={index}
-                className="relative group"
-                onMouseEnter={() => setOpenDropdown(index)}
-                onMouseLeave={() => setOpenDropdown(null)}
-              >
-                {item.dropdown ? (
-                  <div className="px-3 py-2 hover:bg-primaryColor cursor-pointer flex items-center whitespace-nowrap min-w-[6rem]">
-                    {item.label}
-                  </div>
-                ) : (
-                  <Link
-                    to={item.path}
-                    className="px-3 py-2 hover:bg-primaryColor cursor-pointer flex items-center"
-                  >
-                    {item.label}
-                  </Link>
-                )}
-                {item.dropdown &&
-                  openDropdown === index &&
-                  renderDropdown(item.dropdown)}
-              </div>
-            ))}
-          </div>
-
-          {/* Login Button (Desktop & Mobile View) */}
-          <div className="flex">
-            <Link
-              to="/login"
-              className="bg-white text-primaryColor px-4 py-2 rounded-lg hover:bg-gray-200"
+            {isMobileMenuOpen ? (
+              <FaTimes className="w-6 h-6" />
+            ) : (
+              <FaBars className="w-6 h-6" />
+            )}
+          </button>
+        </div>
+        {/* Desktop Navbar */}
+        <div className="hidden lg:flex justify-center gap-x-1 items-center w-full">
+          {menuItems.map((item, index) => (
+            <div
+              key={index}
+              className="relative group"
+              onMouseEnter={() => setOpenDropdown(index)}
+              onMouseLeave={() => setOpenDropdown(null)}
             >
-              Login
-            </Link>
-          </div>
+              {item.dropdown ? (
+                <div className="px-3 py-2 hover:bg-primaryColor cursor-pointer flex items-center whitespace-nowrap !min-w-[6rem]">
+                  {item.label}
+                  {item.label !== <FaHome /> && (
+                    <FaChevronDown className="ml-1 w-4 h-4" />
+                  )}
+                </div>
+              ) : (
+                <Link
+                  to={item.path}
+                  className="px-3 py-2 hover:bg-primaryColor cursor-pointer flex items-center"
+                >
+                  {item.label}
+                </Link>
+              )}
+              {item.dropdown &&
+                openDropdown === index &&
+                renderDropdown(item.dropdown)}
+            </div>
+          ))}
         </div>
 
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="lg:hidden bg-white text-black px-4 py-2 flex flex-col">
-            {menuItems.map((item, index) => (
-              <div key={index} className="mb-2">
-                {item.dropdown ? (
-                  <>
-                    <div
-                      onClick={(e) => {
-                        e.stopPropagation(); // Stop bubbling
-                        setOpenSubDropdown(
-                          openSubDropdown === index ? null : index
-                        );
-                        setOpenNestedDropdown(null); // 🔥 Reset nested dropdown when opening new main dropdown
-                      }}
-                      className="flex justify-between items-center cursor-pointer font-semibold"
-                    >
-                      <span>{item.label}</span>
-                      <FaChevronDown
-                        className={`transform transition-transform ${
-                          openSubDropdown === index ? "rotate-180" : ""
-                        }`}
-                      />
-                    </div>
+        {/* Login Button (Desktop & Mobile View) */}
+        <div className="flex">
+          <Link
+            to="/login"
+            className="bg-white text-primaryColor px-4 py-2 rounded-lg hover:bg-gray-200 whitespace-nowrap"
+          >
+            Login
+          </Link>
+        </div>
+      </div>
 
-                    {openSubDropdown === index && (
-                      <div className="pl-4 mt-1">
-                        {item.dropdown.map((subItem, subIndex) => (
-                          <div key={subIndex} className="mb-1">
-                            {subItem.dropdown ? (
-                              <>
-                                {/* Nested Dropdown Toggle for PG Programs */}
-                                <div
-                                  className="flex justify-between items-center cursor-pointer"
-                                  onClick={(e) => {
-                                    e.stopPropagation(); // Stop bubbling
-                                    setOpenNestedDropdown(
-                                      openNestedDropdown === subIndex
-                                        ? null
-                                        : subIndex
-                                    );
-                                  }}
-                                >
-                                  <span>{subItem.label}</span>
-                                  <FaChevronRight
-                                    className={`transform transition-transform ${
-                                      openNestedDropdown === subIndex
-                                        ? "rotate-90"
-                                        : ""
-                                    }`}
-                                  />
-                                </div>
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden bg-white text-black px-4 py-2 flex flex-col absolute top-full left-0 right-0 z-20">
+          {menuItems.map((item, index) => (
+            <div key={index} className="mb-2">
+              {item.dropdown ? (
+                <>
+                  <div
+                    onClick={(e) => {
+                      e.stopPropagation(); // Stop bubbling
+                      setOpenSubDropdown(
+                        openSubDropdown === index ? null : index
+                      );
+                      setOpenNestedDropdown(null); // 🔥 Reset nested dropdown when opening new main dropdown
+                    }}
+                    className="flex justify-between items-center cursor-pointer font-semibold"
+                  >
+                    <span>{item.label}</span>
+                    <FaChevronDown
+                      className={`transform transition-transform ${
+                        openSubDropdown === index ? "rotate-180" : ""
+                      }`}
+                    />
+                  </div>
 
-                                {/* Render Nested Dropdown for MBA & MTECH */}
-                                {openNestedDropdown === subIndex && (
-                                  <div className="pl-4 mt-1">
-                                    {subItem.dropdown.map(
-                                      (nestedItem, nestedIndex) => (
-                                        <div key={nestedIndex} className="mb-1">
-                                          <Link
-                                            to={nestedItem.path}
-                                            className="block py-1 text-sm hover:text-primaryColor"
-                                            onClick={(e) => {
-                                              e.preventDefault(); // Prevent refresh
-                                              setMobileMenuOpen(false);
-                                              setOpenSubDropdown(null);
-                                              setOpenNestedDropdown(null);
-                                            }}
-                                          >
-                                            {nestedItem.label}
-                                          </Link>
-                                        </div>
-                                      )
-                                    )}
-                                  </div>
-                                )}
-                              </>
-                            ) : (
-                              <Link
-                                to={subItem.path}
-                                className="block py-1 text-sm hover:text-primaryColor"
+                  {openSubDropdown === index && (
+                    <div className="pl-4 mt-1">
+                      {item.dropdown.map((subItem, subIndex) => (
+                        <div key={subIndex} className="mb-1">
+                          {subItem.dropdown ? (
+                            <>
+                              {/* Nested Dropdown Toggle for PG Programs */}
+                              <div
+                                className="flex justify-between items-center cursor-pointer"
                                 onClick={(e) => {
-                                  e.preventDefault();
-                                  setMobileMenuOpen(false);
-                                  setOpenSubDropdown(null);
-                                  setOpenNestedDropdown(null);
+                                  e.stopPropagation(); // Stop bubbling
+                                  setOpenNestedDropdown(
+                                    openNestedDropdown === subIndex
+                                      ? null
+                                      : subIndex
+                                  );
                                 }}
                               >
-                                {subItem.label}
-                              </Link>
-                            )}
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </>
-                ) : (
-                  <Link
-                    to={item.path}
-                    className="block font-semibold py-2"
-                    onClick={() => {
-                      setMobileMenuOpen(false);
-                    }}
-                  >
-                    {item.label}
-                  </Link>
-                )}
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
+                                <span>{subItem.label}</span>
+                                <FaChevronRight
+                                  className={`transform transition-transform ${
+                                    openNestedDropdown === subIndex
+                                      ? "rotate-90"
+                                      : ""
+                                  }`}
+                                />
+                              </div>
+
+                              {/* Render Nested Dropdown for MBA & MTECH */}
+                              {openNestedDropdown === subIndex && (
+                                <div className="pl-4 mt-1">
+                                  {subItem.dropdown.map(
+                                    (nestedItem, nestedIndex) => (
+                                      <div key={nestedIndex} className="mb-1">
+                                        <Link
+                                          to={nestedItem.path}
+                                          className="block py-1 text-sm hover:text-primaryColor"
+                                          onClick={(e) => {
+                                            e.preventDefault(); // Prevent refresh
+                                            setMobileMenuOpen(false);
+                                            setOpenSubDropdown(null);
+                                            setOpenNestedDropdown(null);
+                                          }}
+                                        >
+                                          {nestedItem.label}
+                                        </Link>
+                                      </div>
+                                    )
+                                  )}
+                                </div>
+                              )}
+                            </>
+                          ) : (
+                            <Link
+                              to={subItem.path}
+                              className="block py-1 text-sm hover:text-primaryColor"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                setMobileMenuOpen(false);
+                                setOpenSubDropdown(null);
+                                setOpenNestedDropdown(null);
+                              }}
+                            >
+                              {subItem.label}
+                            </Link>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </>
+              ) : (
+                <Link
+                  to={item.path}
+                  className="block font-semibold py-2"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                  }}
+                >
+                  {item.label}
+                </Link>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
     </>
   );
 };
-
 export default CustomNavbar;
