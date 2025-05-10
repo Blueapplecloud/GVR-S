@@ -95,7 +95,7 @@ const CustomNavbar = () => {
           label: "Academic Scholarship & Awards",
           path: "/academics/academic-scholarship",
         },
-        { label: "Eligibility", path: "/academics/eligibility" },
+        { label: "Eligibility", path: "/academics/elgibility" },
       ],
     },
     {

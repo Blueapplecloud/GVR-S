@@ -92,6 +92,18 @@ function App() {
                 path="/management/governingbody"
                 element={<GoverningBody />}
               />
+              <Route
+                path="/academics/academic-regulations"
+                element={<AcademicRegulations />}
+              />
+              <Route
+                path="/management/teaching-staff"
+                element={<TeachingStaff />}
+              />
+              <Route
+                path="/management/non-teaching-staff"
+                element={<NonTeachingStaffTable />}
+              />
               {/* Add more routes as needed */}
               {/* Academics page Routes */}
               <Route
@@ -107,18 +119,6 @@ function App() {
                 element={<ProgramsOffered />}
               />
 
-              <Route
-                path="/academics/academic-regulations"
-                element={<AcademicRegulations />}
-              />
-              <Route
-                path="/academics/teaching-staff"
-                element={<TeachingStaff />}
-              />
-              <Route
-                path="/academics/non-teaching-staff"
-                element={<NonTeachingStaffTable />}
-              />
               <Route path="/academics/elgibility" element={<Elgibility />} />
 
               {/* Departments page Routes */}
