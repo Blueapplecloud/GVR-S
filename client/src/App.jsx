@@ -42,6 +42,9 @@ import NAAC from "./pages/NAAC/NAAC/NAAC";
 import DVV from "./pages/NAAC/DVV/DVV";
 import LoginLayout from "./components/login/LoginLayout";
 import LoginPage from "./pages/Login/Login";
+import RTIDeclaration from "./pages/Placement/Rti";
+import ContactUS from "./pages/About/Contact Detalis/ContactUS";
+import IQAC from "./pages/IQAC/Iqac";
 function App() {
   return (
     <>
@@ -65,6 +68,7 @@ function App() {
               <Route path="/about/history" element={<AboutGVRS />} />
               <Route path="/about/vision&mission" element={<VisionMission />} />
               <Route path="/about/message" element={<PrincipalMessage />} />
+              <Route path="/about/contactus" element={<ContactUS />} />
               {/* Management page Routes */}
               <Route path="/management/founder" element={<Founder />} />
               <Route path="/management/chairman" element={<Chairman />} />
@@ -136,7 +140,11 @@ function App() {
               <Route path="/naac/naac" element={<NAAC />} />
               <Route path="/naac/dvv" element={<DVV />} />
               {/* Placement page Routes */}
-              <Route path="/placements" element={<PlacementDashboard />} />
+              <Route path="/placements/placements" element={<PlacementDashboard />} />
+              <Route path="/placements/rti" element={<RTIDeclaration />} />
+
+              {/* IQAC page Routes */}
+              <Route path="/iqac" element={<IQAC />} />
             </Routes>
           </main>
           <Footer />

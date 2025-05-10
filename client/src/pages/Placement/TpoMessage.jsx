@@ -28,10 +28,10 @@ const PlacementDashboard = () => {
         <li>Build and enhance the institution’s brand value in the corporate world.</li>
       </ul>
       `,
-      images: [
-        "https://static.vecteezy.com/system/resources/thumbnails/024/983/914/small/simple-user-default-icon-free-png.png",
-        "https://static.vecteezy.com/system/resources/thumbnails/024/983/914/small/simple-user-default-icon-free-png.png",
-      ],
+      // images: [
+      //   "https://static.vecteezy.com/system/resources/thumbnails/024/983/914/small/simple-user-default-icon-free-png.png",
+      //   "https://static.vecteezy.com/system/resources/thumbnails/024/983/914/small/simple-user-default-icon-free-png.png",
+      // ],
       // contacts: [
       //   {
       //     name: "Coming Soon",
@@ -53,35 +53,26 @@ const PlacementDashboard = () => {
       id: "committee",
       label: "Placement Committee",
       content: `
-        <div class="flex items-center justify-center min-h-screen bg-white">
-  <table class="table-auto border border-gray-300 text-center">
-    <thead class="bg-sky-200">
-      <tr>
-        <th class="border border-gray-300 px-4 py-2">S. No.</th>
-        <th class="border border-gray-300 px-4 py-2">Name & Designation</th>
-        <th class="border border-gray-300 px-4 py-2">Position</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="bg-white"><td class="border px-4 py-2">01.</td><td class="border px-4 py-2">Sri Ch. Srinivasa Rao, Training & Placement Officer</td><td class="border px-4 py-2">Convener</td></tr>
-      <tr class="bg-gray-100"><td class="border px-4 py-2">02.</td><td class="border px-4 py-2">Dr. K. Suresh Babu, Placement Officer</td><td class="border px-4 py-2">Co-Convener</td></tr>
-      <tr class="bg-white"><td class="border px-4 py-2">03.</td><td class="border px-4 py-2">Dr. M.L.N. Krishna Sai, Assoc. Prof., CE</td><td class="border px-4 py-2">Member</td></tr>
-      <tr class="bg-gray-100"><td class="border px-4 py-2">04.</td><td class="border px-4 py-2">Sri M. Srikanth Kumar, Asst. Prof., CE</td><td class="border px-4 py-2">Member</td></tr>
-      <tr class="bg-white"><td class="border px-4 py-2">05.</td><td class="border px-4 py-2">Sri G. Sanijya, Asst. Prof., CE</td><td class="border px-4 py-2">Member</td></tr>
-      <tr class="bg-gray-100"><td class="border px-4 py-2">06.</td><td class="border px-4 py-2">Sri K. Siva Prasad, Asst. Prof., ChE</td><td class="border px-4 py-2">Member</td></tr>
-      <tr class="bg-white"><td class="border px-4 py-2">07.</td><td class="border px-4 py-2">Sri P. Rama Krishna, Asst. Prof., CSE</td><td class="border px-4 py-2">Member</td></tr>
-      <tr class="bg-gray-100"><td class="border px-4 py-2">08.</td><td class="border px-4 py-2">Dr. N. Bhagya Lakshmi, Asst. Prof., CSE</td><td class="border px-4 py-2">Member</td></tr>
-      <tr class="bg-white"><td class="border px-4 py-2">09.</td><td class="border px-4 py-2">Sri S. Karthik, Asst. Prof., CSE</td><td class="border px-4 py-2">Member</td></tr>
-      <tr class="bg-gray-100"><td class="border px-4 py-2">10.</td><td class="border px-4 py-2">Dr. M. Srinivasa Rao, Asst. Prof., CSBS</td><td class="border px-4 py-2">Member</td></tr>
-      <tr class="bg-white"><td class="border px-4 py-2">11.</td><td class="border px-4 py-2">Dr. G. Ramanjaiah, Assoc. Prof., CSD</td><td class="border px-4 py-2">Member</td></tr>
-      <tr class="bg-gray-100"><td class="border px-4 py-2">12.</td><td class="border px-4 py-2">Sri B. Rama Krishna, Asst. Prof., CSD</td><td class="border px-4 py-2">Member</td></tr>
-    </tbody>
-  </table>
-</div>
+      <div class="flex items-center justify-center  bg-white"> 
+  <div class="text-left mt-2">
+            <h2 class="text-2xl font-bold text-black-600">DEDICATED PLACEMENT COMMITTEE</h2>
+            <p class="text-gray-700 mt-2 text-lg font-medium">Initiation</p>
+            <p class="text-gray-600 text-base mt-3">The Training & Placement Committee is dedicated to preparing students and connecting them with appropriate opportunities.</p>
+            <ul class="text-gray-600 text-base mt-2 list-disc list-inside">
+              <li>Develop specific recruiting strategies to maximize your success</li>
+              <li>Provide assistance to facilitate your recruitment process</li>
+            </ul>
+            <p class="text-gray-600 text-base mt-3">More than awards and rankings, the strength of our employer relations depends upon our graduates. Employers return to recruit at GVR&S because of the real-world skills our students develop through an applied, hands-on curriculum—producing highly success-oriented graduates.</p>
 
-              `,
+            <h3 class="text-xl font-bold text-black-600 mt-5">FACILITIES FOR RECRUITERS</h3>
+            <ul class="text-gray-600 text-base mt-2 list-disc list-inside">
+              <li>Auditorium with capacity for the entire batch, equipped with a projector for Pre-Placement Talks (PPT).</li>
+              <li>Group Discussion and Personal Interview rooms for a seamless recruitment process.</li>
+            </ul>
+          </div>
+        </div>
+      `,
     },
-
     {
       id: "training",
       label: "Training Programmes",
@@ -104,8 +95,7 @@ const PlacementDashboard = () => {
     {
       id: "statistics",
       label: "Placement Statistics",
-      content: 
-          `Detailed message about Placements will be shared soon. Please stay tuned for more updates.`
+      content: `Detailed message about Placements will be shared soon. Please stay tuned for more updates.`,
     },
   ];
 
