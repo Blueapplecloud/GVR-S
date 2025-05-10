@@ -1,14 +1,15 @@
-// src/pages/LoginPage.jsx
 import React, { useState } from "react";
 import { TextField, Button } from "@mui/material";
 import { Link } from "react-router-dom";
-import { FaLock } from "react-icons/fa";
+import { FaLock, FaUnlock } from "react-icons/fa";
 import { setUser } from "../../redux-slices/userSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+
 const LoginPage = () => {
-  const naviagte = useNavigate();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [isUnlocked, setIsUnlocked] = useState(false); // State to toggle lock/unlock
 
   const [user, setTheUser] = useState({
     userName: "",
@@ -16,6 +17,10 @@ const LoginPage = () => {
   });
 
   async function handleLogin() {
+    setIsUnlocked(!isUnlocked);
+    setTimeout(() => {
+      setIsUnlocked(false);
+    }, 3000);
     let dataToSend = new FormData();
     dataToSend.append("name", user.userName);
     dataToSend.append("password", user.password);
@@ -33,18 +38,23 @@ const LoginPage = () => {
     if (result.success) {
       alert(result.message);
       dispatch(setUser(result.user));
-      alert("Welcome to the Adminstrations " + result.user.name);
-      naviagte("/admin/placements");
+      alert("Welcome to the Administration " + result.user.name);
+      navigate("/admin/placements");
     } else {
       alert(result.message);
     }
   }
+
   return (
-    <div className="w-full max-w-md s p-8 bg-white shadow-lg rounded-lg hover:!shadow-2xl transition-shadow duration-300 ">
-      <h2 className=" font-semibold mb-9 text-3xl text-center text-primaryColor flex items-center justify-center gap-3 ">
-        Admin Login{" "}
-        <span>
-          <FaLock />
+    <div className="w-full max-w-md s p-8 bg-white shadow-lg rounded-lg hover:!shadow-2xl transition-shadow duration-300">
+      <h2 className="font-semibold mb-9 text-3xl text-center text-primaryColor flex items-center justify-center gap-3">
+        Admin Login
+        <span
+          className={`transition-transform duration-500 ${
+            isUnlocked ? " scale-125 text-green-500" : ""
+          }`}
+        >
+          {isUnlocked ? <FaUnlock /> : <FaLock />}
         </span>
       </h2>
 

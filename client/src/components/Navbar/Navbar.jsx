@@ -6,8 +6,9 @@ import {
   FaChevronDown,
   FaChevronRight,
 } from "react-icons/fa";
-import { Link } from "react-router-dom";
+
 import HeaderComponent from "./Header";
+import { Link } from "react-router-dom";
 
 const CustomNavbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
