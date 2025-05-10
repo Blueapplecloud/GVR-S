@@ -35,7 +35,7 @@ const BrochureModal = () => {
       </button>
 
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 overflow-hidden">
           <div className="bg-white w-full h-full p-6 overflow-auto relative">
             <button
               onClick={closeModal}

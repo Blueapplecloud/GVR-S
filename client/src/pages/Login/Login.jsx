@@ -5,7 +5,9 @@ import { Link } from "react-router-dom";
 import { FaLock } from "react-icons/fa";
 import { setUser } from "../../redux-slices/userSlice";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 const LoginPage = () => {
+  const naviagte = useNavigate();
   const dispatch = useDispatch();
 
   const [user, setTheUser] = useState({
@@ -31,6 +33,8 @@ const LoginPage = () => {
     if (result.success) {
       alert(result.message);
       dispatch(setUser(result.user));
+      alert("Welcome to the Adminstrations " + result.user.name);
+      naviagte("/admin/placements");
     } else {
       alert(result.message);
     }
