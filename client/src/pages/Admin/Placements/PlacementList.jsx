@@ -1,34 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
   Table, TableHead, TableRow, TableCell,
   TableBody, Button, Typography
 } from '@mui/material';
-import axios from 'axios';
 
-export default function PlacementList({ placements, setPlacements, onEdit }) {
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const { data } = await axios.get('http://localhost:5001/placement/all');
-        setPlacements(data);
-      } catch (err) {
-        console.error('Fetch error:', err);
-      }
-    };
-    fetchData();
-  }, [setPlacements]);
-
-  const handleDelete = async (id) => {
-    if (!window.confirm('Delete this placement?')) return;
-    try {
-      await axios.delete(`http://localhost:5001/placement/${id}`);
-      setPlacements(prev => prev.filter(p => p._id !== id));
-    } catch (err) {
-      console.error('Delete failed:', err);
-    }
-  };
-
-  if (!placements?.length) {
+export default function PlacementList({ placements, onEdit, onDelete }) {
+  if (!placements.length) {
     return <Typography>No placements added yet.</Typography>;
   }
 
@@ -49,26 +26,16 @@ export default function PlacementList({ placements, setPlacements, onEdit }) {
             <TableCell>{item.name}</TableCell>
             <TableCell>
               <img
-                src={`http://localhost:5001/uploads/${item.logo}`}
+                src={`http://localhost:5001/uploads/${item.image}`}
                 alt={item.name}
                 className="h-10 w-auto rounded"
               />
             </TableCell>
             <TableCell align="right">
-              <Button
-                size="small"
-                variant="outlined"
-                className="!mr-2"
-                onClick={() => onEdit(item)} // Pass the entire item object
-              >
+              <Button size="small" variant="outlined" className="!mr-2" onClick={() => onEdit(item)}>
                 Edit
               </Button>
-              <Button
-                size="small"
-                variant="outlined"
-                color="error"
-                onClick={() => handleDelete(item._id)}
-              >
+              <Button size="small" variant="outlined" color="error" onClick={() => onDelete(item._id)}>
                 Delete
               </Button>
             </TableCell>

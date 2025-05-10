@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Button, TextField, Box, Typography } from '@mui/material';
 
 export default function PlacementForm({ initialData, onSave, onCancel }) {
-  // Ensure initialData is an object
   const data = initialData || {};
   const isEdit = Boolean(data._id);
 
@@ -10,20 +9,12 @@ export default function PlacementForm({ initialData, onSave, onCancel }) {
   const [file, setFile] = useState(null);
   const [preview, setPreview] = useState('');
 
-  // Initialize form when data changes or on mount
-useEffect(() => {
-  if (isEdit) {
-    setName(data.name || '');
-    setPreview(data.logo || '');
-  } else {
-    setName('');
-    setPreview('');
-  }
-  setFile(null);
-}, []); // run only once on mount
+  useEffect(() => {
+    if (isEdit) {
+      setPreview(`http://localhost:5001/uploads/${data.image}`);
+    }
+  }, [data, isEdit]);
 
-
-  // Generate preview when a new file is picked
   useEffect(() => {
     if (!file) return;
     const url = URL.createObjectURL(file);
@@ -33,19 +24,17 @@ useEffect(() => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const payload = new FormData();
-    payload.append('name', name);
-    if (file) payload.append('image', file);
+    const formData = new FormData();
+    formData.append('name', name);
+    if (file) formData.append('image', file);
 
     try {
       const url = isEdit
-        ? `http://localhost:5001/placement/${data._id}`
+        ? `http://localhost:5001/placement/update/${data._id}`
         : 'http://localhost:5001/placement/create';
       const method = isEdit ? 'PUT' : 'POST';
 
-      const res = await fetch(url, { method, body: payload });
-      if (!res.ok) throw new Error(`Server responded ${res.status}`);
+      const res = await fetch(url, { method, body: formData });
       const saved = await res.json();
       onSave(saved);
     } catch (err) {
@@ -63,20 +52,12 @@ useEffect(() => {
         fullWidth
         required
       />
-
       {preview && (
         <Box>
-          <Typography variant="subtitle2">
-            {isEdit ? 'Current Logo' : 'Preview'}
-          </Typography>
-          <img
-            src={preview}
-            alt="preview"
-            className="h-24 rounded mb-2"
-          />
+          <Typography variant="subtitle2">{isEdit ? 'Current Logo' : 'Preview'}</Typography>
+          <img src={preview} alt="preview" className="h-24 rounded mb-2" />
         </Box>
       )}
-
       <Box>
         <Button variant="outlined" component="label">
           {isEdit ? 'Change Logo' : 'Upload Logo'}
@@ -88,14 +69,11 @@ useEffect(() => {
           />
         </Button>
       </Box>
-
       <Box display="flex" gap={2} mt={2}>
         <Button type="submit" variant="contained" className="!bg-primaryColor">
           {isEdit ? 'Update' : 'Save'}
         </Button>
-        <Button variant="outlined" onClick={onCancel}>
-          Cancel
-        </Button>
+        <Button variant="outlined" onClick={onCancel}>Cancel</Button>
       </Box>
     </form>
   );

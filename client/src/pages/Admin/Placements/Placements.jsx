@@ -4,61 +4,49 @@ import { Button, Box, Typography } from '@mui/material';
 import PlacementForm from './PlacementForm';
 import PlacementList from './PlacementList';
 
- function Placements() {
+function Placements() {
   const [showForm, setShowForm] = useState(false);
   const [placements, setPlacements] = useState([]);
-  const [editingId, setEditingId] = useState(null);
+  const [editingItem, setEditingItem] = useState(null);
 
-  // Load all placements on mount
-  useEffect(() => {
-    async function load() {
-      try {
-        const res = await fetch('http://localhost:5001/placement/all');
-        if (!res.ok) throw new Error(`Status ${res.status}`);
-        const data = await res.json();
-        setPlacements(data);
-      } catch (err) {
-        console.error('Failed to fetch placements:', err);
-      }
+  const fetchPlacements = async () => {
+    try {
+      const res = await fetch('http://localhost:5001/placement/all');
+      const data = await res.json();
+      setPlacements(data);
+    } catch (err) {
+      console.error('Failed to fetch placements:', err);
     }
-    load();
+  };
+
+  useEffect(() => {
+    fetchPlacements();
   }, []);
 
-  // Open add form
   const handleAdd = () => {
-    setEditingId(null);
+    setEditingItem(null);
     setShowForm(true);
   };
 
-  // Open edit form
-  const handleEdit = (id) => {
-    setEditingId(id);
+  const handleEdit = (item) => {
+    setEditingItem(item);
     setShowForm(true);
   };
 
-  // Save (create or update)
   const handleSave = (record) => {
-    setPlacements(prev => {
-      if (record._id && prev.some(p => p._id === record._id)) {
-        // Update existing
-        return prev.map(p => p._id === record._id ? record : p);
-      } else {
-        // New
-        return [record, ...prev];
-      }
-    });
+    const updated = placements.map(p => (p._id === record._id ? record : p));
+    if (!placements.some(p => p._id === record._id)) {
+      updated.unshift(record);
+    }
+    setPlacements(updated);
     setShowForm(false);
-    setEditingId(null);
+    setEditingItem(null);
   };
 
-  // Delete
   const handleDelete = async (id) => {
     if (!window.confirm('Are you sure you want to delete this placement?')) return;
     try {
-      const res = await fetch(`http://localhost:5001/placement/${id}`, {
-        method: 'DELETE'
-      });
-      if (!res.ok) throw new Error(`Status ${res.status}`);
+      await fetch(`http://localhost:5001/placement/delete/${id}`, { method: 'DELETE' });
       setPlacements(prev => prev.filter(item => item._id !== id));
     } catch (err) {
       console.error('Delete failed:', err);
@@ -66,17 +54,10 @@ import PlacementList from './PlacementList';
     }
   };
 
-  // Calculate the data to pass into the form
-  const selectedPlacement = editingId
-    ? placements.find(item => item._id === editingId) || null
-    : null;
-
   return (
     <Box className="flex container h-full">
       <SideNav />
-
       <Box className="flex-1 flex flex-col p-6">
-        {/* Header */}
         <Box display="flex" alignItems="center" justifyContent="space-between" mb={4}>
           <Typography variant="h4">Placements</Typography>
           <Button
@@ -87,15 +68,13 @@ import PlacementList from './PlacementList';
             Add
           </Button>
         </Box>
-
-        {/* Either Form or List */}
         {showForm ? (
           <PlacementForm
-            initialData={selectedPlacement}
+            initialData={editingItem}
             onSave={handleSave}
             onCancel={() => {
               setShowForm(false);
-              setEditingId(null);
+              setEditingItem(null);
             }}
           />
         ) : (
@@ -110,9 +89,5 @@ import PlacementList from './PlacementList';
     </Box>
   );
 }
+
 export default Placements;
-{/* now generat ethe frontend code 
-i want only 
-->Placements.jsx,(it contain like )
-->PlacementList.jsx,
-->PlacementForm.jsx, */}
