@@ -36,6 +36,28 @@ const CustomNavbar = () => {
         { label: "GVR&S History", path: "/about/history" },
         { label: "Vision & Mission", path: "/about/vision&mission" },
         { label: "Principal's Message", path: "/about/message" },
+        { label: "Contact Us", path: "/about/contactus" },
+      ],
+    },
+    {
+      label: (
+        <>
+          GVR&S Group <FaChevronDown className="hidden lg:inline" />
+        </>
+      ),
+      dropdown: [
+        {
+          label: "GVR&S Degree College For women",
+          path: "/GVR&S Group/GVR&S Degree College For women",
+        },
+        {
+          label: "GVR&S Degree College For Professional studies",
+          path: "/GVR&S Group/GVR&S Degree College For Professional studies",
+        },
+        {
+          label: "GVR&S Co-operavtive junior college",
+          path: "/GVR&S Group/GVR&S Co-operavtive junior college",
+        },
       ],
     },
     {
@@ -51,6 +73,8 @@ const CustomNavbar = () => {
         { label: "Dean", path: "/management/dean" },
         { label: "Executive Body", path: "/management/executive-body" },
         { label: "Governing Body", path: "/management/governing-body" },
+        { label: "Teaching Staff", path: "/management/teaching-staff" },
+        { label: "Non-Teaching Staff", path: "/management/non-teaching-staff" },
       ],
     },
     {
@@ -62,15 +86,16 @@ const CustomNavbar = () => {
       dropdown: [
         { label: "Programs Offered", path: "/academics/programs-offered" },
         { label: "Fee Structure", path: "/academics/fee-structure" },
-        { label: "Examination Section", path: "/academics/exam" },
+        // { label: "Examination Section", path: "/academics/exam" },
         {
           label: "Academic Regulations",
           path: "/academics/academic-regulations",
         },
         {
-          label: "Academic Scholarship",
+          label: "Academic Scholarship & Awards",
           path: "/academics/academic-scholarship",
         },
+        { label: "Eligibility", path: "/academics/eligibility" },
       ],
     },
     {
@@ -120,7 +145,14 @@ const CustomNavbar = () => {
           ),
           dropdown: [
             {
-              label: "MBA",
+              label: (
+                <div className="flex items-center">
+                  <Link to="/departments/mba" className="mr-2">
+                    MBA
+                  </Link>
+                  <FaChevronDown className="hidden lg:inline cursor-pointer" />
+                </div>
+              ),
               dropdown: [
                 { label: "Finance", path: "/departments/mba-finance" },
               ],
@@ -129,7 +161,7 @@ const CustomNavbar = () => {
               label: "MTECH",
               dropdown: [
                 { label: "CSE", path: "/departments/mtech-cse" },
-                { label: "EEE", path: "/departments/mtech-eee" },
+                { label: "Power System(EEE)", path: "/departments/mtech-eee" },
               ],
             },
           ],
@@ -174,8 +206,15 @@ const CustomNavbar = () => {
       ],
     },
     {
-      label: "Placements",
-      path: "/placements",
+      label: (
+        <>
+          Placements <FaChevronDown className="hidden lg:inline" />
+        </>
+      ),
+      dropdown: [
+        { label: "Placements", path: "/placements/placements" },
+        { label: "RTI", path: "/placements/rti" },
+      ],
     },
     {
       label: (
@@ -186,6 +225,10 @@ const CustomNavbar = () => {
       dropdown: [
         { label: "Organising Chart", path: "/administration/organising chart" },
       ],
+    },
+    {
+      label: "IQAC",
+      path: "/iqac",
     },
   ];
 
@@ -243,7 +286,7 @@ const CustomNavbar = () => {
     <>
       <Header />
       <div className="bg-primaryColor text-white sticky top-0 z-50">
-        <div className="container mx-auto px-4 flex items-center justify-between h-14">
+        <div className="container mx-auto flex items-center justify-evenly h-14">
           {/* Mobile Menu Toggle */}
           <div
             className="lg:hidden text-2xl cursor-pointer"
@@ -253,7 +296,7 @@ const CustomNavbar = () => {
           </div>
 
           {/* Desktop Navbar */}
-          <div className="hidden lg:flex justify-center gap-x-4 items-center w-full">
+          <div className="hidden lg:flex justify-center gap-x-1 items-center w-full">
             {menuItems.map((item, index) => (
               <div
                 key={index}
@@ -262,7 +305,7 @@ const CustomNavbar = () => {
                 onMouseLeave={() => setOpenDropdown(null)}
               >
                 {item.dropdown ? (
-                  <div className="px-3 py-2 hover:bg-primaryColor cursor-pointer flex items-center">
+                  <div className="px-3 py-2 hover:bg-primaryColor cursor-pointer flex items-center whitespace-nowrap min-w-[6rem]">
                     {item.label}
                   </div>
                 ) : (
@@ -284,7 +327,7 @@ const CustomNavbar = () => {
           <div className="flex">
             <Link
               to="/login"
-              className="bg-white text-primaryColor px-4 py-2 rounded hover:bg-gray-200"
+              className="bg-white text-primaryColor px-4 py-2 rounded-lg hover:bg-gray-200"
             >
               Login
             </Link>
