@@ -42,6 +42,9 @@ import NAAC from "./pages/NAAC/NAAC/NAAC";
 import DVV from "./pages/NAAC/DVV/DVV";
 import LoginLayout from "./components/login/LoginLayout";
 import LoginPage from "./pages/Login/Login";
+import TeachingStaff from "./pages/Academics/TeachingStaff";
+import NonTeachingStaffTable from "./pages/Academics/NonTeachingStaff";
+import Elgibility from "./pages/Academics/Elgibility";
 function App() {
   return (
     <>
@@ -108,6 +111,15 @@ function App() {
                 path="/academics/academic-regulations"
                 element={<AcademicRegulations />}
               />
+              <Route
+                path="/academics/teaching-staff"
+                element={<TeachingStaff />}
+              />
+              <Route
+                path="/academics/non-teaching-staff"
+                element={<NonTeachingStaffTable />}
+              />
+              <Route path="/academics/elgibility" element={<Elgibility />} />
 
               {/* Departments page Routes */}
               <Route path="/departments/cse" element={<CSE />} />
