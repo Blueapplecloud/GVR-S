@@ -45,6 +45,7 @@ import LoginPage from "./pages/Login/Login";
 import TeachingStaff from "./pages/Academics/TeachingStaff";
 import NonTeachingStaffTable from "./pages/Academics/NonTeachingStaff";
 import Elgibility from "./pages/Academics/Elgibility";
+import Placements from "./pages/Admin/Placements/Placements";
 function App() {
   return (
     <>
@@ -149,6 +150,10 @@ function App() {
               <Route path="/naac/dvv" element={<DVV />} />
               {/* Placement page Routes */}
               <Route path="/placements" element={<PlacementDashboard />} />
+
+              {/* All Admin Routes Here */}
+              <Route path="/admin/placements" element={<Placements />} />
+              {/* Add more routes as needed */}
             </Routes>
           </main>
           <Footer />
