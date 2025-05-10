@@ -1,7 +1,7 @@
 import React from "react";
 import "./Navbar.css";
 
-const Header = () => {
+const HeaderComponent = () => {
   return (
     <header className="w-full bg-white border-b border-gray-300 py-2">
       <div className="max-w-screen-xl mx-auto w-full flex flex-col md:flex-row items-center justify-center px-4 md:px-8 lg:px-11 gap-y-4 md:gap-y-0">
@@ -53,4 +53,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderComponent;

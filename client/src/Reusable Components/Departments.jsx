@@ -179,7 +179,9 @@ const DepartmentsComponent = ({
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg sm:text-2xl mb-2">Mission</h3>
+                  <h3 className="font-bold text-lg sm:text-2xl mb-2">
+                    Mission
+                  </h3>
                   <ul className="list-disc pl-6 text-sm sm:text-base leading-relaxed">
                     {missionContent.map((point, index) => (
                       <li key={index}>{point}</li>
@@ -196,22 +198,30 @@ const DepartmentsComponent = ({
             content={
               <div className="space-y-6">
                 <p className="text-sm sm:text-base leading-relaxed">
+                  <p className="!font-bold text-[18px] pb-3">{`Following are the Infrastructure Provided by ${sectionName} Department :`}</p>
                   {infrastructureContent}
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {infrastructureImages.map((item, index) => (
-                    <div key={index} className="space-y-4">
-                      <img
-                        src={item.image}
-                        alt={`Infrastructure ${index + 1}`}
-                        className="w-full h-auto rounded-md shadow-md"
-                      />
-                      <p className="text-sm sm:text-base leading-relaxed">
-                        {item.text}
-                      </p>
-                    </div>
-                  ))}
-                </div>
+                {infrastructureImages.length > 0 ? (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {infrastructureImages.map((item, index) => (
+                      <div key={index} className="space-y-4">
+                        <img
+                          src={item.image}
+                          alt={`Infrastructure ${index + 1}`}
+                          className="w-full h-auto rounded-md shadow-md"
+                        />
+                        <p className="text-sm sm:text-base leading-relaxed">
+                          {item.text}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="italic text-gray-600">
+                    Infrastructure images are not available at the moment. They
+                    will be added soon.
+                  </p>
+                )}
               </div>
             }
           />

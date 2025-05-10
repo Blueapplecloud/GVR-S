@@ -46,6 +46,13 @@ import TeachingStaff from "./pages/Academics/TeachingStaff";
 import NonTeachingStaffTable from "./pages/Academics/NonTeachingStaff";
 import Elgibility from "./pages/Academics/Elgibility";
 import Placements from "./pages/Admin/Placements/Placements";
+import GVRSDegreeCollegeforWomen from "./pages/GVRSGroups/GVRS Degree Womens/GVRS Degree Womens";
+import GVRSDegreeCollegeforProfessionalStudents from "./pages/GVRSGroups/GVRS Degree Professional/GVRS Degree Professional";
+import GVRSJuniorCollege from "./pages/GVRSGroups/GVRS Junior College/GVRS Junior College";
+import MBA from "./pages/Departments/PG/MBA/MBA/MBA";
+import RTIDeclaration from "./pages/Placement/Rti";
+import ContactUS from "./pages/About/Contact Detalis/ContactUS";
+import IQAC from "./pages/IQAC/Iqac";
 function App() {
   return (
     <>
@@ -69,6 +76,7 @@ function App() {
               <Route path="/about/history" element={<AboutGVRS />} />
               <Route path="/about/vision&mission" element={<VisionMission />} />
               <Route path="/about/message" element={<PrincipalMessage />} />
+              <Route path="/about/contactus" element={<ContactUS />} />
               {/* Management page Routes */}
               <Route path="/management/founder" element={<Founder />} />
               <Route path="/management/chairman" element={<Chairman />} />
@@ -131,6 +139,7 @@ function App() {
               <Route path="/departments/civil" element={<Civil />} />
               <Route path="/departments/mech" element={<Mechanical />} />
               <Route path="/departments/sh" element={<SH />} />
+              <Route path="/departments/mba" element={<MBA/>}/>
 
               <Route path="/campus/campus" element={<CampusGalleryGrid />} />
               <Route path="/gallery/culturals" element={<CampusCulturals />} />
@@ -154,6 +163,15 @@ function App() {
               {/* All Admin Routes Here */}
               <Route path="/admin/placements" element={<Placements />} />
               {/* Add more routes as needed */}
+              
+              <Route path="/GVR&S Group/GVR&S Degree College For women" element={<GVRSDegreeCollegeforWomen/>}/>
+              <Route path="/GVR&S Group/GVR&S Degree College For Professional studies" element={<GVRSDegreeCollegeforProfessionalStudents/>}/>
+              <Route path="/GVR&S Group/GVR&S Co-operavtive junior college" element={<GVRSJuniorCollege/>}/>
+              <Route path="/placements/placements" element={<PlacementDashboard />} />
+              <Route path="/placements/rti" element={<RTIDeclaration />} />
+
+              {/* IQAC page Routes */}
+              <Route path="/iqac" element={<IQAC />} />
             </Routes>
           </main>
           <Footer />
