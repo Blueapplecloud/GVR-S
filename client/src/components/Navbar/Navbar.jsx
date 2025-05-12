@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   FaHome,
   FaBars,
@@ -29,6 +29,20 @@ const CustomNavbar = () => {
   const [openNestedDropdown, setOpenNestedDropdown] = useState(null); // for nested mobile dropdowns
   const [isDesktop, setIsDesktop] = useState(false);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 1024); // Adjust breakpoint as needed
+      if (window.innerWidth >= 1024) {
+        setMobileMenuOpen(false); // Close mobile menu on desktop
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Initial check
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
     setOpenSubDropdown(null);
@@ -54,15 +68,15 @@ const CustomNavbar = () => {
       dropdown: [
         {
           label: "GVR&S Degree College For Women",
-          path: "/GVR&S Group/GVR&S Degree College For women",
+          path: "/gvr&s-group/gvr&s-degree-college-for-women",
         },
         {
           label: "GVR&S Degree College For Professional Studies",
-          path: "/GVR&S Group/GVR&S Degree College For Professional studies",
+          path: "/gvr&s-group/gvr&s-degree-college-for-professional-studies",
         },
         {
           label: "GVR&S Co-operavtive Junior College",
-          path: "/GVR&S Group/GVR&S Co-operavtive junior college",
+          path: "/gvr&s-group/gvr&s-co-operavtive-junior-college",
         },
       ],
     },
@@ -181,6 +195,21 @@ const CustomNavbar = () => {
       ],
     },
     {
+      label: <>Committees</>,
+      dropdown: [
+        { label: "Grievance Redressal Committee", path: "/committees/grievance" },
+        { label: "Committee For SC/ST", path: "/committees/scst" },
+        { label: "Minority Cell", path: "/committees/minority-cell" },
+        { label: "Internal Complaint Committee", path: "/committees/icc" },
+        {
+          label: "Anti Sexual Harassment Committee",
+          path: "/committees/ashc",
+        },
+        { label: "Anti-Ragging Committee", path: "/committees/anti-ragging" },
+        { label: "OBC Cell", path: "/committees/obc-cell" },
+      ],
+    },
+    {
       label: <>Campus Life</>,
       dropdown: [
         { label: "Campus", path: "/campus/campus" },
@@ -215,7 +244,7 @@ const CustomNavbar = () => {
     {
       label: <>Administration</>,
       dropdown: [
-        { label: "Organising Chart", path: "/administration/organising chart" },
+        { label: "Organising Chart", path: "/administration/organising-chart" },
       ],
     },
     {
@@ -228,7 +257,7 @@ const CustomNavbar = () => {
     <ul
       className={`absolute ${
         level === 1 ? "left-0 top-full" : "left-full top-0"
-      } mt-0.5 bg-white text-black rounded shadow-md min-w-[10rem] w-max z-20`} // Increased min-width
+      } mt-0.5 bg-white text-black rounded shadow-md min-w-[10rem] w-max z-20`}
       onMouseLeave={() => {
         if (level === 1) setOpenSubDropdown(null);
         else setOpenNestedDropdown(null);
@@ -263,7 +292,7 @@ const CustomNavbar = () => {
           ) : (
             <Link
               to={item.path}
-              className="block px-4 py-2 hover:text-primaryColor whitespace-nowrap" // Added whitespace-nowrap
+              className="block px-4 py-2 hover:text-primaryColor whitespace-nowrap"
               onClick={() => {
                 setOpenDropdown(null);
                 setOpenSubDropdown(null);
@@ -281,8 +310,8 @@ const CustomNavbar = () => {
   return (
     <>
       <HeaderComponent />
-      <div className="bg-primaryColor text-white py-4 px-6 flex justify-between items-center relative z-10">
-        <div className="flex items-center">
+      <div className="bg-primaryColor text-white py-4 px-6 flex items-center relative z-10">
+        <div className="flex items-center mr-auto"> {/* Move mobile toggle to the left */}
           <button
             onClick={toggleMobileMenu}
             className="lg:hidden mr-4"
@@ -294,39 +323,37 @@ const CustomNavbar = () => {
               <FaBars className="w-6 h-6" />
             )}
           </button>
-        </div>
-        {/* Desktop Navbar */}
-        <div className="hidden lg:flex justify-center gap-x-1 items-center w-full">
-          {menuItems.map((item, index) => (
-            <div
-              key={index}
-              className="relative group"
-              onMouseEnter={() => setOpenDropdown(index)}
-              onMouseLeave={() => setOpenDropdown(null)}
-            >
-              {item.dropdown ? (
-                <div className="px-3 py-2 hover:bg-primaryColor cursor-pointer flex items-center whitespace-nowrap !min-w-[6rem]">
-                  {item.label}
-                  {item.label !== <FaHome /> && (
-                    <FaChevronDown className="ml-1 w-4 h-4" />
-                  )}
-                </div>
-              ) : (
-                <Link
-                  to={item.path}
-                  className="px-3 py-2 hover:bg-primaryColor cursor-pointer flex items-center"
-                >
-                  {item.label}
-                </Link>
-              )}
-              {item.dropdown &&
-                openDropdown === index &&
-                renderDropdown(item.dropdown)}
-            </div>
-          ))}
+          {/* Desktop Navbar */}
+          <div className="hidden lg:flex items-center">
+            {menuItems.map((item, index) => (
+              <div
+                key={index}
+                className="relative group mr-1" /* Reduce space between items */
+                onMouseEnter={() => setOpenDropdown(index)}
+                onMouseLeave={() => setOpenDropdown(null)}
+              >
+                {item.dropdown ? (
+                  <div className="px-2 py-2 hover:bg-primaryColor cursor-pointer flex items-center whitespace-nowrap !min-w-[6rem]"> {/* Reduced padding */}
+                    {item.label}
+                    {item.label !== <FaHome /> && (
+                      <FaChevronDown className="ml-1 w-4 h-4" />
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    to={item.path}
+                    className="px-2 py-2 hover:bg-primaryColor cursor-pointer flex items-center whitespace-nowrap" /* Reduced padding */
+                  >
+                    {item.label}
+                  </Link>
+                )}
+                {item.dropdown && openDropdown === index && renderDropdown(item.dropdown)}
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Login Button (Desktop & Mobile View) */}
+        {/* Login Button (Desktop & Mobile View) - Moved to the right */}
         <div className="flex">
           <Link
             to="/login"

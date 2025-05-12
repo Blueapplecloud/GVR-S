@@ -151,7 +151,7 @@ function App() {
               <Route path="/gallery/labs" element={<LabsGallery />} />
 
               <Route
-                path="/administration/organising chart"
+                path="/administration/organising-chart"
                 element={<OrganisingChart />}
               />
 
@@ -164,9 +164,9 @@ function App() {
               <Route path="/admin/placements" element={<Placements />} />
               {/* Add more routes as needed */}
               
-              <Route path="/GVR&S Group/GVR&S Degree College For women" element={<GVRSDegreeCollegeforWomen/>}/>
-              <Route path="/GVR&S Group/GVR&S Degree College For Professional studies" element={<GVRSDegreeCollegeforProfessionalStudents/>}/>
-              <Route path="/GVR&S Group/GVR&S Co-operavtive junior college" element={<GVRSJuniorCollege/>}/>
+              <Route path="/gvr&s-group/gvr&s-degree-college-for-women" element={<GVRSDegreeCollegeforWomen/>}/>
+              <Route path="/gvr&s-group/gvr&s-degree-college-for-professional-studies" element={<GVRSDegreeCollegeforProfessionalStudents/>}/>
+              <Route path="/gvr&s-group/gvr&s-co-operavtive-junior-college" element={<GVRSJuniorCollege/>}/>
               <Route path="/placements/placements" element={<PlacementDashboard />} />
               <Route path="/placements/rti" element={<RTIDeclaration />} />
 
