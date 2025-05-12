@@ -59,7 +59,7 @@ const PrincipalMessage = () => {
           {/* Right: Image */}
           <div className="md:w-1/2 mt-6 md:mt-0 flex justify-center">
             <img
-              src="https://static.vecteezy.com/system/resources/thumbnails/024/983/914/small/simple-user-default-icon-free-png.png"
+              src="/Images/management/principal.jpeg"
               alt="Dr.P BHASKAR NAIDU"
               className="w-90 h-auto rounded-lg shadow-lg"
             />
