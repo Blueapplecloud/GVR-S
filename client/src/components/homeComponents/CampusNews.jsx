@@ -19,7 +19,7 @@ const newsItems = [
 
 const CampusNews = () => {
   return (
-    <div className="bg-white shadow-md rounded-md p-6 max-w-6xl mx-auto mt-6 border-2 mb-3">
+    <div className="bg-white shadow-md rounded-md p-6 max-w-6xl mx-auto mt-2 border-2 mb-2">
       <h2 className="text-2xl font-semibold mb-6 border-b-2  !mx-auto border-primaryColor flex items-center justify-center pb-2">
         Campus News
       </h2>

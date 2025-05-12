@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
@@ -14,6 +14,15 @@ const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const dragThreshold = 50;
   const [dragStartX, setDragStartX] = useState(null);
+
+  // --- AUTOPLAY EFFECT ---
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 2000); // 2 seconds
+
+    return () => clearInterval(interval); // cleanup on unmount
+  }, [currentIndex]);
 
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
@@ -39,7 +48,7 @@ const Carousel = () => {
 
   return (
     <div className="w-full ">
-      <div className="relative w-full  overflow-hidden ">
+      <div className="relative w-full ">
         {/* Slide Image */}
         <motion.div
           key={currentIndex}
@@ -47,7 +56,7 @@ const Carousel = () => {
           initial={{ opacity: 0.6, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -100 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.5 }}
           drag="x"
           onDragStart={handleDragStart}
           onDragEnd={handleDragEnd}
@@ -56,7 +65,7 @@ const Carousel = () => {
           <img
             src={images[currentIndex]}
             alt={`slide-${currentIndex}`}
-            className="w-full h-full object-cover  shadow-lg"
+            className="w-full h-full object-cover shadow-lg"
           />
         </motion.div>
 
@@ -81,7 +90,7 @@ const Carousel = () => {
           <button
             key={index}
             onClick={() => handleDotClick(index)}
-            className={`h-2.5 w-2.5 !rounded-full transition-all duration-300 ${
+            className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${
               index === currentIndex ? "bg-blue-600 scale-125" : "bg-gray-400"
             }`}
           ></button>

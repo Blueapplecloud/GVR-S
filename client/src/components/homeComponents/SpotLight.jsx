@@ -17,7 +17,7 @@ function SpotLight() {
       <h3 className="border-b-2 border-Amber pb-2 text-3xl font-bold text-primaryColor">
         GVRS SpotLight
       </h3>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6 px-10 place-items-cent max-w-6xl">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-2 px-10 place-items-cent max-w-6xl">
         {images.map((image, index) => (
           <div
             key={index}

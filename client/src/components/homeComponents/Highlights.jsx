@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactPlayer from "react-player";
 import BrochureModal from "./BrochureModal";
 import {
@@ -6,10 +6,13 @@ import {
   FaBuilding,
   FaMicroscope,
   FaUsers,
+  FaVolumeMute,
+  FaVolumeUp,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 function Highlights() {
+  const [isMuted, setIsMuted] = useState(true);
   const cards = [
     {
       icon: <FaUniversity className="text-primaryColor text-3xl mb-1 " />,
@@ -42,31 +45,32 @@ function Highlights() {
   ];
 
   return (
-    <div className="md:px-12 md:py-10 flex flex-col md:flex-row gap-5 items-center justify-center h-screen  mx-auto w-full ">
-      <div className="w-full md:flex-1 md:h-[500px] flex flex-col shadow-xl hover:shadow-2xl bg-white rounded-lg  gap-2 md:px-5 p-1 transition duration-300 ease-in-out">
-        <h3 className="text-3xl font-semibold text-primaryColor">
-          Leading Engineering Institution
-        </h3>
-        <p className="text-Red ">
-          Blending academic innovation with engineering excellence for a
-          transformative educational experience.
-        </p>
-        <div className="overflow-hidden rounded-lg shadow-lg md:h-[400px] w-full h-full  ">
-          <iframe
-            src="https://drive.google.com/file/d/1qQ4dX3d_WDg6A3d7laNbN69thB2TQwMY/preview"
+    <div className="md:px-5 md:py-5 flex flex-col  mb-1 gap-5 items-center justify-center  mx-auto w-full ">
+      <div className="w-full md:flex-1 md:h-[500px] flex flex-col shadow-xl hover:shadow-2xl bg-white rounded-lg  gap-2   transition duration-300 ease-in-out">
+        <div className=" rounded-lg shadow-lg  w-auto h-screen bg-gray-50  ">
+          <ReactPlayer
+            url="/video/gvrs_video.mp4"
             width="100%"
             height="100%"
-            allow="autoplay"
-            mute="true"
-            controls="0"
-          ></iframe>
+            controls={false}
+            playing={true}
+            loop={true}
+            muted={isMuted}
+          />
         </div>
-        {/* <button className="mt-3 py-2 bg-primaryColor text-white  hover:bg-Amber hover:!text-black rounded">
-          Explore Brochure
-        </button> */}
+        <button
+          onClick={() => setIsMuted(!isMuted)}
+          className="text-center mx-auto text-md"
+        >
+          {isMuted ? (
+            <FaVolumeMute className="text-primaryColor" size={30} />
+          ) : (
+            <FaVolumeUp className="text-primaryColor" size={30} />
+          )}
+        </button>
         <BrochureModal />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-1 gap-4 md:w-1/4 w-full ">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4  w-full md:w-3/4 lg:w-2/3">
         {cards.map((card, index) => (
           <div
             key={index}
