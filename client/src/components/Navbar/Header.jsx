@@ -32,10 +32,10 @@ const HeaderComponent = () => {
             {/* Center Text */}
             <div className="flex flex-col items-center px-2 leading-tight">
               <p className="text-green-600 text-lg sm:text-xl md:text-2xl font-Serif">
-                (Approved by AICTE,New Delhi)
+                (Approved by AICTE,New Delhi,Affiliated to JNTUK Kakinada,SBTET {""}& Govt.of.AP)
               </p>
               <p className="text-black font-semibold font-Serif text-base sm:text-lg md:text-xl">
-                Affiliated to JNTUK Kakinada | Govt.of.AP Accrediated by NAAC | ISO Certified Institution
+                Accrediated by NAAC | ISO Certified Institution
               </p>
             </div>
           </div>

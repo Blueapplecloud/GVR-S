@@ -21,11 +21,15 @@ const PrincipalMessage = () => {
         <div className="flex flex-col md:flex-row items-center mt-6">
           {/* Left: Text */}
           <div className="md:w-1/2 text-lg text-gray-700 space-y-4">
-            <p>
+            {/* <p>
               <strong>Dr. P BHASKAR NAIDU</strong> has around 20+ years of
               experience in Telugu States & Non-Telugu States in India, as
               well as 5+ years of international exposure.
+            </p> */}
+            <p><strong>Dr. P BHASKAR NAIDU</strong></p>
+            <p className="text-1xl font-bold">AMIE(CSE), M.Tech (CSE),Ph.D(CSE),PGP(NIT-W),(PDF-MALAYSIA)
             </p>
+            <p className="font-semibold"><i>LIMISTE,LMCSI,MIAENG(HK),LMIACSIT(SING),MCSTA(NY)</i></p>
             <p className="italic text-gray-600">
               Detailed message from the principal will be shared soon. Please stay tuned for more updates.
             </p>
