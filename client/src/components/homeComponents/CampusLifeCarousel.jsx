@@ -56,9 +56,7 @@ const CampusLifeCarousel = () => {
   const itemsPerPage = isMobile ? 1 : 3;
 
   const handleNext = () => {
-    setCurrentIndex((prev) =>
-      prev + itemsPerPage >= campusLifeData.length ? 0 : prev + itemsPerPage
-    );
+    setCurrentIndex((prev) => (prev + itemsPerPage) % campusLifeData.length);
   };
 
   const handlePrev = () => {
@@ -75,7 +73,7 @@ const CampusLifeCarousel = () => {
   );
 
   return (
-    <div className="relative mx-auto w-full bg-gray-100 px-4 md:px-10 py-10 min-h-screen">
+    <div className="relative mx-auto w-full bg-gray-100 px-4 md:px-10 py-2 min-h-screen">
       <h2 className="text-center text-3xl font-bold text-primaryColor mb-8">
         Campus Life
         <span className="block mt-2 h-1 w-20 bg-Amber mx-auto"></span>

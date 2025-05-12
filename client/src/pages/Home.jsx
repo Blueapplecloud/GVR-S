@@ -29,14 +29,13 @@ function Home() {
     <div className="">
       <CarouselComponent />
       <Highlights />
-      <h1
-        scrollamount="20"
-        className="text-center text-primaryColor font-semibold text-6xl sm:w-full mt-5 mb-5  md:inline-block border-2 px-3 py-3 font-Serif"
-      >
+      <h1 className="text-center text-primaryColor font-semibold text-6xl sm:w-full mt-1 mb-2  md:inline-block border-2 px-3 py-3 font-Serif">
         EAPCET CODE : GVRS
       </h1>
-      <div className="flex flex-col items-center justify-center mt-10 mb-10">
-        <h3 className="border-b-2 border-primaryColor pb-1">Campus updates</h3>
+      <div className="flex flex-col items-center justify-center mt-3 mb-3">
+        <h1 className=" text-primaryColor pb-2 text-5xl font-semibold">
+          Campus updates
+        </h1>
         <div className="flex flex-col md:flex-row gap-2 mt-3">
           {news.map((item, index) => (
             <p
