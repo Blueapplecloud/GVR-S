@@ -28,26 +28,6 @@ const PlacementDashboard = () => {
         <li>Build and enhance the institution’s brand value in the corporate world.</li>
       </ul>
       `,
-      // images: [
-      //   "https://static.vecteezy.com/system/resources/thumbnails/024/983/914/small/simple-user-default-icon-free-png.png",
-      //   "https://static.vecteezy.com/system/resources/thumbnails/024/983/914/small/simple-user-default-icon-free-png.png",
-      // ],
-      // contacts: [
-      //   {
-      //     name: "Coming Soon",
-      //     position: "Training & Placement Officer",
-      //     email: "Coming Soon.ac.in",
-      //     mobile: "+91 Coming Soon",
-      //     image: "/attachments/Q6ZGnhwT8uVNfmnk1XULA.png",
-      //   },
-      //   {
-      //     name: "Coming Soon",
-      //     position: "Placement Officer",
-      //     email: "Coming Soon.ac.in",
-      //     mobile: "+91 Coming Soon",
-      //     image: "/attachments/WCtzjc398hQkU7e1DDotk.png",
-      //   },
-      // ],
     },
     {
       id: "committee",
@@ -74,28 +54,79 @@ const PlacementDashboard = () => {
       `,
     },
     {
-      id: "training",
-      label: "Training Programmes",
-      content: `<section id="training" class="py-10 px-4 text-center">
-  <div class="flex flex-wrap justify-center gap-4 p-20">
-
-    <a href="https://gvrs.ac.in/about-us/" class="no-underline bg-red-800 text-white px-6 py-2 rounded-full hover:bg-red-600 transition">2024-2025</a>
-    <a href="#" class="no-underline bg-red-800 text-white px-6 py-2 rounded-full hover:bg-red-600 transition">2023-2024</a>
-    <a href="#" class="no-underline bg-red-800 text-white px-6 py-2 rounded-full hover:bg-red-600 transition">2022-2023</a>
-    <a href="#" class="no-underline bg-red-800 text-white px-6 py-2 rounded-full hover:bg-red-600 transition">2021-2022</a>
-    <a href="#" class="no-underline bg-red-800 text-white px-6 py-2 rounded-full hover:bg-red-600 transition">2020-2021</a>
-    <a href="#" class="no-underline bg-red-800 text-white px-6 py-2 rounded-full hover:bg-red-600 transition">2019-2020</a>
-    <a href="#" class="no-underline bg-red-800 text-white px-6 py-2 rounded-full hover:bg-red-600 transition">2018-2019</a>
-    <a href="#" class="no-underline bg-red-800 text-white px-6 py-2 rounded-full hover:bg-red-600 transition">2017-2018</a>
-    <a href="#" class="no-underline bg-red-800 text-white px-6 py-2 rounded-full hover:bg-red-600 transition">2016-2017</a>
+      id: "Procedure",
+      label: "Placements Procedure",
+      content: `  <div className="p-6 bg-white">
+  <h1 class="text-2xl font-bold text-black-600">PLACEMENT PROCEDURE</h1>
+  <div>
+     <p class="text-gray-700 mt-2 text-lg font-medium">Initiation</p>
+    <ol class="text-gray-600 text-base mt-2 list-disc list-inside">
+      <li>The Placement Office sends invitations to companies/organizations along with relevant information.</li>
+      <li>The company/organization reverts with filled JD containing information about company/organization, recruitment procedure, job description, package (CTC) offered, place of posting, allowances & other bonuses.</li>
+      <li>JD’s can be sent either by post or email to Training and Placement Cell, GVR&S College of Engineering and Technology, Guntur, AP (Placements@gvrands.com).</li>
+      <li>Slot for the company's recruitment visit is decided upon a mutual agreement.</li>
+      <li>If the company is interested in conducting a Pre-Placement Talk (PPT), they can send a request along with preferred dates.</li>
+    </ol>
   </div>
-</section>
+  <div className="mt-6">
+    <h2 class="text-xl font-bold text-black-600 mt-5">Selection</h2>
+    <ol class="text-gray-600 text-base mt-2 list-disc list-inside">
+      <li>The JD is made available online to eligible students, along with any other information furnished by the company.</li>
+      <li>Interested and eligible students (as per the criteria specified by the organizations) show their willingness to appear for the recruitment process. Verified resumes of such students become available to the company.</li>
+      <li>Resumes of the students are made available before the visit of the company/organization.</li>
+    </ol>
+  </div>
+</div>
+
 `,
     },
     {
-      id: "statistics",
-      label: "Placement Statistics",
-      content: `Detailed message about Placements will be shared soon. Please stay tuned for more updates.`,
+      id: "Gallery",
+      label: "Placements Gallery",
+      content: `<div class="flex flex-col items-center justify-center bg-white p-6">
+ 
+  <div class="grid grid-cols-3 gap-6">
+    <img src="https://gvrs.ac.in/wp-content/uploads/2020/10/1-2-272x182.jpeg" alt="Placement Activity 1" class="rounded-lg shadow-md w-full h-auto" />
+    <img src="https://gvrs.ac.in/wp-content/uploads/2020/10/2-1-272x182.jpeg" alt="Placement Activity 2" class="rounded-lg shadow-md w-full h-auto" />
+    <img src="https://gvrs.ac.in/wp-content/uploads/2020/10/3-1-272x182.jpeg" alt="Placement Activity 3" class="rounded-lg shadow-md w-full h-auto" />
+    <img src="https://gvrs.ac.in/wp-content/uploads/2020/10/P5-272x182.jpg" alt="Placement Activity 4" class="rounded-lg shadow-md w-full h-auto" />
+    <img src="https://gvrs.ac.in/wp-content/uploads/2020/10/P9-272x182.jpg" alt="Placement Activity 5" class="rounded-lg shadow-md w-full h-auto" />
+    <img src="https://gvrs.ac.in/wp-content/uploads/2020/10/P7-272x182.jpg" alt="Placement Activity 6" class="rounded-lg shadow-md w-full h-auto" />
+    <img src="https://gvrs.ac.in/wp-content/uploads/2020/10/P11-272x182.jpg" alt="Placement Activity 7" class="rounded-lg shadow-md w-full h-auto" />
+  </div>
+</div>
+
+<div class="flex flex-col items-center justify-center bg-white p-6">
+  <h2 class="text-2xl font-bold text-black mb-6">PLACEMENT ACTIVITIES</h2>
+  <div class="grid grid-cols-2 gap-6 w-full">
+    <img src="https://gvrs.ac.in/wp-content/uploads/2023/12/IMG-20231220-WA0016.jpg" alt="Placement Activity 1" class="rounded-lg shadow-md w-full h-64 object-cover" />
+    <img src="https://gvrs.ac.in/wp-content/uploads/2023/12/IMG-20231220-WA0013.jpg" alt="Placement Activity 2" class="rounded-lg shadow-md w-full h-64 object-cover" />
+    <img src="https://gvrs.ac.in/wp-content/uploads/2020/10/placement3.jpg" alt="Placement Activity 3" class="rounded-lg shadow-md w-full h-64 object-cover" />
+    <img src="https://gvrs.ac.in/wp-content/uploads/2020/10/placement5.jpg" alt="Placement Activity 4" class="rounded-lg shadow-md w-full h-64 object-cover" />
+    <img src="https://gvrs.ac.in/wp-content/uploads/2020/10/placement6.jpg" alt="Placement Activity 5" class="rounded-lg shadow-md w-full h-64 object-cover" />
+    <img src="https://gvrs.ac.in/wp-content/uploads/2020/10/placemnet1.jpg" alt="Placement Activity 6" class="rounded-lg shadow-md w-full h-64 object-cover" />
+  </div>
+</div>
+
+
+
+
+`,
+    },
+
+    {
+      id: "Program",
+      label: "Meet Industry Program",
+      content: `
+      <h2 class="text-2xl font-bold text-red-600 text-left mb-6 p-6">INDUSTRIAL VISIT</h2>
+
+<div class="flex flex-col items-center justify-center bg-white p-6">
+  <div>
+    <img src="https://gvrs.ac.in/wp-content/uploads/2023/09/insvisit.jpg" alt="Placement Activity 1" class="rounded-lg shadow-md w-full h-auto object-cover" />
+ 
+  </div>
+</div>
+`,
     },
   ];
 
