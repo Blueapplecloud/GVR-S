@@ -21,11 +21,15 @@ const PrincipalMessage = () => {
         <div className="flex flex-col md:flex-row items-center mt-6">
           {/* Left: Text */}
           <div className="md:w-1/2 text-lg text-gray-700 space-y-4">
-            <p>
+            {/* <p>
               <strong>Dr. P BHASKAR NAIDU</strong> has around 20+ years of
               experience in Telugu States & Non-Telugu States in India, as
               well as 5+ years of international exposure.
+            </p> */}
+            <p><strong>Dr. P BHASKAR NAIDU</strong></p>
+            <p className="text-1xl font-bold">AMIE(CSE), M.Tech (CSE),Ph.D(CSE),PGP(NIT-W),(PDF-MALAYSIA)
             </p>
+            <p className="font-semibold"><i>LIMISTE,LMCSI,MIAENG(HK),LMIACSIT(SING),MCSTA(NY)</i></p>
             <p className="italic text-gray-600">
               Detailed message from the principal will be shared soon. Please stay tuned for more updates.
             </p>
@@ -59,7 +63,7 @@ const PrincipalMessage = () => {
           {/* Right: Image */}
           <div className="md:w-1/2 mt-6 md:mt-0 flex justify-center">
             <img
-              src="https://static.vecteezy.com/system/resources/thumbnails/024/983/914/small/simple-user-default-icon-free-png.png"
+              src="/Images/management/principal.jpeg"
               alt="Dr.P BHASKAR NAIDU"
               className="w-90 h-auto rounded-lg shadow-lg"
             />
