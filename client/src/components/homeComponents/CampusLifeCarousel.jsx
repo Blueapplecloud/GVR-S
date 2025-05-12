@@ -17,21 +17,21 @@ const campusLifeData = [
   //   image: "/Images/placeholderImg.png",
   // },
   {
-    id: 3,
+    id: 2,
     title: "Cultural Club",
     description:
       "Showcase your talents in drama, and art with the vibrant activities of the Cultural Club! Join us for exciting events.",
     image: "/Images/campuslife/culturals.jpg",
   },
   {
-    id: 4,
+    id: 3,
     title: "Sports Arena",
     description:
       "Well-equipped courts and fields for all sports lovers to practice and compete.",
     image: "/Images/campuslife/sports.jpg",
   },
   {
-    id: 5,
+    id: 4,
     title: "Tech Club",
     description:
       "Join Tech Club to participate in coding contests, hackathons, and tech fests.",
@@ -73,7 +73,7 @@ const CampusLifeCarousel = () => {
   );
 
   return (
-    <div className="relative mx-auto w-full bg-gray-100 px-4 md:px-10 py-2 min-h-screen">
+    <div className="relative mx-auto w-full bg-gray-100 px-4 md:px-10 py-2 ">
       <h2 className="text-center text-3xl font-bold text-primaryColor mb-8">
         Campus Life
         <span className="block mt-2 h-1 w-20 bg-Amber mx-auto"></span>

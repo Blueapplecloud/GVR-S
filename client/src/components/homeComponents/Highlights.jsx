@@ -45,9 +45,9 @@ function Highlights() {
   ];
 
   return (
-    <div className="md:px-5 md:py-5 flex flex-col  mb-1 gap-5 items-center justify-center  mx-auto w-full ">
-      <div className="w-full md:flex-1 md:h-[500px] flex flex-col shadow-xl hover:shadow-2xl bg-white rounded-lg  gap-2   transition duration-300 ease-in-out">
-        <div className=" rounded-lg shadow-lg  w-auto h-screen bg-gray-50  ">
+    <div className="md:px-5 md:py-5 pt-3 flex flex-col  mb-1 gap-5 items-center justify-center   mx-auto w-full ">
+      <div className="w-full md:flex-1  md:h-[500px] flex flex-col shadow-xl hover:shadow-2xl bg-white rounded-lg  gap-2   transition duration-300 ease-in-out">
+        <div className=" rounded-lg shadow-lg  w-auto md:h-screen bg-gray-50  ">
           <ReactPlayer
             url="/video/gvrs_video.mp4"
             width="100%"

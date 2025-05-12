@@ -26,7 +26,7 @@ function Home() {
     },
   ];
   return (
-    <div className="">
+    <div className="overflow-hidden">
       <CarouselComponent />
       <Highlights />
       <h1 className="text-center text-primaryColor font-semibold text-6xl sm:w-full mt-1 mb-2  md:inline-block border-2 px-3 py-3 font-Serif">

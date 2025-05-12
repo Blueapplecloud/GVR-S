@@ -15,13 +15,12 @@ const Carousel = () => {
   const dragThreshold = 50;
   const [dragStartX, setDragStartX] = useState(null);
 
-  // --- AUTOPLAY EFFECT ---
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 2000); // 2 seconds
+    }, 3000);
 
-    return () => clearInterval(interval); // cleanup on unmount
+    return () => clearInterval(interval);
   }, [currentIndex]);
 
   const prevSlide = () => {
@@ -47,12 +46,12 @@ const Carousel = () => {
   };
 
   return (
-    <div className="w-full ">
-      <div className="relative w-full ">
-        {/* Slide Image */}
-        <motion.div
+    <div className="w-full overflow-hidden">
+      <div className="relative w-full h-[240px] sm:h-[300px] md:h-[360px] lg:h-[480px] overflow-hidden">
+        <motion.img
           key={currentIndex}
-          className="w-full h-[400px]"
+          src={images[currentIndex]}
+          alt={`slide-${currentIndex}`}
           initial={{ opacity: 0.6, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -100 }}
@@ -61,36 +60,31 @@ const Carousel = () => {
           onDragStart={handleDragStart}
           onDragEnd={handleDragEnd}
           dragConstraints={{ left: 0, right: 0 }}
-        >
-          <img
-            src={images[currentIndex]}
-            alt={`slide-${currentIndex}`}
-            className="w-full h-full object-cover shadow-lg"
-          />
-        </motion.div>
+          className="absolute inset-0 w-full h-full object-cover shadow-lg"
+        />
 
         {/* Arrows */}
         <button
           onClick={prevSlide}
-          className="absolute top-1/2 -translate-y-1/2 left-4 bg-white p-2 rounded-full shadow-md hover:bg-gray-200 z-10"
+          className="absolute top-1/2 -translate-y-1/2 left-2 sm:left-4 bg-white p-1 sm:p-2 rounded-full shadow-md hover:bg-gray-200 z-10"
         >
-          <ChevronLeft size={24} />
+          <ChevronLeft size={20} />
         </button>
         <button
           onClick={nextSlide}
-          className="absolute top-1/2 -translate-y-1/2 right-4 bg-white p-2 rounded-full shadow-md hover:bg-gray-200 z-10"
+          className="absolute top-1/2 -translate-y-1/2 right-2 sm:right-4 bg-white p-1 sm:p-2 rounded-full shadow-md hover:bg-gray-200 z-10"
         >
-          <ChevronRight size={24} />
+          <ChevronRight size={20} />
         </button>
       </div>
 
       {/* Dots */}
-      <div className="flex justify-center mt-6 gap-2">
+      <div className="flex justify-center mt-3 sm:mt-6 gap-2 py-2">
         {images.map((_, index) => (
           <button
             key={index}
             onClick={() => handleDotClick(index)}
-            className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${
+            className={`h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full transition-all duration-300 ${
               index === currentIndex ? "bg-blue-600 scale-125" : "bg-gray-400"
             }`}
           ></button>
