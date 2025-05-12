@@ -1,5 +1,7 @@
 const bcrypt = require("bcryptjs");
 const User = require("../DB/models/User.model");
+const jwt = require("jsonwebtoken");
+const { JWT_SECRET } = process.env;
 
 const registerUser = async (req, res) => {
   const { name, email, password } = req.body;
@@ -62,12 +64,20 @@ const loginUser = async (req, res) => {
     });
   } else {
     const isMatch = await bcrypt.compare(password, existingUser.password);
+
     if (!isMatch) {
       return res.status(400).json({
         success: false,
         message: "Invalid credentials",
       });
     }
+
+    const enCryptedToken = jwt.sign({ id: existingUser._id }, JWT_SECRET, {
+      expiresIn: "30d",
+    });
+
+    // Set the token in the response header
+
     res.status(200).json({
       success: true,
       message: "User logged in successfully",
@@ -75,8 +85,48 @@ const loginUser = async (req, res) => {
         id: existingUser._id,
         name: existingUser.name,
         email: existingUser.email,
-        profilePic: existingUser.profilePic,
+        token: enCryptedToken,
       },
+    });
+  }
+};
+
+// Validate user
+const validateUser = async (req, res) => {
+  const { token } = req.body;
+
+  if (!token) {
+    return res.status(400).json({
+      success: false,
+      message: "Please provide a token",
+    });
+  }
+
+  try {
+    const decoded = jwt.verify(token, JWT_SECRET);
+    const user = await User.findById(decoded.id);
+
+    if (!user) {
+      return res.status(400).json({
+        success: false,
+        message: "User does not exist",
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "User validated successfully",
+      data: {
+        id: user._id,
+        name: user.name,
+        email: user.email,
+      },
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Error validating user",
+      error: error.message,
     });
   }
 };
@@ -84,4 +134,5 @@ const loginUser = async (req, res) => {
 module.exports = {
   registerUser,
   loginUser,
+  validateUser,
 };

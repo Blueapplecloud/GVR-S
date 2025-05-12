@@ -5,6 +5,7 @@ import { FaLock, FaUnlock } from "react-icons/fa";
 import { setUser } from "../../redux-slices/userSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -39,12 +40,40 @@ const LoginPage = () => {
       alert(result.message);
       dispatch(setUser(result.user));
       alert("Welcome to the Administration " + result.user.name);
+      localStorage.setItem("user", JSON.stringify(result.user));
       navigate("/admin/placements");
     } else {
       alert(result.message);
     }
   }
+  async function validateLogin() {
+    let user = JSON.parse(localStorage.getItem("user"));
+    let formData = new FormData();
+    if (user) {
+      formData.append("token", user.token);
+      let requestOptions = {
+        method: "POST",
+        body: formData,
+      };
+      let response = await fetch(
+        "http://localhost:5001/users/validate",
+        requestOptions
+      );
+      let result = await response.json();
 
+      if (result.success) {
+        dispatch(setUser(result.data));
+        navigate("/admin/placements");
+      } else {
+        alert(result.message);
+      }
+    }
+  }
+  useEffect(() => {
+    if (localStorage.getItem("user")) {
+      validateLogin();
+    }
+  }, []);
   return (
     <div className="w-full max-w-md s p-8 bg-white shadow-lg rounded-lg hover:!shadow-2xl transition-shadow duration-300">
       <h2 className="font-semibold mb-9 text-3xl text-center text-primaryColor flex items-center justify-center gap-3">

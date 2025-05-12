@@ -1,21 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import SideNav from "../../../Reusable Components/SideNav";
-import { Button, Box, Typography } from '@mui/material';
-import PlacementForm from './PlacementForm';
-import PlacementList from './PlacementList';
+import { Button, Box, Typography } from "@mui/material";
+import PlacementForm from "./PlacementForm";
+import PlacementList from "./PlacementList";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 function Placements() {
+  const navigate = useNavigate();
+  const store = useSelector((state) => state.userData);
+  // useEffect(() => {
+  //   if (!store || !store.user || !store.user.name) {
+  //     navigate("/");
+  //   }
+  // }, [store, navigate]);
   const [showForm, setShowForm] = useState(false);
   const [placements, setPlacements] = useState([]);
   const [editingItem, setEditingItem] = useState(null);
 
   const fetchPlacements = async () => {
     try {
-      const res = await fetch('http://localhost:5001/placement/all');
+      const res = await fetch("http://localhost:5001/placement/all");
       const data = await res.json();
       setPlacements(data);
     } catch (err) {
-      console.error('Failed to fetch placements:', err);
+      console.error("Failed to fetch placements:", err);
     }
   };
 
@@ -34,8 +43,8 @@ function Placements() {
   };
 
   const handleSave = (record) => {
-    const updated = placements.map(p => (p._id === record._id ? record : p));
-    if (!placements.some(p => p._id === record._id)) {
+    const updated = placements.map((p) => (p._id === record._id ? record : p));
+    if (!placements.some((p) => p._id === record._id)) {
       updated.unshift(record);
     }
     setPlacements(updated);
@@ -44,13 +53,16 @@ function Placements() {
   };
 
   const handleDelete = async (id) => {
-    if (!window.confirm('Are you sure you want to delete this placement?')) return;
+    if (!window.confirm("Are you sure you want to delete this placement?"))
+      return;
     try {
-      await fetch(`http://localhost:5001/placement/delete/${id}`, { method: 'DELETE' });
-      setPlacements(prev => prev.filter(item => item._id !== id));
+      await fetch(`http://localhost:5001/placement/delete/${id}`, {
+        method: "DELETE",
+      });
+      setPlacements((prev) => prev.filter((item) => item._id !== id));
     } catch (err) {
-      console.error('Delete failed:', err);
-      alert('Could not delete placement.');
+      console.error("Delete failed:", err);
+      alert("Could not delete placement.");
     }
   };
 
@@ -58,7 +70,12 @@ function Placements() {
     <Box className="flex container h-full">
       <SideNav />
       <Box className="flex-1 flex flex-col p-6">
-        <Box display="flex" alignItems="center" justifyContent="space-between" mb={4}>
+        <Box
+          display="flex"
+          alignItems="center"
+          justifyContent="space-between"
+          mb={4}
+        >
           <Typography variant="h4">Placements</Typography>
           <Button
             onClick={handleAdd}

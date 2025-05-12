@@ -8,9 +8,21 @@ import {
 } from "react-icons/fa";
 
 import HeaderComponent from "./Header";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
 
 const CustomNavbar = () => {
+  const navigate = useNavigate();
+  const store = useSelector((state) => state.userData);
+
+  useEffect(() => {
+    if (store && store.user && store.user.name) {
+    } else {
+      navigate("/");
+    }
+  }, []);
+
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openSubDropdown, setOpenSubDropdown] = useState(null);
   const [openDropdown, setOpenDropdown] = useState(null);
