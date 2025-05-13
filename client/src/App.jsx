@@ -53,6 +53,9 @@ import MBA from "./pages/Departments/PG/MBA/MBA/MBA";
 import RTIDeclaration from "./pages/Placement/Rti";
 import ContactUS from "./pages/About/Contact Detalis/ContactUS";
 import IQAC from "./pages/IQAC/Iqac";
+import ASHC from "./pages/Committees/ASHC";
+import ARC from "./pages/Committees/ARC";
+import OBCCELL from "./pages/Committees/ObcCell";
 function App() {
   return (
     <>
@@ -172,6 +175,13 @@ function App() {
 
               {/* IQAC page Routes */}
               <Route path="/iqac" element={<IQAC />} />
+
+
+              <Route path="/committees/ashc" element={<ASHC/>}/>
+              <Route path="/committees/anti-ragging" element={<ARC/>}/>
+              <Route path="/committees/obc-cell" element={<OBCCELL/>}/>
+
+              
             </Routes>
           </main>
           <Footer />
