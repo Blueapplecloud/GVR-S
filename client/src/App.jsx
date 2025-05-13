@@ -58,6 +58,8 @@ import ARC from "./pages/Committees/ARC";
 import OBCCELL from "./pages/Committees/ObcCell";
 import GrievanceRedressalCommittee from "./pages/Committees/Grievance redressal Committee";
 import Scst from "./pages/Committees/Committee For SC/Committee For SC/Committee for sc/Committee For SC/ST";
+import MinorityCell from "./pages/Committees/MinorityCell";
+import ICC from "./pages/Committees/ICC";
 function App() {
   return (
     <>
@@ -163,6 +165,8 @@ function App() {
 
 
 
+               <Route path="/committees/minority-cell" element={<MinorityCell />} />
+               <Route path="/committees/icc" element={<ICC />} />
 
               <Route
                 path="/administration/organising-chart"
