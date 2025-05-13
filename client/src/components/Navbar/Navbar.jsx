@@ -10,7 +10,7 @@ import {
 import HeaderComponent from "./Header";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { useEffect } from "react";
+
 
 const CustomNavbar = () => {
   const navigate = useNavigate();
