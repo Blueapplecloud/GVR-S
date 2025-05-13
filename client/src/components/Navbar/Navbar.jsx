@@ -310,7 +310,7 @@ const CustomNavbar = () => {
   return (
     <>
       <HeaderComponent />
-      <div className="bg-primaryColor text-white py-4 px-6 flex items-center relative z-10">
+      <div className="bg-primaryColor text-white py-4 px-6 flex items-center sticky top-0 z-10">
         <div className="flex items-center mr-auto"> {/* Move mobile toggle to the left */}
           <button
             onClick={toggleMobileMenu}
