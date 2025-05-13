@@ -55,7 +55,7 @@ const infrastructureData = [
       missionContent={missionPoints}
       infrastructureContent={infrastructure}
       hodName="DR. M. AVINASH"
-      hodDesignation=" Msc(Maths),Msc(stat),M.phil,M.Tech(cse),MBA,Ph.d"
+      hodDesignation="M.Sc (Physics), PHD"
       infrastructureImages={infrastructureData}
     />
   );

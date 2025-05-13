@@ -7,7 +7,7 @@ The Department of Mechanical Engineering was established in the year 2012 with a
 This department is another promising twig which plays the most significant role in its wider sense. It believes in developing studiousness among the students by giving a clear understanding of core concepts including mechanics, kinematics, thermodynamics, materials science, structural analysis, and electricity.  `;
 
   const hodMessage = `
-Mr. G.Anil Kumar is Associate Professor and Head of the Mechanical Engineering Department. He obtained  in Mechanical Engineering from JNTUH . He received M.Tech in (CAD/CAM) From the Dept. Of Mechanical Engineering in Narasaraopet engineering college Narasaraopet,  He has a rich teaching experience of 9 years and worked in various prestigious Engineering Colleges in Andhra Pradesh. He has published many National/International Journals.
+Mr.TVSRK PRASAD is Associate Professor and Head of the Mechanical Engineering Department. He obtained  in Mechanical Engineering from JNTUH . He received M.Tech in (CAD/CAM) From the Dept. Of Mechanical Engineering in Narasaraopet engineering college Narasaraopet,  He has a rich teaching experience of 9 years and worked in various prestigious Engineering Colleges in Andhra Pradesh. He has published many National/International Journals.
 His research interests include Design and  Manufacturing  . He organized several workshops. He delivered several guest lectures throughout the state of Andhra Pradesh. He has extensive experience in the feild of Mechanical Engineering Design. He supervised and mentored undergraduate and post graduate students. He is adept in communication and problem solving.
 `;
 
@@ -80,7 +80,7 @@ The department maintains updated printed laboratory manuals in all the lab�s a
       missionContent={missionPoints}
       infrastructureContent={infrastructure}
       hodName="DR. TVSRK PRASAD"
-      hodDesignation=" B.Tech,M.Tech"
+      hodDesignation="M.Tech(PHD)"
       infrastructureImages={infrastructureData}
     />
   );
