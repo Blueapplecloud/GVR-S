@@ -53,6 +53,8 @@ import MBA from "./pages/Departments/PG/MBA/MBA/MBA";
 import RTIDeclaration from "./pages/Placement/Rti";
 import ContactUS from "./pages/About/Contact Detalis/ContactUS";
 import IQAC from "./pages/IQAC/Iqac";
+import GrievanceRedressalCommittee from "./pages/Committees/Grievance redressal Committee";
+import Scst from "./pages/Committees/Committee For SC/Committee For SC/Committee for sc/Committee For SC/ST";
 function App() {
   return (
     <>
@@ -149,6 +151,15 @@ function App() {
               <Route path="/gallery/transport" element={<TransportGallery />} />
               <Route path="/gallery/events" element={<EventsGallery />} />
               <Route path="/gallery/labs" element={<LabsGallery />} />
+
+
+               {/*Committee page Routes */}
+
+                <Route path="/committees/grievance" element={<GrievanceRedressalCommittee />} />
+                <Route path="/committees/scst" element={<Scst />} />
+
+
+
 
               <Route
                 path="/administration/organising-chart"
