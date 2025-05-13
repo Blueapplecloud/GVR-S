@@ -53,6 +53,8 @@ import MBA from "./pages/Departments/PG/MBA/MBA/MBA";
 import RTIDeclaration from "./pages/Placement/Rti";
 import ContactUS from "./pages/About/Contact Detalis/ContactUS";
 import IQAC from "./pages/IQAC/Iqac";
+import MinorityCell from "./pages/Committees/MinorityCell";
+import ICC from "./pages/Committees/ICC";
 function App() {
   return (
     <>
@@ -149,6 +151,9 @@ function App() {
               <Route path="/gallery/transport" element={<TransportGallery />} />
               <Route path="/gallery/events" element={<EventsGallery />} />
               <Route path="/gallery/labs" element={<LabsGallery />} />
+
+               <Route path="/committees/minority-cell" element={<MinorityCell />} />
+               <Route path="/committees/icc" element={<ICC />} />
 
               <Route
                 path="/administration/organising-chart"
